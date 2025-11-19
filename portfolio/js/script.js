@@ -456,19 +456,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const formMessage = document.getElementById('formMessage');
 
     if (contactForm && submitBtn) {
-        contactForm.addEventListener('submit', async function(e) {
-            e.preventDefault(); // Prevent default form submission
-
+        contactForm.addEventListener('submit', function(e) {
             const submitText = submitBtn.querySelector('.submit-text');
-            const originalText = submitText.textContent;
 
-            // Client-side validation
+            // Client-side validation only
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
             const subject = document.getElementById('subject').value.trim();
             const message = document.getElementById('message').value.trim();
 
             if (!name || !email || !subject || !message) {
+                e.preventDefault();
                 showFormMessage(portfolioData[currentLanguage].contact.form.errorMessage, 'error');
                 return;
             }
@@ -476,6 +474,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Email validation
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email)) {
+                e.preventDefault();
                 showFormMessage(portfolioData[currentLanguage].contact.form.errorMessage, 'error');
                 return;
             }
@@ -486,48 +485,16 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.style.opacity = '0.7';
             submitBtn.style.cursor = 'not-allowed';
 
-            try {
-                // Submit form using AJAX to FormSubmit
-                const formData = new FormData(contactForm);
-                const response = await fetch(contactForm.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-
-                const result = await response.json();
-
-                // Debug logging - remove this after testing
-                console.log('📧 FormSubmit Response:', result);
-                console.log('📊 Response status:', response.status);
-                console.log('✔️ Response OK:', response.ok);
-                console.log('🔍 Result success:', result.success);
-
-                if (response.ok && result.success) {
-                    // Success
-                    console.log('✅ Form submitted successfully!');
-                    showFormMessage(portfolioData[currentLanguage].contact.form.successMessage, 'success');
-                    contactForm.reset(); // Clear form
-                } else {
-                    // Error - could be validation or server error
-                    console.error('❌ Form submission failed:', result);
-                    const errorMsg = result.message || portfolioData[currentLanguage].contact.form.errorMessage;
-                    showFormMessage(errorMsg, 'error');
-                }
-            } catch (error) {
-                // Network error
-                console.error('❌ Form submission error:', error);
-                showFormMessage(portfolioData[currentLanguage].contact.form.errorMessage, 'error');
-            } finally {
-                // Reset button state
-                submitBtn.disabled = false;
-                submitText.textContent = originalText;
-                submitBtn.style.opacity = '1';
-                submitBtn.style.cursor = 'pointer';
-            }
+            // Let the form submit normally - FormSubmit will handle it and redirect back
         });
+
+        // Show success message if redirected back with success parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('submitted') === 'true') {
+            showFormMessage(portfolioData[currentLanguage].contact.form.successMessage, 'success');
+            // Clean URL
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
     }
 
     // Helper function to show form messages
