@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERP-Shopify Integration - Shopify Developer Portfolio</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/project-detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-code"></i>
+                <span>Shopify Dev</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Back to Portfolio</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <a href="../index.html#projects">Projects</a>
+                <span>/</span>
+                <span>ERP Integration</span>
+            </div>
+            <h1 class="project-title">ERP-Shopify Integration System</h1>
+            <p class="project-lead">Comprehensive bidirectional synchronization between Fantasy ERP and Shopify for seamless data flow</p>
+            <div class="project-meta-header">
+                <span><i class="fas fa-calendar"></i> 2023-2024</span>
+                <span><i class="fas fa-building"></i> Leibish Online</span>
+                <span><i class="fas fa-code"></i> Node.js, GraphQL, REST API</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-details">
+        <div class="container">
+            <div class="project-content-grid">
+                <div class="project-main">
+                    <div class="project-image-showcase">
+                        <img src="../images/project-erp.jpg" alt="ERP-Shopify Integration Dashboard">
+                    </div>
+
+                    <h2>Project Overview</h2>
+                    <p>
+                        Developed a comprehensive bidirectional synchronization system between Fantasy ERP and Shopify, handling
+                        real-time data exchange for products, inventory, orders, customer information, and custom business logic.
+                        This enterprise-level integration serves as the backbone of e-commerce operations, ensuring data consistency
+                        across all business systems.
+                    </p>
+
+                    <h2>Business Challenge</h2>
+                    <p>
+                        The jewelry e-commerce business was facing critical challenges with manual data entry and synchronization
+                        between their ERP system and Shopify store. This led to inventory discrepancies, delayed order processing,
+                        and customer satisfaction issues. The complexity was amplified by the need to handle multiple product types
+                        (diamonds, gemstones, jewelry) each with unique attributes and business rules.
+                    </p>
+
+                    <h2>Technical Solution</h2>
+                    <p>
+                        I designed and implemented a robust, scalable integration system with the following capabilities:
+                    </p>
+                    <ul>
+                        <li><strong>Bidirectional Product Sync:</strong> Real-time synchronization of product data including titles, descriptions, pricing, and images between ERP and Shopify</li>
+                        <li><strong>Inventory Management:</strong> Live inventory updates ensuring accurate stock levels across all sales channels</li>
+                        <li><strong>Order Processing:</strong> Automatic order creation in ERP when orders are placed on Shopify, with status updates flowing back</li>
+                        <li><strong>Customer Data Sync:</strong> Seamless customer profile synchronization including contact information and order history</li>
+                        <li><strong>Metafield Management:</strong> Custom metafield mapping for product-specific data like certificates, dimensions, and quality grades</li>
+                        <li><strong>Error Handling & Logging:</strong> Comprehensive error tracking and automated retry mechanisms</li>
+                    </ul>
+
+                    <h2>Architecture & Implementation</h2>
+                    <p>
+                        The system utilizes a microservices architecture with the following components:
+                    </p>
+                    <div class="tech-stack">
+                        <div class="tech-item">
+                            <i class="fab fa-node"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>GraphQL</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-shopify"></i>
+                            <span>Shopify API</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-database"></i>
+                            <span>MySQL</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-server"></i>
+                            <span>REST API</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-cloud"></i>
+                            <span>Cloud Deploy</span>
+                        </div>
+                    </div>
+
+                    <h2>Key Features</h2>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <h4>Real-Time Synchronization</h4>
+                            <p>Instant data updates between ERP and Shopify ensuring consistency</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-boxes"></i>
+                            </div>
+                            <h4>Multi-Product Support</h4>
+                            <p>Handles diamonds, gemstones, and jewelry with unique attributes</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-warehouse"></i>
+                            </div>
+                            <h4>Inventory Tracking</h4>
+                            <p>Live stock level updates across all sales channels</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <h4>Order Automation</h4>
+                            <p>Automated order creation and status updates</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4>Error Recovery</h4>
+                            <p>Automatic retry mechanisms and comprehensive logging</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-tags"></i>
+                            </div>
+                            <h4>Custom Metafields</h4>
+                            <p>Advanced data mapping for product-specific attributes</p>
+                        </div>
+                    </div>
+
+                    <h2>Data Flow Architecture</h2>
+                    <p>
+                        The integration implements a sophisticated event-driven architecture:
+                    </p>
+                    <ul>
+                        <li><strong>ERP to Shopify:</strong> Product updates, new inventory, price changes trigger Shopify updates via GraphQL mutations</li>
+                        <li><strong>Shopify to ERP:</strong> Orders, customer data, inventory changes trigger ERP API calls</li>
+                        <li><strong>Conflict Resolution:</strong> Timestamp-based conflict resolution ensures data integrity</li>
+                        <li><strong>Queue Management:</strong> Message queuing for handling high-volume data synchronization</li>
+                    </ul>
+
+                    <h2>Results & Business Impact</h2>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <div class="result-number">95%</div>
+                            <div class="result-label">Automation</div>
+                            <p>Eliminated 95% of manual data entry</p>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-number">30%</div>
+                            <div class="result-label">Faster Processing</div>
+                            <p>Reduced order processing time by 30%</p>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-number">99.9%</div>
+                            <div class="result-label">Accuracy</div>
+                            <p>Achieved 99.9% data accuracy rate</p>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-number">10k+</div>
+                            <div class="result-label">Products</div>
+                            <p>Managing 10,000+ product SKUs</p>
+                        </div>
+                    </div>
+
+                    <h2>Technical Challenges & Solutions</h2>
+                    <ul>
+                        <li><strong>API Rate Limits:</strong> Implemented intelligent request batching and caching to stay within Shopify API limits</li>
+                        <li><strong>Data Transformation:</strong> Created flexible mapping system to handle different data structures between systems</li>
+                        <li><strong>Performance Optimization:</strong> Utilized concurrent processing to reduce sync time by 40%</li>
+                        <li><strong>Error Handling:</strong> Built comprehensive error tracking and automatic retry mechanisms</li>
+                    </ul>
+
+                    <h2>Lessons Learned</h2>
+                    <p>
+                        This project deepened my expertise in enterprise integration patterns, API optimization, and handling
+                        complex business logic. I learned the importance of robust error handling, comprehensive logging, and
+                        building systems that can gracefully handle failures and recover automatically.
+                    </p>
+                </div>
+
+                <div class="project-sidebar">
+                    <div class="sidebar-card">
+                        <h3>Project Details</h3>
+                        <div class="detail-item">
+                            <strong>Client</strong>
+                            <span>Leibish Online</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Industry</strong>
+                            <span>Jewelry E-commerce</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Year</strong>
+                            <span>2023-2024</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Duration</strong>
+                            <span>6 months</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Role</strong>
+                            <span>Lead Developer</span>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Technologies Used</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">GraphQL</span>
+                            <span class="tech-tag">Shopify API</span>
+                            <span class="tech-tag">REST API</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Message Queue</span>
+                            <span class="tech-tag">Cloud Hosting</span>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Key Achievements</h3>
+                        <ul class="achievements-list">
+                            <li><i class="fas fa-check"></i> Eliminated 95% manual data entry</li>
+                            <li><i class="fas fa-check"></i> 99.9% data accuracy achieved</li>
+                            <li><i class="fas fa-check"></i> 30% faster order processing</li>
+                            <li><i class="fas fa-check"></i> Managing 10,000+ products</li>
+                            <li><i class="fas fa-check"></i> Zero downtime deployment</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card cta-card">
+                        <h3>Need ERP Integration?</h3>
+                        <p>Let's discuss how I can integrate your systems for seamless operations.</p>
+                        <a href="../index.html#contact" class="btn btn-primary btn-block">Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="related-projects">
+        <div class="container">
+            <h2>Related Projects</h2>
+            <div class="related-grid">
+                <a href="automation-workflows.html" class="related-card">
+                    <img src="../images/project-automation.jpg" alt="Automation Workflows">
+                    <h4>Shopify Automation Workflows</h4>
+                    <p>Event-driven automation with webhooks</p>
+                </a>
+                <a href="hubspot-sync.html" class="related-card">
+                    <img src="../images/project-hubspot.jpg" alt="HubSpot Sync">
+                    <h4>Shopify-HubSpot Sync</h4>
+                    <p>Real-time CRM data synchronization</p>
+                </a>
+                <a href="b2b-platform.html" class="related-card">
+                    <img src="../images/project-b2b.jpg" alt="B2B Platform">
+                    <h4>B2B Product Sharing Platform</h4>
+                    <p>Collaborative product catalog management</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>&copy; 2024 Shopify Developer Portfolio. All rights reserved.</p>
+                </div>
+                <div class="footer-right">
+                    <a href="../index.html"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
