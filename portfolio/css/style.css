@@ -895,3 +895,75 @@ section {
         font-size: 0.9rem;
     }
 }
+
+/* ========== Social Links & CV Button ========== */
+.social-links {
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: var(--lighter-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.social-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.social-btn i {
+    font-size: 1.1rem;
+}
+
+.btn-accent {
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    color: var(--dark-bg);
+    font-weight: 700;
+    border: none;
+}
+
+.btn-accent:hover {
+    background: linear-gradient(135deg, #ffed4e, #ffd700);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+}
+
+[dir="rtl"] .social-buttons {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .social-btn {
+    flex-direction: row-reverse;
+}
+
+@media (max-width: 768px) {
+    .social-buttons {
+        flex-direction: column;
+    }
+    
+    .social-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

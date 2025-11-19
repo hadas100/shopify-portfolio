@@ -144,7 +144,22 @@ function buildDynamicContent(lang = 'en') {
                     <p>${item.value}</p>
                 </div>
             </div>
-        `).join('');
+        `).join('') +
+        `<div class="contact-item social-links">
+            <div class="contact-icon">
+                <i class="fas fa-share-alt"></i>
+            </div>
+            <div>
+                <h4>${data.contact.social.title}</h4>
+                <div class="social-buttons">
+                    ${data.contact.social.links.map(link => `
+                        <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="${link.name}">
+                            <i class="${link.icon}"></i> ${link.name}
+                        </a>
+                    `).join('')}
+                </div>
+            </div>
+        </div>`;
     }
 
     // Update contact CTA
@@ -154,14 +169,19 @@ function buildDynamicContent(lang = 'en') {
     const ctaDesc = document.querySelector('.contact-cta p');
     if (ctaDesc) ctaDesc.textContent = data.contact.cta.description;
 
-    const ctaBtns = document.querySelectorAll('.contact-buttons a');
-    if (ctaBtns[0]) {
-        ctaBtns[0].innerHTML = `<i class="fas fa-envelope"></i> ${data.contact.cta.btnEmail}`;
-        ctaBtns[0].href = `mailto:${data.email}`;
-    }
-    if (ctaBtns[1]) {
-        ctaBtns[1].innerHTML = `<i class="fas fa-phone"></i> ${data.contact.cta.btnPhone}`;
-        ctaBtns[1].href = `tel:+972583261441`;
+    const contactButtons = document.querySelector('.contact-buttons');
+    if (contactButtons) {
+        contactButtons.innerHTML = `
+            <a href="mailto:${data.email}" class="btn btn-primary">
+                <i class="fas fa-envelope"></i> ${data.contact.cta.btnEmail}
+            </a>
+            <a href="tel:+972583261441" class="btn btn-secondary">
+                <i class="fas fa-phone"></i> ${data.contact.cta.btnPhone}
+            </a>
+            <a href="cv/Hadas-Schweitzer-CV.pdf" download class="btn btn-accent">
+                <i class="fas fa-download"></i> ${data.contact.cta.btnCV}
+            </a>
+        `;
     }
 
     // Update footer
