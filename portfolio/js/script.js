@@ -417,9 +417,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Contact form handling
     const contactForm = document.getElementById('contactForm');
     const submitBtn = contactForm?.querySelector('.btn-submit');
+    const formMessage = document.getElementById('formMessage');
 
     if (contactForm && submitBtn) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault(); // Prevent default form submission
+
             const submitText = submitBtn.querySelector('.submit-text');
             const originalText = submitText.textContent;
 
@@ -430,17 +433,15 @@ document.addEventListener('DOMContentLoaded', function() {
             const message = document.getElementById('message').value.trim();
 
             if (!name || !email || !subject || !message) {
-                e.preventDefault();
-                alert(portfolioData[currentLanguage].contact.form.errorMessage);
-                return false;
+                showFormMessage(portfolioData[currentLanguage].contact.form.errorMessage, 'error');
+                return;
             }
 
             // Email validation
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email)) {
-                e.preventDefault();
-                alert(portfolioData[currentLanguage].contact.form.errorMessage);
-                return false;
+                showFormMessage(portfolioData[currentLanguage].contact.form.errorMessage, 'error');
+                return;
             }
 
             // Show loading state
@@ -449,9 +450,50 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.style.opacity = '0.7';
             submitBtn.style.cursor = 'not-allowed';
 
-            // FormSubmit.co will handle the actual submission
-            // Form will submit normally after validation passes
+            try {
+                // Submit form using AJAX
+                const formData = new FormData(contactForm);
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    // Success
+                    showFormMessage(portfolioData[currentLanguage].contact.form.successMessage, 'success');
+                    contactForm.reset(); // Clear form
+                } else {
+                    // Error
+                    showFormMessage(portfolioData[currentLanguage].contact.form.errorMessage, 'error');
+                }
+            } catch (error) {
+                // Network error
+                showFormMessage(portfolioData[currentLanguage].contact.form.errorMessage, 'error');
+            } finally {
+                // Reset button state
+                submitBtn.disabled = false;
+                submitText.textContent = originalText;
+                submitBtn.style.opacity = '1';
+                submitBtn.style.cursor = 'pointer';
+            }
         });
+    }
+
+    // Helper function to show form messages
+    function showFormMessage(message, type) {
+        if (formMessage) {
+            formMessage.textContent = message;
+            formMessage.className = `form-message ${type}`;
+            formMessage.style.display = 'block';
+
+            // Auto-hide after 5 seconds
+            setTimeout(() => {
+                formMessage.style.display = 'none';
+            }, 5000);
+        }
     }
 
     // Initialize
