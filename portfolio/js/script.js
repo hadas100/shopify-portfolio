@@ -59,6 +59,26 @@ function buildDynamicContent(lang = 'en') {
         }
     });
 
+    // Build solutions section (Problems I Solve)
+    const solutionsTitle = document.querySelector('.solutions .section-title');
+    if (solutionsTitle) solutionsTitle.textContent = data.solutions?.title || 'Problems I Solve';
+
+    const solutionsSubtitle = document.querySelector('.solutions .section-subtitle');
+    if (solutionsSubtitle) solutionsSubtitle.textContent = data.solutions?.subtitle || '';
+
+    const solutionsGrid = document.querySelector('.solutions-grid');
+    if (solutionsGrid && data.solutions?.problems) {
+        solutionsGrid.innerHTML = data.solutions.problems.map(problem => `
+            <div class="solution-card">
+                <div class="solution-icon">
+                    <i class="${problem.icon}"></i>
+                </div>
+                <h3>${problem.title}</h3>
+                <p>${problem.description}</p>
+            </div>
+        `).join('');
+    }
+
     // Update skills section
     const skillsTitle = document.querySelector('.skills .section-title');
     if (skillsTitle) skillsTitle.textContent = data.skills.title;
@@ -127,6 +147,27 @@ function buildDynamicContent(lang = 'en') {
                         <p>${review.role}</p>
                     </div>
                 </div>
+            </div>
+        `).join('');
+    }
+
+    // Build process section (How I Work)
+    const processTitle = document.querySelector('.process .section-title');
+    if (processTitle) processTitle.textContent = data.process?.title || 'How I Work';
+
+    const processSubtitle = document.querySelector('.process .section-subtitle');
+    if (processSubtitle) processSubtitle.textContent = data.process?.subtitle || '';
+
+    const processGrid = document.querySelector('.process-grid');
+    if (processGrid && data.process?.steps) {
+        processGrid.innerHTML = data.process.steps.map(step => `
+            <div class="process-step">
+                <div class="step-number">${step.number}</div>
+                <div class="step-icon">
+                    <i class="${step.icon}"></i>
+                </div>
+                <h3>${step.title}</h3>
+                <p>${step.description}</p>
             </div>
         `).join('');
     }
