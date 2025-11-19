@@ -1,5 +1,273 @@
+// ========== Dynamic Content Builder ==========
+function buildDynamicContent(lang = 'en') {
+    const data = portfolioData[lang];
+    currentLanguage = lang;
+
+    // Update document direction
+    document.documentElement.setAttribute('lang', lang);
+    document.documentElement.setAttribute('dir', lang === 'he' ? 'rtl' : 'ltr');
+
+    // Update navigation brand
+    const navBrand = document.querySelector('.nav-brand span');
+    if (navBrand) navBrand.textContent = data.name;
+
+    // Update navigation links
+    const navLinks = {
+        home: document.querySelector('.nav-link[href="#home"]'),
+        about: document.querySelector('.nav-link[href="#about"]'),
+        projects: document.querySelector('.nav-link[href="#projects"]'),
+        skills: document.querySelector('.nav-link[href="#skills"]'),
+        contact: document.querySelector('.nav-link[href="#contact"]')
+    };
+
+    Object.keys(navLinks).forEach(key => {
+        if (navLinks[key]) navLinks[key].textContent = data.nav[key];
+    });
+
+    // Update hero section
+    const heroTitle = document.querySelector('.hero-title');
+    if (heroTitle) {
+        heroTitle.innerHTML = `${data.hero.title}<br><span class="gradient-text">${data.hero.titleGradient}</span>`;
+    }
+
+    const heroDesc = document.querySelector('.hero-description');
+    if (heroDesc) heroDesc.textContent = data.hero.description;
+
+    const heroBtns = document.querySelectorAll('.hero-buttons .btn');
+    if (heroBtns[0]) heroBtns[0].textContent = data.hero.btnProjects;
+    if (heroBtns[1]) heroBtns[1].textContent = data.hero.btnContact;
+
+    // Update stats
+    const stats = document.querySelectorAll('.stat');
+    stats.forEach((stat, index) => {
+        if (data.hero.stats[index]) {
+            stat.querySelector('.stat-number').textContent = data.hero.stats[index].number;
+            stat.querySelector('.stat-label').textContent = data.hero.stats[index].label;
+        }
+    });
+
+    // Update about section
+    const aboutTitle = document.querySelector('.about .section-title');
+    if (aboutTitle) aboutTitle.textContent = data.about.title;
+
+    const aboutSubtitle = document.querySelector('.about .section-subtitle');
+    if (aboutSubtitle) aboutSubtitle.textContent = data.about.subtitle;
+
+    const aboutText = document.querySelector('.about-text');
+    if (aboutText) {
+        const paragraphs = aboutText.querySelectorAll('p');
+        paragraphs.forEach((p, index) => {
+            if (data.about.paragraphs[index]) {
+                p.textContent = data.about.paragraphs[index];
+            }
+        });
+    }
+
+    // Update highlights
+    const highlights = document.querySelectorAll('.highlight span');
+    highlights.forEach((highlight, index) => {
+        if (data.about.highlights[index]) {
+            highlight.textContent = data.about.highlights[index];
+        }
+    });
+
+    // Update skills section
+    const skillsTitle = document.querySelector('.skills .section-title');
+    if (skillsTitle) skillsTitle.textContent = data.skills.title;
+
+    const skillsSubtitle = document.querySelector('.skills .section-subtitle');
+    if (skillsSubtitle) skillsSubtitle.textContent = data.skills.subtitle;
+
+    // Build skills dynamically
+    const skillsGrid = document.querySelector('.skills-grid');
+    if (skillsGrid) {
+        skillsGrid.innerHTML = data.skills.categories.map(category => `
+            <div class="skill-category">
+                <h3><i class="${category.icon}"></i> ${category.title}</h3>
+                <ul>
+                    ${category.items.map(item => `<li>${item}</li>`).join('')}
+                </ul>
+            </div>
+        `).join('');
+    }
+
+    // Update projects section
+    const projectsTitle = document.querySelector('.projects .section-title');
+    if (projectsTitle) projectsTitle.textContent = data.projects.title;
+
+    const projectsSubtitle = document.querySelector('.projects .section-subtitle');
+    if (projectsSubtitle) projectsSubtitle.textContent = data.projects.subtitle;
+
+    // Build projects dynamically
+    const projectsGrid = document.querySelector('.projects-grid');
+    if (projectsGrid) {
+        projectsGrid.innerHTML = data.projects.list.map(project => `
+            <div class="project-card" data-project="${project.id}">
+                <div class="project-image">
+                    <img src="${project.image}" alt="${project.title}">
+                    <div class="project-overlay">
+                        <a href="${project.link}" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                    </div>
+                    <h3>${project.title}</h3>
+                    <p>${project.description}</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-clock"></i> ${project.year}</span>
+                        <span><i class="fas fa-code"></i> ${project.tech}</span>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    // Update contact section
+    const contactTitle = document.querySelector('.contact .section-title');
+    if (contactTitle) contactTitle.textContent = data.contact.title;
+
+    const contactSubtitle = document.querySelector('.contact .section-subtitle');
+    if (contactSubtitle) contactSubtitle.textContent = data.contact.subtitle;
+
+    // Build contact items dynamically
+    const contactInfo = document.querySelector('.contact-info');
+    if (contactInfo) {
+        contactInfo.innerHTML = data.contact.items.map(item => `
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="${item.icon}"></i>
+                </div>
+                <div>
+                    <h4>${item.title}</h4>
+                    <p>${item.value}</p>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    // Update contact CTA
+    const ctaTitle = document.querySelector('.contact-cta h3');
+    if (ctaTitle) ctaTitle.textContent = data.contact.cta.title;
+
+    const ctaDesc = document.querySelector('.contact-cta p');
+    if (ctaDesc) ctaDesc.textContent = data.contact.cta.description;
+
+    const ctaBtns = document.querySelectorAll('.contact-buttons a');
+    if (ctaBtns[0]) {
+        ctaBtns[0].innerHTML = `<i class="fas fa-envelope"></i> ${data.contact.cta.btnEmail}`;
+        ctaBtns[0].href = `mailto:${data.email}`;
+    }
+    if (ctaBtns[1]) {
+        ctaBtns[1].innerHTML = `<i class="fas fa-phone"></i> ${data.contact.cta.btnPhone}`;
+        ctaBtns[1].href = `tel:+972583261441`;
+    }
+
+    // Update footer
+    const footerCopyright = document.querySelector('.footer-left p');
+    if (footerCopyright) footerCopyright.textContent = data.footer.copyright;
+
+    const footerBackToTop = document.querySelector('.footer-right a');
+    if (footerBackToTop) {
+        footerBackToTop.innerHTML = `<i class="fas fa-arrow-up"></i> ${data.footer.backToTop}`;
+    }
+
+    // Re-initialize animations after content change
+    initAnimations();
+}
+
+// ========== Language Switcher ==========
+function switchLanguage(lang) {
+    buildDynamicContent(lang);
+    localStorage.setItem('preferredLanguage', lang);
+}
+
+// ========== Initialize Animations ==========
+function initAnimations() {
+    // Animate elements on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe project cards
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(card);
+
+        // Project card click handling
+        card.addEventListener('click', (e) => {
+            if (!e.target.classList.contains('btn')) {
+                const detailsBtn = card.querySelector('.btn');
+                if (detailsBtn) {
+                    window.location.href = detailsBtn.getAttribute('href');
+                }
+            }
+        });
+
+        // Add cursor effect
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = (y - centerY) / 20;
+            const rotateY = (centerX - x) / 20;
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+        });
+    });
+
+    // Observe skill categories
+    const skillCategories = document.querySelectorAll('.skill-category');
+    skillCategories.forEach((category, index) => {
+        category.style.opacity = '0';
+        category.style.transform = 'translateY(30px)';
+        category.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+        observer.observe(category);
+    });
+
+    // Observe highlights
+    const highlights = document.querySelectorAll('.highlight');
+    highlights.forEach((highlight, index) => {
+        highlight.style.opacity = '0';
+        highlight.style.transform = 'translateX(-30px)';
+        highlight.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+        observer.observe(highlight);
+    });
+}
+
 // ========== Smooth Scrolling Navigation ==========
 document.addEventListener('DOMContentLoaded', function() {
+    // Load preferred language
+    const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
+    buildDynamicContent(savedLanguage);
+
+    // Language switcher event listener
+    const languageSwitcher = document.querySelector('.language-switcher');
+    if (languageSwitcher) {
+        languageSwitcher.addEventListener('click', () => {
+            const newLang = currentLanguage === 'en' ? 'he' : 'en';
+            switchLanguage(newLang);
+        });
+    }
     // Mobile menu toggle
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
