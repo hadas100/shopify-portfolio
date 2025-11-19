@@ -195,6 +195,95 @@ a {
     transition: var(--transition);
 }
 
+/* ========== Language Switcher ========== */
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    font-family: var(--font-family);
+}
+
+.language-switcher:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.language-switcher i {
+    font-size: 1.2rem;
+}
+
+/* ========== RTL Support ========== */
+[dir="rtl"] {
+    direction: rtl;
+}
+
+[dir="rtl"] .nav-brand {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .nav-menu {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .navbar .container {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .hero-content {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .hero-buttons {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .hero-stats {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .about-highlights {
+    direction: rtl;
+}
+
+[dir="rtl"] .highlight {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .contact-content {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .contact-item {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+[dir="rtl"] .contact-buttons {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer-content {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .project-meta {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .project-tags {
+    flex-direction: row-reverse;
+}
+
 /* ========== Hero Section ========== */
 .hero {
     position: relative;
@@ -732,6 +821,19 @@ section {
 
     .hamburger {
         display: flex;
+    }
+
+    .language-switcher {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    .language-switcher .lang-text {
+        display: none;
+    }
+
+    .language-switcher i {
+        font-size: 1.4rem;
     }
 
     .hamburger.active span:nth-child(1) {
