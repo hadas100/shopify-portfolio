@@ -499,18 +499,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 const result = await response.json();
 
+                // Debug logging - remove this after testing
+                console.log('📧 FormSubmit Response:', result);
+                console.log('📊 Response status:', response.status);
+                console.log('✔️ Response OK:', response.ok);
+                console.log('🔍 Result success:', result.success);
+
                 if (response.ok && result.success) {
                     // Success
+                    console.log('✅ Form submitted successfully!');
                     showFormMessage(portfolioData[currentLanguage].contact.form.successMessage, 'success');
                     contactForm.reset(); // Clear form
                 } else {
                     // Error - could be validation or server error
+                    console.error('❌ Form submission failed:', result);
                     const errorMsg = result.message || portfolioData[currentLanguage].contact.form.errorMessage;
                     showFormMessage(errorMsg, 'error');
                 }
             } catch (error) {
                 // Network error
-                console.error('Form submission error:', error);
+                console.error('❌ Form submission error:', error);
                 showFormMessage(portfolioData[currentLanguage].contact.form.errorMessage, 'error');
             } finally {
                 // Reset button state
