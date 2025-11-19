@@ -764,6 +764,9 @@ function getPortfolioData(lang = 'en') {
         // About Section
         about: trans.about,
 
+        // Solutions Section
+        solutions: trans.solutions,
+
         // Skills Section
         skills: {
             title: trans.skills.title,
@@ -788,6 +791,9 @@ function getPortfolioData(lang = 'en') {
 
         // Testimonials Section
         testimonials: trans.testimonials,
+
+        // Process Section
+        process: trans.process,
 
         // FAQ Section
         faq: trans.faq,
