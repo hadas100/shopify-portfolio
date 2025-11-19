@@ -123,7 +123,9 @@ const translations = {
         nav: {
             home: "Home",
             about: "About",
+            solutions: "Problems I Solve",
             projects: "Projects",
+            process: "How I Work",
             skills: "Skills",
             contact: "Contact"
         },
@@ -153,6 +155,44 @@ const translations = {
                 "ERP & CRM Integrations",
                 "AI-Powered Solutions",
                 "Theme Customization"
+            ]
+        },
+
+        // Solutions Section (Problems I Solve)
+        solutions: {
+            title: "Problems I Solve",
+            subtitle: "If you're facing any of these challenges - I can help",
+            problems: [
+                {
+                    icon: "fas fa-sync-alt",
+                    title: "Systems Don't Talk to Each Other",
+                    description: "Your Shopify store not syncing with your management system (ERP/CRM)? Inventory not updating? Orders not transferring automatically? I build automated connections between systems so everything works smoothly."
+                },
+                {
+                    icon: "fas fa-clock",
+                    title: "Wasting Time on Manual Work",
+                    description: "Updating prices manually? Copying orders between systems? Uploading images by hand? I build automations that do the work for you - set it up once, then everything happens automatically."
+                },
+                {
+                    icon: "fas fa-puzzle-piece",
+                    title: "Need a Feature That Doesn't Exist",
+                    description: "Want to add a special capability to your store that doesn't exist in Shopify? Need something specific for your business? I develop custom solutions exactly to your needs."
+                },
+                {
+                    icon: "fas fa-robot",
+                    title: "Want to Integrate AI",
+                    description: "Want AI to write product descriptions? Generate images? Answer customers? I integrate advanced AI tools into your store to save time and improve experience."
+                },
+                {
+                    icon: "fas fa-exclamation-triangle",
+                    title: "Store Not Working Well or Stuck",
+                    description: "Have bugs? Store slow? Something not working after update? I diagnose and fix technical issues, improve performance, and ensure your store runs smoothly."
+                },
+                {
+                    icon: "fas fa-shopping-cart",
+                    title: "Need Help Managing & Optimizing Sales",
+                    description: "Want to improve checkout process? Add automatic promotions? Integrate additional payment methods? I help you optimize the store to increase conversions and sales."
+                }
             ]
         },
 
@@ -273,6 +313,38 @@ const translations = {
             ]
         },
 
+        // Process Section (How I Work)
+        process: {
+            title: "How I Work",
+            subtitle: "A simple and transparent process - exactly what you need",
+            steps: [
+                {
+                    number: "1",
+                    icon: "fas fa-comments",
+                    title: "Free Consultation Call",
+                    description: "You tell me about your problem or what you want to improve. We talk for 15-30 minutes, I understand your needs and give you initial direction."
+                },
+                {
+                    number: "2",
+                    icon: "fas fa-file-invoice-dollar",
+                    title: "Quote & Timeline",
+                    description: "Within 24 hours you get an accurate quote, detailed explanation of what I'll do, and clear timeline. We don't start until you're happy with the proposal."
+                },
+                {
+                    number: "3",
+                    icon: "fas fa-code",
+                    title: "Development & Implementation",
+                    description: "I build the solution with regular updates. You can see the progress and request changes along the way. Everything is transparent and collaborative."
+                },
+                {
+                    number: "4",
+                    icon: "fas fa-check-circle",
+                    title: "Testing & Delivery",
+                    description: "I test that everything works perfectly, teach you how to use the solution, and ensure you're satisfied. Even after delivery, I'm here for support."
+                }
+            ]
+        },
+
         // FAQ Section
         faq: {
             title: "Frequently Asked Questions",
@@ -361,43 +433,83 @@ const translations = {
         nav: {
             home: "בית",
             about: "אודות",
+            solutions: "בעיות שאני פותר",
             projects: "פרויקטים",
+            process: "איך אני עובד",
             skills: "כישורים",
             contact: "יצירת קשר"
         },
 
         // Hero Section
         hero: {
-            title: "מומחית Shopify ו",
-            titleGradient: "יועצת טכנית",
-            description: "אני עוזרת לבעלי חנויות Shopify לפתור אתגרים טכניים מורכבים, לבצע אופטימיזציה ולהטמיע פתרונות מותאמים אישית. 5+ שנות ניסיון במתן שירותי תמיכה ופיתוח מומחים.",
-            btnProjects: "לפתרונות",
-            btnContact: "קבל עזרה מקצועית",
+            title: "עוזר לבעלי חנויות Shopify",
+            titleGradient: "לחסוך זמן ולהגדיל מכירות",
+            description: "מתמחה בפתרונות טכניים לחנויות שופיפיי - חיבור מערכות, אוטומציות, פיתוח מותאם אישית ועזרה בכל נושא טכני. 5+ שנות ניסיון בבניית פתרונות שחוסכים זמן ומגדילים רווחים.",
+            btnProjects: "ראה את הפתרונות",
+            btnContact: "בוא נדבר על הבעיה שלך",
             statsLabels: ["שנות ניסיון", "פרויקטים שהושלמו", "שביעות רצון לקוחות"]
         },
 
         // About Section
         about: {
-            title: "אודות",
-            subtitle: "השותפה הטכנית שלך ל-Shopify להצלחה וצמיחה",
+            title: "קצת עליי",
+            subtitle: "השותפה הטכנית שלך להצלחה בשופיפיי",
             paragraphs: [
-                "עם 5+ שנות ניסיון מיוחד ב-Shopify, אני מספקת שירותי תמיכה וייעוץ טכניים מומחים כדי לעזור לבעלי חנויות להתגבר על אתגרים, לבצע אופטימיזציה לביצועים ולהטמיע פתרונות מותאמים אישית שמניעים צמיחה עסקית.",
-                "בין אם אתם צריכים לשלב את מערכת ה-ERP שלכם, לבצע אוטומציה לתהליכי עבודה, לבנות פונקציונליות מותאמת אישית או לפתור בעיות טכניות מורכבות - אני מספקת פתרונות אמינים ומקצועיים המותאמים לצרכים העסקיים הספציפיים שלכם. המומחיות שלי משתרעת על כל האקוסיסטם של Shopify, מהתאמה אישית של ערכות נושא ועד אינטגרציות API מתקדמות ואוטומציה מבוססת בינה מלאכותית."
+                "אני הדס, מפתחת ויועצת טכנית לשופיפיי עם מעל 5 שנות ניסיון. אני עוזרת לבעלי חנויות לפתור בעיות טכניות, לחבר מערכות ולבנות אוטומציות שחוסכות זמן וכסף.",
+                "אם יש לך חנות בשופיפיי ואתה נתקע עם בעיה טכנית, צריך לחבר את החנות למערכת ניהול, רוצה להוסיף פיצ'רים מיוחדים או סתם צריך עזרה טכנית - אני כאן בשביל זה. אני מתמחה בכל מה שקשור לשופיפיי - מעיצוב והתאמה אישית ועד פיתוח מערכות מורכבות ואינטגרציות עם בינה מלאכותית."
             ],
             highlights: [
-                "פיתוח אפליקציות Shopify מותאמות אישית",
-                "אינטגרציית REST & GraphQL API",
-                "תהליכי עבודה אוטומטיים ו-Webhooks",
-                "אינטגרציות ERP ו-CRM",
-                "פתרונות מבוססי בינה מלאכותית",
-                "התאמה אישית של ערכות נושא"
+                "בניית אפליקציות ופיצ'רים מותאמים אישית",
+                "חיבור בין שופיפיי למערכות אחרות (ERP, CRM ועוד)",
+                "אוטומציות שחוסכות עבודה ידנית",
+                "שילוב בינה מלאכותית בחנות",
+                "פתרון בעיות טכניות והאצת החנות",
+                "עיצוב והתאמה אישית של התבנית"
+            ]
+        },
+
+        // Solutions Section (Problems I Solve)
+        solutions: {
+            title: "בעיות שאני פותרת",
+            subtitle: "אם אתה מתמודד עם אחת מהבעיות האלה - אני יכולה לעזור",
+            problems: [
+                {
+                    icon: "fas fa-sync-alt",
+                    title: "המערכות לא מדברות אחת עם השנייה",
+                    description: "החנות שלך בשופיפיי לא מסונכרנת עם מערכת הניהול (ERP/CRM)? המלאי לא מתעדכן? ההזמנות לא עוברות אוטומטית? אני בונה חיבורים אוטומטיים בין המערכות כך שהכל יעבוד חלק."
+                },
+                {
+                    icon: "fas fa-clock",
+                    title: "מבזבז המון זמן על עבודה ידנית",
+                    description: "מעדכן מחירים ידנית? מעתיק הזמנות בין מערכות? מעלה תמונות ידנית? אני בונה אוטומציות שיעשו את העבודה בשבילך - פעם אחת מגדירים, ואז הכל קורה אוטומטית."
+                },
+                {
+                    icon: "fas fa-puzzle-piece",
+                    title: "צריך פיצ'ר שלא קיים",
+                    description: "רוצה להוסיף יכולת מיוחדת לחנות שלא קיימת בשופיפיי? צריך משהו ספציפי לעסק שלך? אני מפתחת פתרונות מותאמים אישית בדיוק לפי מה שאתה צריך."
+                },
+                {
+                    icon: "fas fa-robot",
+                    title: "רוצה לשלב בינה מלאכותית",
+                    description: "רוצה שבינה מלאכותית תכתוב לך תיאורי מוצרים? תייצר תמונות? תענה ללקוחות? אני משלבת כלי AI מתקדמים בחנות שלך כדי לחסוך זמן ולשפר את החוויה."
+                },
+                {
+                    icon: "fas fa-exclamation-triangle",
+                    title: "החנות לא עובדת טוב או נתקעת",
+                    description: "יש באגים? החנות איטית? משהו לא עובד אחרי עדכון? אני מאבחנת ומתקנת בעיות טכניות, משפרת ביצועים ודואגת שהחנות תעבוד חלק."
+                },
+                {
+                    icon: "fas fa-shopping-cart",
+                    title: "צריך עזרה בניהול ואופטימיזציה של המכירות",
+                    description: "רוצה לשפר את תהליך הקנייה? להוסיף מבצעים אוטומטיים? לשלב שיטות תשלום נוספות? אני עוזרת לך לייעל את החנות כדי להגדיל המרות ומכירות."
+                }
             ]
         },
 
         // Skills Section
         skills: {
-            title: "שירותים ומומחיות",
-            subtitle: "פתרונות טכניים שאני מספקת לחנות Shopify שלך",
+            title: "איך אני יכולה לעזור לך",
+            subtitle: "השירותים והפתרונות שאני מספקת",
             categories: {
                 shopify: {
                     title: "פלטפורמת Shopify",
@@ -462,8 +574,8 @@ const translations = {
 
         // Projects Section
         projects: {
-            title: "סיפורי הצלחה של לקוחות",
-            subtitle: "בעיות אמיתיות שנפתרו עבור בעלי חנויות Shopify",
+            title: "פרויקטים שעשיתי",
+            subtitle: "בעיות אמיתיות שפתרתי עבור בעלי חנויות שופיפיי",
             projectTitles: {
                 "ai-image-generation": "אפליקציית יצירת תמונות AI",
                 "erp-integration": "מערכת אינטגרציה ERP-Shopify",
@@ -485,28 +597,28 @@ const translations = {
         // Testimonials Section
         testimonials: {
             title: "מה לקוחות אומרים",
-            subtitle: "המלצות אמיתיות מבעלי חנויות שעזרתי להם",
+            subtitle: "בעלי חנויות שעבדו איתי והצליחו",
             reviews: [
                 {
                     name: "שרה כהן",
-                    role: "בעלים, בוטיק אופנה",
+                    role: "בעלת בוטיק אופנה",
                     image: "images/client-1.jpg",
                     rating: 5,
-                    text: "הדס שינתה את חנות ה-Shopify שלנו עם אינטגרציה מותאמת ל-ERP שחסכה לנו 15 שעות עבודה ידנית כל שבוע. המומחיות והמקצועיות שלה יוצאות דופן!"
+                    text: "הדס חיברה לי את החנות למערכת הניהול וחסכה לי 15 שעות עבודה ידנית כל שבוע! עכשיו הכל מסונכרן אוטומטית. פשוט מדהים!"
                 },
                 {
                     name: "דוד מילר",
-                    role: "מנכ\"ל, חנות אלקטרוניקה",
+                    role: "מנכ\"ל חנות אלקטרוניקה",
                     image: "images/client-2.jpg",
                     rating: 5,
-                    text: "היינו זקוקים לעזרה דחופה עם אינטגרציית API מורכבת. הדס סיפקה פתרון מושלם לפני לוח הזמנים. מומלצת בחום לכל אתגר טכני ב-Shopify!"
+                    text: "הייתי נתקע עם בעיה טכנית מורכבת והדס פתרה את זה תוך יומיים. מקצועית, מהירה וממש יודעת את שלה. ממליץ בחום!"
                 },
                 {
                     name: "רחל גרין",
-                    role: "מנהלת, חנות עיצוב הבית",
+                    role: "בעלת חנות עיצוב הבית",
                     image: "images/client-3.jpg",
                     rating: 5,
-                    text: "האוטומציה מבוססת AI שהדס בנתה לתיאורי המוצרים שלנו הגדילה את הפרודוקטיביות שלנו ב-300%. היא מומחית Shopify אמיתית שמספקת תוצאות עסקיות."
+                    text: "בנתה לי מערכת AI שכותבת תיאורי מוצרים אוטומטית. חסכתי שעות של עבודה והמכירות עלו! שווה כל שקל."
                 }
             ]
         },
@@ -514,39 +626,71 @@ const translations = {
         // FAQ Section
         faq: {
             title: "שאלות נפוצות",
-            subtitle: "כל מה שצריך לדעת על עבודה איתי",
+            subtitle: "תשובות לשאלות שבעלי חנויות שואלים אותי הכי הרבה",
             questions: [
                 {
-                    question: "אילו שירותים את מציעה?",
-                    answer: "אני מספקת פיתוח Shopify מותאם אישית, אינטגרציות ERP/CRM, תהליכי אוטומציה, פתרונות מבוססי AI, התאמה אישית של ערכות נושא ותמיכה טכנית שוטפת לחנויות Shopify."
+                    question: "איך העבודה איתך עובדת?",
+                    answer: "פשוט! אתה מספר לי מה הבעיה או מה אתה צריך, אנחנו עושים שיחת ייעוץ חינם, אני נותנת לך הצעת מחיר והערכת זמן, ואז אני בונה לך את הפתרון. אני מעדכנת אותך לאורך הדרך ואתה מקבל בדיוק מה שאתה צריך."
                 },
                 {
-                    question: "כמה זמן לוקח פרויקט טיפוסי?",
-                    answer: "זה תלוי במורכבות. אינטגרציות פשוטות יכולות להסתיים תוך 1-2 שבועות, בעוד אפליקציות מותאמות מורכבות עשויות לקחת 4-8 שבועות. אספק ציר זמן מפורט לאחר הייעוץ הראשוני."
+                    question: "כמה זמן לוקח לסיים פרויקט?",
+                    answer: "תלוי מה צריך לעשות. דברים פשוטים כמו תיקון באג או שינוי קטן - יכול להיות מוכן תוך ימים. פרויקטים גדולים כמו חיבור מערכות או בניית פיצ'ר חדש - בין שבועיים לחודשיים. אני תמיד אומרת מראש כמה זמן זה ייקח."
                 },
                 {
-                    question: "האם את מציעה תמיכה שוטפת?",
-                    answer: "כן! אני מציעה חבילות חודשיות לתחזוקה שוטפת, עדכונים ותמיכה טכנית. אני כאן כדי להבטיח שחנות ה-Shopify שלך תפעל בצורה חלקה לטווח ארוך."
+                    question: "כמה זה עולה?",
+                    answer: "המחיר תלוי בגודל הפרויקט. דברים קטנים יכולים להתחיל מכמה מאות דולר, פרויקטים בינוניים בין 2-5 אלף דולר, ופרויקטים גדולים יכולים להגיע ל-15 אלף דולר ומעלה. אני תמיד נותנת הצעת מחיר ברורה לפני שמתחילים."
                 },
                 {
-                    question: "מה המחירים שלך?",
-                    answer: "המחירים משתנים לפי היקף הפרויקט. אני מציעה ייעוץ ראשוני חינם כדי להבין את הצרכים ולספק הצעת מחיר מותאמת. רוב הפרויקטים נעים בין $2,000-$15,000 בהתאם למורכבות."
+                    question: "אפשר לעבוד איתך לטווח ארוך?",
+                    answer: "בהחלט! הרבה לקוחות עובדים איתי בתמיכה שוטפת - אני פה בשבילם כשיש בעיה או צריך להוסיף משהו חדש. יש אפשרות לעבוד בחבילה חודשית או פשוט לפנות אליי כשצריך."
                 },
                 {
-                    question: "את יכולה לעזור עם בעיה קיימת בחנות Shopify?",
-                    answer: "בהחלט! אני מתמחה באיתור ותיקון בעיות טכניות, בין אם מדובר בבאגים, בעיות אינטגרציה, אופטימיזציה לביצועים או התאמות אישיות מורכבות."
+                    question: "יש לי בעיה בחנות עכשיו - את יכולה לעזור?",
+                    answer: "כן! אני עובדת גם על פתרון בעיות דחופות. ספר לי מה קורה ואני אראה איך אפשר לפתור. לפעמים זה משהו שאני יכולה לטפל בו מהר, ולפעמים צריך קצת יותר זמן - אבל אני תמיד נותנת תשובה כנה."
                 },
                 {
-                    question: "את עובדת עם לקוחות בינלאומיים?",
-                    answer: "כן! אני עובדת עם לקוחות ברחבי העולם. אני ממוקמת בתל אביב אך מספקת שירותים מרחוק לבעלי חנויות Shopify בכל העולם. כל התקשורת באנגלית או עברית."
+                    question: "את עובדת רק עם חנויות בישראל?",
+                    answer: "לא, אני עובדת עם לקוחות מכל העולם! כל העבודה היא מרחוק, אז לא משנה איפה החנות שלך נמצאת. אני מדברת עברית ואנגלית."
+                }
+            ]
+        },
+
+        // Process Section (How I Work)
+        process: {
+            title: "איך אני עובדת",
+            subtitle: "תהליך עבודה פשוט ושקוף - בדיוק מה שאתה צריך",
+            steps: [
+                {
+                    number: "1",
+                    icon: "fas fa-comments",
+                    title: "שיחת ייעוץ חינם",
+                    description: "אתה מספר לי מה הבעיה או מה אתה רוצה לשפר. אנחנו מדברים 15-30 דקות, אני מבינה את הצרכים ונותנת לך כיוון ראשוני."
+                },
+                {
+                    number: "2",
+                    icon: "fas fa-file-invoice-dollar",
+                    title: "הצעת מחיר והערכת זמן",
+                    description: "תוך 24 שעות אתה מקבל הצעת מחיר מדויקת, הסבר מפורט מה אני אעשה, וציר זמן ברור. לא מתחילים עד שאתה מרוצה עם ההצעה."
+                },
+                {
+                    number: "3",
+                    icon: "fas fa-code",
+                    title: "פיתוח ויישום",
+                    description: "אני בונה את הפתרון תוך עדכון שוטף. אתה יכול לראות את ההתקדמות ולבקש שינויים בדרך. הכל שקוף ובשיתוף פעולה מלא."
+                },
+                {
+                    number: "4",
+                    icon: "fas fa-check-circle",
+                    title: "בדיקות ומסירה",
+                    description: "אני בודקת שהכל עובד מעולה, מלמדת אותך איך להשתמש בפתרון, ומוודאת שאתה מרוצה. גם אחרי המסירה אני פה לתמיכה."
                 }
             ]
         },
 
         // Contact Section
         contact: {
-            title: "צריך עזרה עם חנות Shopify שלך?",
-            subtitle: "בואו נפתור את האתגרים הטכניים שלך ביחד",
+            title: "בוא נדבר על הפרויקט שלך",
+            subtitle: "ספר לי מה אתה צריך ואני אעזור לך",
             itemLabels: {
                 email: "אימייל",
                 phone: "טלפון",
@@ -567,11 +711,11 @@ const translations = {
                 errorMessage: "אופס! משהו השתבש. אנא נסה שוב או שלח לי מייל ישירות."
             },
             cta: {
-                title: "מוכן לקבל עזרה מקצועית?",
-                description: "בין אם אתה צריך פיתוח מותאם אישית, תמיכה טכנית או הנחיה אסטרטגית - אני כאן כדי לעזור לחנות Shopify שלך להצליח.",
-                btnEmail: "שלח אימייל",
-                btnPhone: "התקשר עכשיו",
-                btnConsultation: "קביעת ייעוץ חינם",
+                title: "מוכן להתחיל?",
+                description: "לא משנה אם זה פרויקט גדול או בעיה קטנה - אני כאן לעזור. בוא נדבר ונראה איך אפשר לקדם את החנות שלך.",
+                btnEmail: "שלח לי מייל",
+                btnPhone: "התקשר אליי",
+                btnConsultation: "קבע שיחת ייעוץ חינם",
                 consultationUrl: "https://calendly.com/441dasis/30min"
             }
         },

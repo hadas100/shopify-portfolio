@@ -14,7 +14,9 @@ function createNavigation(data, isProjectPage = false, includeLanguageSwitcher =
         : `
             <li><a href="#home" class="nav-link active">${data.nav.home}</a></li>
             <li><a href="#about" class="nav-link">${data.nav.about}</a></li>
+            ${data.nav.solutions ? `<li><a href="#solutions" class="nav-link">${data.nav.solutions}</a></li>` : ''}
             <li><a href="#projects" class="nav-link">${data.nav.projects}</a></li>
+            ${data.nav.process ? `<li><a href="#process" class="nav-link">${data.nav.process}</a></li>` : ''}
             <li><a href="#skills" class="nav-link">${data.nav.skills}</a></li>
             <li><a href="#contact" class="nav-link">${data.nav.contact}</a></li>
         `;
