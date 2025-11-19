@@ -227,8 +227,15 @@ const portfolioData = {
 
         // Footer
         footer: {
-            copyright: "© 2026 Hadas Schweitzer. All rights reserved.",
+            rights: `© ${new Date().getFullYear()} Hadas Schweitzer. All rights reserved.`,
             backToTop: "Back to Top"
+        },
+
+        // Project Pages
+        backToPortfolio: "Back to Portfolio",
+        breadcrumb: {
+            home: "Home",
+            projects: "Projects"
         }
     },
 
@@ -458,8 +465,15 @@ const portfolioData = {
 
         // Footer
         footer: {
-            copyright: "© 2026 הדס שוויצר. כל הזכויות שמורות.",
+            rights: `© ${new Date().getFullYear()} הדס שוויצר. כל הזכויות שמורות.`,
             backToTop: "חזרה למעלה"
+        },
+
+        // Project Pages
+        backToPortfolio: "חזרה לתיק העבודות",
+        breadcrumb: {
+            home: "בית",
+            projects: "פרויקטים"
         }
     }
 };
