@@ -144,8 +144,42 @@ function buildDynamicContent(lang = 'en') {
                     <p>${item.value}</p>
                 </div>
             </div>
-        `).join('');
+        `).join('') +
+        `<div class="contact-item social-links">
+            <div class="contact-icon">
+                <i class="fas fa-share-alt"></i>
+            </div>
+            <div>
+                <h4>${data.contact.social.title}</h4>
+                <div class="social-buttons">
+                    ${data.contact.social.links.map(link => `
+                        <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="${link.name}">
+                            <i class="${link.icon}"></i> ${link.name}
+                        </a>
+                    `).join('')}
+                </div>
+            </div>
+        </div>`;
     }
+
+    // Update contact form
+    const formTitle = document.querySelector('.form-title');
+    if (formTitle) formTitle.textContent = data.contact.form.title;
+
+    const nameInput = document.querySelector('#name');
+    if (nameInput) nameInput.placeholder = data.contact.form.namePlaceholder;
+
+    const emailInput = document.querySelector('#email');
+    if (emailInput) emailInput.placeholder = data.contact.form.emailPlaceholder;
+
+    const subjectInput = document.querySelector('#subject');
+    if (subjectInput) subjectInput.placeholder = data.contact.form.subjectPlaceholder;
+
+    const messageInput = document.querySelector('#message');
+    if (messageInput) messageInput.placeholder = data.contact.form.messagePlaceholder;
+
+    const submitText = document.querySelector('.submit-text');
+    if (submitText) submitText.textContent = data.contact.form.submitButton;
 
     // Update contact CTA
     const ctaTitle = document.querySelector('.contact-cta h3');
@@ -154,14 +188,19 @@ function buildDynamicContent(lang = 'en') {
     const ctaDesc = document.querySelector('.contact-cta p');
     if (ctaDesc) ctaDesc.textContent = data.contact.cta.description;
 
-    const ctaBtns = document.querySelectorAll('.contact-buttons a');
-    if (ctaBtns[0]) {
-        ctaBtns[0].innerHTML = `<i class="fas fa-envelope"></i> ${data.contact.cta.btnEmail}`;
-        ctaBtns[0].href = `mailto:${data.email}`;
-    }
-    if (ctaBtns[1]) {
-        ctaBtns[1].innerHTML = `<i class="fas fa-phone"></i> ${data.contact.cta.btnPhone}`;
-        ctaBtns[1].href = `tel:+972583261441`;
+    const contactButtons = document.querySelector('.contact-buttons');
+    if (contactButtons) {
+        contactButtons.innerHTML = `
+            <a href="mailto:${data.email}" class="btn btn-primary">
+                <i class="fas fa-envelope"></i> ${data.contact.cta.btnEmail}
+            </a>
+            <a href="tel:+972583261441" class="btn btn-secondary">
+                <i class="fas fa-phone"></i> ${data.contact.cta.btnPhone}
+            </a>
+            <a href="cv/Hadas-Schweitzer-CV.pdf" download class="btn btn-accent">
+                <i class="fas fa-download"></i> ${data.contact.cta.btnCV}
+            </a>
+        `;
     }
 
     // Update footer
@@ -374,6 +413,46 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Contact form handling
+    const contactForm = document.getElementById('contactForm');
+    const submitBtn = contactForm?.querySelector('.btn-submit');
+
+    if (contactForm && submitBtn) {
+        contactForm.addEventListener('submit', function(e) {
+            const submitText = submitBtn.querySelector('.submit-text');
+            const originalText = submitText.textContent;
+
+            // Client-side validation
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !email || !subject || !message) {
+                e.preventDefault();
+                alert(portfolioData[currentLanguage].contact.form.errorMessage);
+                return false;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                e.preventDefault();
+                alert(portfolioData[currentLanguage].contact.form.errorMessage);
+                return false;
+            }
+
+            // Show loading state
+            submitBtn.disabled = true;
+            submitText.textContent = portfolioData[currentLanguage].contact.form.sending;
+            submitBtn.style.opacity = '0.7';
+            submitBtn.style.cursor = 'not-allowed';
+
+            // FormSubmit.co will handle the actual submission
+            // Form will submit normally after validation passes
+        });
+    }
 
     // Initialize
     highlightNavigation();

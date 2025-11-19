@@ -198,11 +198,30 @@ const portfolioData = {
                 { icon: "fas fa-phone", title: "Phone", value: "058-326-1441" },
                 { icon: "fas fa-map-marker-alt", title: "Location", value: "Tel Aviv, Israel" }
             ],
+            social: {
+                title: "Connect With Me",
+                links: [
+                    { icon: "fab fa-linkedin", name: "LinkedIn", url: "https://linkedin.com/in/hadas-schweitzer" },
+                    { icon: "fab fa-github", name: "GitHub", url: "https://github.com/hadas-schweitzer" }
+                ]
+            },
+            form: {
+                title: "Send Me a Message",
+                namePlaceholder: "Your Name",
+                emailPlaceholder: "Your Email",
+                subjectPlaceholder: "Subject",
+                messagePlaceholder: "Your Message",
+                submitButton: "Send Message",
+                sending: "Sending...",
+                successMessage: "Thank you! Your message has been sent successfully.",
+                errorMessage: "Oops! Something went wrong. Please try again or email me directly."
+            },
             cta: {
                 title: "Ready to Start Your Project?",
                 description: "I'm available for freelance projects and full-time opportunities. Let's create something amazing together!",
                 btnEmail: "Send Email",
-                btnPhone: "Call Now"
+                btnPhone: "Call Now",
+                btnCV: "Download CV"
             }
         },
 
@@ -410,11 +429,30 @@ const portfolioData = {
                 { icon: "fas fa-phone", title: "טלפון", value: "058-326-1441" },
                 { icon: "fas fa-map-marker-alt", title: "מיקום", value: "תל אביב, ישראל" }
             ],
+            social: {
+                title: "התחבר אליי",
+                links: [
+                    { icon: "fab fa-linkedin", name: "LinkedIn", url: "https://linkedin.com/in/hadas-schweitzer" },
+                    { icon: "fab fa-github", name: "GitHub", url: "https://github.com/hadas-schweitzer" }
+                ]
+            },
+            form: {
+                title: "שלח לי הודעה",
+                namePlaceholder: "השם שלך",
+                emailPlaceholder: "האימייל שלך",
+                subjectPlaceholder: "נושא",
+                messagePlaceholder: "ההודעה שלך",
+                submitButton: "שלח הודעה",
+                sending: "שולח...",
+                successMessage: "תודה! ההודעה נשלחה בהצלחה.",
+                errorMessage: "אופס! משהו השתבש. אנא נסה שוב או שלח לי מייל ישירות."
+            },
             cta: {
                 title: "מוכן להתחיל את הפרויקט שלך?",
                 description: "אני זמינה לפרויקטים פרילנסריים והזדמנויות מלאות. בואו ניצור משהו מדהים ביחד!",
                 btnEmail: "שלח אימייל",
-                btnPhone: "התקשר עכשיו"
+                btnPhone: "התקשר עכשיו",
+                btnCV: "הורד קורות חיים"
             }
         },
 
