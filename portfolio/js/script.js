@@ -7,22 +7,10 @@ function buildDynamicContent(lang = 'en') {
     document.documentElement.setAttribute('lang', lang);
     document.documentElement.setAttribute('dir', lang === 'he' ? 'rtl' : 'ltr');
 
-    // Update navigation brand
-    const navBrand = document.querySelector('.nav-brand span');
-    if (navBrand) navBrand.textContent = data.name;
-
-    // Update navigation links
-    const navLinks = {
-        home: document.querySelector('.nav-link[href="#home"]'),
-        about: document.querySelector('.nav-link[href="#about"]'),
-        projects: document.querySelector('.nav-link[href="#projects"]'),
-        skills: document.querySelector('.nav-link[href="#skills"]'),
-        contact: document.querySelector('.nav-link[href="#contact"]')
-    };
-
-    Object.keys(navLinks).forEach(key => {
-        if (navLinks[key]) navLinks[key].textContent = data.nav[key];
-    });
+    // Update shared components (navigation, footer) using components.js
+    if (typeof updatePageComponents === 'function') {
+        updatePageComponents(data, { isProjectPage: false });
+    }
 
     // Update hero section
     const heroTitle = document.querySelector('.hero-title');
@@ -203,14 +191,7 @@ function buildDynamicContent(lang = 'en') {
         `;
     }
 
-    // Update footer
-    const footerCopyright = document.querySelector('.footer-left p');
-    if (footerCopyright) footerCopyright.textContent = data.footer.copyright;
-
-    const footerBackToTop = document.querySelector('.footer-right a');
-    if (footerBackToTop) {
-        footerBackToTop.innerHTML = `<i class="fas fa-arrow-up"></i> ${data.footer.backToTop}`;
-    }
+    // Note: Footer is updated by updatePageComponents() from components.js
 
     // Re-initialize animations after content change
     initAnimations();

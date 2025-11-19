@@ -25,12 +25,10 @@ function buildProjectPage(lang = 'en') {
     // Update page title
     document.title = `${data.title} - Hadas Schweitzer`;
 
-    // Update navigation
-    const navBrand = document.querySelector('.nav-brand span');
-    if (navBrand) navBrand.textContent = "Hadas Schweitzer";
-
-    const navBackLink = document.querySelector('.nav-link');
-    if (navBackLink) navBackLink.textContent = data.nav.back;
+    // Update shared components (navigation) using components.js
+    if (typeof updatePageComponents === 'function') {
+        updatePageComponents(data, { isProjectPage: true });
+    }
 
     // Update breadcrumb
     const breadcrumbLinks = document.querySelectorAll('.breadcrumb a');
@@ -237,14 +235,7 @@ function buildProjectPage(lang = 'en') {
         }
     }
 
-    // Update footer
-    const footerCopyright = document.querySelector('.footer-left p');
-    if (footerCopyright) footerCopyright.textContent = data.footer.copyright;
-
-    const footerBack = document.querySelector('.footer-right a');
-    if (footerBack) {
-        footerBack.innerHTML = `<i class="fas fa-arrow-${lang === 'he' ? 'right' : 'left'}"></i> ${data.footer.back}`;
-    }
+    // Note: Footer is updated by updatePageComponents() from components.js
 }
 
 function switchProjectLanguage(lang) {
