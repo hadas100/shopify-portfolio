@@ -205,6 +205,17 @@ const portfolioData = {
                     { icon: "fab fa-github", name: "GitHub", url: "https://github.com/hadas-schweitzer" }
                 ]
             },
+            form: {
+                title: "Send Me a Message",
+                namePlaceholder: "Your Name",
+                emailPlaceholder: "Your Email",
+                subjectPlaceholder: "Subject",
+                messagePlaceholder: "Your Message",
+                submitButton: "Send Message",
+                sending: "Sending...",
+                successMessage: "Thank you! Your message has been sent successfully.",
+                errorMessage: "Oops! Something went wrong. Please try again or email me directly."
+            },
             cta: {
                 title: "Ready to Start Your Project?",
                 description: "I'm available for freelance projects and full-time opportunities. Let's create something amazing together!",
@@ -424,6 +435,17 @@ const portfolioData = {
                     { icon: "fab fa-linkedin", name: "LinkedIn", url: "https://linkedin.com/in/hadas-schweitzer" },
                     { icon: "fab fa-github", name: "GitHub", url: "https://github.com/hadas-schweitzer" }
                 ]
+            },
+            form: {
+                title: "שלח לי הודעה",
+                namePlaceholder: "השם שלך",
+                emailPlaceholder: "האימייל שלך",
+                subjectPlaceholder: "נושא",
+                messagePlaceholder: "ההודעה שלך",
+                submitButton: "שלח הודעה",
+                sending: "שולח...",
+                successMessage: "תודה! ההודעה נשלחה בהצלחה.",
+                errorMessage: "אופס! משהו השתבש. אנא נסה שוב או שלח לי מייל ישירות."
             },
             cta: {
                 title: "מוכן להתחיל את הפרויקט שלך?",

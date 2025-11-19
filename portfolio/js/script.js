@@ -162,6 +162,25 @@ function buildDynamicContent(lang = 'en') {
         </div>`;
     }
 
+    // Update contact form
+    const formTitle = document.querySelector('.form-title');
+    if (formTitle) formTitle.textContent = data.contact.form.title;
+
+    const nameInput = document.querySelector('#name');
+    if (nameInput) nameInput.placeholder = data.contact.form.namePlaceholder;
+
+    const emailInput = document.querySelector('#email');
+    if (emailInput) emailInput.placeholder = data.contact.form.emailPlaceholder;
+
+    const subjectInput = document.querySelector('#subject');
+    if (subjectInput) subjectInput.placeholder = data.contact.form.subjectPlaceholder;
+
+    const messageInput = document.querySelector('#message');
+    if (messageInput) messageInput.placeholder = data.contact.form.messagePlaceholder;
+
+    const submitText = document.querySelector('.submit-text');
+    if (submitText) submitText.textContent = data.contact.form.submitButton;
+
     // Update contact CTA
     const ctaTitle = document.querySelector('.contact-cta h3');
     if (ctaTitle) ctaTitle.textContent = data.contact.cta.title;
@@ -394,6 +413,46 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Contact form handling
+    const contactForm = document.getElementById('contactForm');
+    const submitBtn = contactForm?.querySelector('.btn-submit');
+
+    if (contactForm && submitBtn) {
+        contactForm.addEventListener('submit', function(e) {
+            const submitText = submitBtn.querySelector('.submit-text');
+            const originalText = submitText.textContent;
+
+            // Client-side validation
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !email || !subject || !message) {
+                e.preventDefault();
+                alert(portfolioData[currentLanguage].contact.form.errorMessage);
+                return false;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                e.preventDefault();
+                alert(portfolioData[currentLanguage].contact.form.errorMessage);
+                return false;
+            }
+
+            // Show loading state
+            submitBtn.disabled = true;
+            submitText.textContent = portfolioData[currentLanguage].contact.form.sending;
+            submitBtn.style.opacity = '0.7';
+            submitBtn.style.cursor = 'not-allowed';
+
+            // FormSubmit.co will handle the actual submission
+            // Form will submit normally after validation passes
+        });
+    }
 
     // Initialize
     highlightNavigation();
