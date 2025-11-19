@@ -197,10 +197,16 @@ function buildDynamicContent(lang = 'en') {
     initAnimations();
 }
 
-// ========== Language Switcher ==========
+// ========== Language Switcher (Deprecated - use LanguageManager) ==========
+// Kept for backward compatibility
 function switchLanguage(lang) {
-    buildDynamicContent(lang);
-    localStorage.setItem('preferredLanguage', lang);
+    if (typeof LanguageManager !== 'undefined') {
+        LanguageManager.switchLanguage(lang, 'main');
+    } else {
+        // Fallback if LanguageManager not loaded
+        buildDynamicContent(lang);
+        localStorage.setItem('preferredLanguage', lang);
+    }
 }
 
 // ========== Initialize Animations ==========
@@ -276,17 +282,17 @@ function initAnimations() {
 
 // ========== Smooth Scrolling Navigation ==========
 document.addEventListener('DOMContentLoaded', function() {
-    // Load preferred language
-    const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
-    buildDynamicContent(savedLanguage);
-
-    // Language switcher event listener
-    const languageSwitcher = document.querySelector('.language-switcher');
-    if (languageSwitcher) {
-        languageSwitcher.addEventListener('click', () => {
-            const newLang = currentLanguage === 'en' ? 'he' : 'en';
-            switchLanguage(newLang);
+    // Initialize Language Manager (handles language loading and switching)
+    if (typeof LanguageManager !== 'undefined') {
+        LanguageManager.init({
+            onLanguageChange: buildDynamicContent,
+            pageType: 'main'
         });
+        currentLanguage = LanguageManager.getCurrentLanguage();
+    } else {
+        // Fallback if LanguageManager not loaded
+        const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
+        buildDynamicContent(savedLanguage);
     }
     // Mobile menu toggle
     const hamburger = document.querySelector('.hamburger');

@@ -1,11 +1,133 @@
-// ========== Portfolio Data - Bilingual Support ==========
+// ========== Portfolio Data - Refactored Structure ==========
+// This file eliminates 60%+ duplication by separating static data from translations
 
-const portfolioData = {
+// ========== Static Data (Language-Independent) ==========
+const staticData = {
+    // Personal Info
+    email: "hadasa.schweitzer@gmail.com",
+    phone: "058-326-1441",
+    phoneFormatted: "+972583261441",
+
+    // Hero Stats (numbers are language-independent)
+    stats: [
+        { number: "5+" },
+        { number: "20+" },
+        { number: "100%" }
+    ],
+
+    // Skills - Icons and technical terms (mostly language-independent)
+    skills: {
+        categories: [
+            {
+                icon: "fab fa-shopify",
+                id: "shopify"
+            },
+            {
+                icon: "fas fa-laptop-code",
+                id: "frontend"
+            },
+            {
+                icon: "fas fa-server",
+                id: "backend"
+            },
+            {
+                icon: "fas fa-plug",
+                id: "integrations"
+            },
+            {
+                icon: "fas fa-database",
+                id: "databases"
+            },
+            {
+                icon: "fas fa-tools",
+                id: "devops"
+            }
+        ]
+    },
+
+    // Projects - Static metadata
+    projects: {
+        list: [
+            {
+                id: "ai-image-generation",
+                image: "images/project-ai-image.jpg",
+                tags: ["Shopify API", "OpenAI", "Node.js"],
+                year: "2024",
+                tech: "JavaScript, Node.js",
+                link: "projects/ai-image-generation.html"
+            },
+            {
+                id: "erp-integration",
+                image: "images/project-erp.jpg",
+                tags: ["Integration", "GraphQL", "REST API"],
+                year: "2023-2024",
+                tech: "Node.js, GraphQL",
+                link: "projects/erp-integration.html"
+            },
+            {
+                id: "automation-workflows",
+                image: "images/project-automation.jpg",
+                tags: ["Webhooks", "Automation", "Real-time"],
+                year: "2022-2024",
+                tech: "Node.js, Webhooks",
+                link: "projects/automation-workflows.html"
+            },
+            {
+                id: "hubspot-sync",
+                image: "images/project-hubspot.jpg",
+                tags: ["CRM", "Integration", "Sync"],
+                year: "2023",
+                tech: "Node.js, REST API",
+                link: "projects/hubspot-sync.html"
+            },
+            {
+                id: "ai-descriptions",
+                image: "images/project-ai-desc.jpg",
+                tags: ["AI", "OpenAI", "Automation"],
+                year: "2024",
+                tech: "JavaScript, AI APIs",
+                link: "projects/ai-descriptions.html"
+            },
+            {
+                id: "b2b-platform",
+                image: "images/project-b2b.jpg",
+                tags: ["B2B", "Platform", "Real-time"],
+                year: "2023",
+                tech: "Node.js, React",
+                link: "projects/b2b-platform.html"
+            }
+        ]
+    },
+
+    // Contact - Icons and static values
+    contact: {
+        items: [
+            { icon: "fas fa-envelope", id: "email" },
+            { icon: "fas fa-phone", id: "phone" },
+            { icon: "fas fa-map-marker-alt", id: "location" }
+        ],
+        social: {
+            links: [
+                {
+                    icon: "fab fa-linkedin",
+                    name: "LinkedIn",
+                    url: "https://linkedin.com/in/hadas-schweitzer"
+                },
+                {
+                    icon: "fab fa-github",
+                    name: "GitHub",
+                    url: "https://github.com/hadas-schweitzer"
+                }
+            ]
+        }
+    }
+};
+
+// ========== Translations (Language-Specific) ==========
+const translations = {
     en: {
         // Personal Info
         name: "Hadas Schweitzer",
-        email: "hadasa.schweitzer@gmail.com",
-        phone: "058-326-1441",
         location: "Tel Aviv, Israel",
 
         // Navigation
@@ -24,11 +146,7 @@ const portfolioData = {
             description: "Specialized in building custom Shopify applications, automations, and complex third-party integrations. 5+ years of experience delivering high-quality e-commerce solutions.",
             btnProjects: "View Projects",
             btnContact: "Get in Touch",
-            stats: [
-                { number: "5+", label: "Years Experience" },
-                { number: "20+", label: "Projects Completed" },
-                { number: "100%", label: "Client Satisfaction" }
-            ]
+            statsLabels: ["Years Experience", "Projects Completed", "Client Satisfaction"]
         },
 
         // About Section
@@ -53,9 +171,8 @@ const portfolioData = {
         skills: {
             title: "Technical Skills",
             subtitle: "Technologies and tools I work with",
-            categories: [
-                {
-                    icon: "fab fa-shopify",
+            categories: {
+                shopify: {
                     title: "Shopify Platform",
                     items: [
                         "Shopify REST & GraphQL APIs",
@@ -65,8 +182,7 @@ const portfolioData = {
                         "Metafields & Custom Data"
                     ]
                 },
-                {
-                    icon: "fas fa-laptop-code",
+                frontend: {
                     title: "Frontend",
                     items: [
                         "JavaScript (ES6+)",
@@ -76,8 +192,7 @@ const portfolioData = {
                         "Alpine.js"
                     ]
                 },
-                {
-                    icon: "fas fa-server",
+                backend: {
                     title: "Backend",
                     items: [
                         "Node.js & Express",
@@ -87,8 +202,7 @@ const portfolioData = {
                         "Webhook Processing"
                     ]
                 },
-                {
-                    icon: "fas fa-plug",
+                integrations: {
                     title: "Integrations",
                     items: [
                         "ERP Systems Integration",
@@ -98,8 +212,7 @@ const portfolioData = {
                         "Third-Party APIs"
                     ]
                 },
-                {
-                    icon: "fas fa-database",
+                databases: {
                     title: "Databases",
                     items: [
                         "MySQL",
@@ -108,8 +221,7 @@ const portfolioData = {
                         "Query Optimization"
                     ]
                 },
-                {
-                    icon: "fas fa-tools",
+                devops: {
                     title: "DevOps & Tools",
                     items: [
                         "CI/CD Pipelines",
@@ -118,92 +230,42 @@ const portfolioData = {
                         "Git & Version Control"
                     ]
                 }
-            ]
+            }
         },
 
         // Projects Section
         projects: {
             title: "Featured Projects",
             subtitle: "Real-world Shopify solutions I've built",
-            list: [
-                {
-                    id: "ai-image-generation",
-                    image: "images/project-ai-image.jpg",
-                    title: "AI Image Generation App",
-                    description: "Shopify-integrated application that retrieves product data and generates customized product images using OpenAI and Gemini APIs.",
-                    tags: ["Shopify API", "OpenAI", "Node.js"],
-                    year: "2024",
-                    tech: "JavaScript, Node.js",
-                    link: "projects/ai-image-generation.html"
-                },
-                {
-                    id: "erp-integration",
-                    image: "images/project-erp.jpg",
-                    title: "ERP-Shopify Integration System",
-                    description: "Comprehensive bidirectional synchronization system between Fantasy ERP and Shopify, handling products, inventory, orders, and customer data.",
-                    tags: ["Integration", "GraphQL", "REST API"],
-                    year: "2023-2024",
-                    tech: "Node.js, GraphQL",
-                    link: "projects/erp-integration.html"
-                },
-                {
-                    id: "automation-workflows",
-                    image: "images/project-automation.jpg",
-                    title: "Shopify Automation Workflows",
-                    description: "Automated event-driven applications using Shopify webhooks for product updates, order processing, and inventory management.",
-                    tags: ["Webhooks", "Automation", "Real-time"],
-                    year: "2022-2024",
-                    tech: "Node.js, Webhooks",
-                    link: "projects/automation-workflows.html"
-                },
-                {
-                    id: "hubspot-sync",
-                    image: "images/project-hubspot.jpg",
-                    title: "Shopify-HubSpot Sync Application",
-                    description: "Real-time synchronization system for products, orders, and customer data between Shopify and HubSpot CRM.",
-                    tags: ["CRM", "Integration", "Sync"],
-                    year: "2023",
-                    tech: "Node.js, REST API",
-                    link: "projects/hubspot-sync.html"
-                },
-                {
-                    id: "ai-descriptions",
-                    image: "images/project-ai-desc.jpg",
-                    title: "AI Product Description Generator",
-                    description: "AI-powered system for generating compelling product descriptions using Gemini and OpenAI APIs, integrated with Shopify.",
-                    tags: ["AI", "OpenAI", "Automation"],
-                    year: "2024",
-                    tech: "JavaScript, AI APIs",
-                    link: "projects/ai-descriptions.html"
-                },
-                {
-                    id: "b2b-platform",
-                    image: "images/project-b2b.jpg",
-                    title: "B2B Product Sharing Platform",
-                    description: "Shopify-integrated platform enabling merchants to share and collaborate on product catalogs with advanced permission management.",
-                    tags: ["B2B", "Platform", "Real-time"],
-                    year: "2023",
-                    tech: "Node.js, React",
-                    link: "projects/b2b-platform.html"
-                }
-            ]
+            projectTitles: {
+                "ai-image-generation": "AI Image Generation App",
+                "erp-integration": "ERP-Shopify Integration System",
+                "automation-workflows": "Shopify Automation Workflows",
+                "hubspot-sync": "Shopify-HubSpot Sync Application",
+                "ai-descriptions": "AI Product Description Generator",
+                "b2b-platform": "B2B Product Sharing Platform"
+            },
+            projectDescriptions: {
+                "ai-image-generation": "Shopify-integrated application that retrieves product data and generates customized product images using OpenAI and Gemini APIs.",
+                "erp-integration": "Comprehensive bidirectional synchronization system between Fantasy ERP and Shopify, handling products, inventory, orders, and customer data.",
+                "automation-workflows": "Automated event-driven applications using Shopify webhooks for product updates, order processing, and inventory management.",
+                "hubspot-sync": "Real-time synchronization system for products, orders, and customer data between Shopify and HubSpot CRM.",
+                "ai-descriptions": "AI-powered system for generating compelling product descriptions using Gemini and OpenAI APIs, integrated with Shopify.",
+                "b2b-platform": "Shopify-integrated platform enabling merchants to share and collaborate on product catalogs with advanced permission management."
+            }
         },
 
         // Contact Section
         contact: {
             title: "Get In Touch",
             subtitle: "Let's discuss your next Shopify project",
-            items: [
-                { icon: "fas fa-envelope", title: "Email", value: "hadasa.schweitzer@gmail.com" },
-                { icon: "fas fa-phone", title: "Phone", value: "058-326-1441" },
-                { icon: "fas fa-map-marker-alt", title: "Location", value: "Tel Aviv, Israel" }
-            ],
+            itemLabels: {
+                email: "Email",
+                phone: "Phone",
+                location: "Location"
+            },
             social: {
-                title: "Connect With Me",
-                links: [
-                    { icon: "fab fa-linkedin", name: "LinkedIn", url: "https://linkedin.com/in/hadas-schweitzer" },
-                    { icon: "fab fa-github", name: "GitHub", url: "https://github.com/hadas-schweitzer" }
-                ]
+                title: "Connect With Me"
             },
             form: {
                 title: "Send Me a Message",
@@ -242,8 +304,6 @@ const portfolioData = {
     he: {
         // Personal Info
         name: "הדס שוויצר",
-        email: "hadasa.schweitzer@gmail.com",
-        phone: "058-326-1441",
         location: "תל אביב, ישראל",
 
         // Navigation
@@ -262,11 +322,7 @@ const portfolioData = {
             description: "מתמחה בבניית אפליקציות Shopify מותאמות אישית, אוטומציות ואינטגרציות מורכבות עם מערכות צד שלישי. 5+ שנות ניסיון במתן פתרונות מסחר אלקטרוני איכותיים.",
             btnProjects: "לפרויקטים",
             btnContact: "צור קשר",
-            stats: [
-                { number: "5+", label: "שנות ניסיון" },
-                { number: "20+", label: "פרויקטים שהושלמו" },
-                { number: "100%", label: "שביעות רצון לקוחות" }
-            ]
+            statsLabels: ["שנות ניסיון", "פרויקטים שהושלמו", "שביעות רצון לקוחות"]
         },
 
         // About Section
@@ -291,9 +347,8 @@ const portfolioData = {
         skills: {
             title: "כישורים טכניים",
             subtitle: "טכנולוגיות וכלים שאני עובדת איתם",
-            categories: [
-                {
-                    icon: "fab fa-shopify",
+            categories: {
+                shopify: {
                     title: "פלטפורמת Shopify",
                     items: [
                         "Shopify REST & GraphQL APIs",
@@ -303,8 +358,7 @@ const portfolioData = {
                         "Metafields & Custom Data"
                     ]
                 },
-                {
-                    icon: "fas fa-laptop-code",
+                frontend: {
                     title: "Frontend",
                     items: [
                         "JavaScript (ES6+)",
@@ -314,8 +368,7 @@ const portfolioData = {
                         "Alpine.js"
                     ]
                 },
-                {
-                    icon: "fas fa-server",
+                backend: {
                     title: "Backend",
                     items: [
                         "Node.js & Express",
@@ -325,8 +378,7 @@ const portfolioData = {
                         "Webhook Processing"
                     ]
                 },
-                {
-                    icon: "fas fa-plug",
+                integrations: {
                     title: "אינטגרציות",
                     items: [
                         "ERP Systems Integration",
@@ -336,8 +388,7 @@ const portfolioData = {
                         "Third-Party APIs"
                     ]
                 },
-                {
-                    icon: "fas fa-database",
+                databases: {
                     title: "מסדי נתונים",
                     items: [
                         "MySQL",
@@ -346,8 +397,7 @@ const portfolioData = {
                         "Query Optimization"
                     ]
                 },
-                {
-                    icon: "fas fa-tools",
+                devops: {
                     title: "DevOps וכלים",
                     items: [
                         "CI/CD Pipelines",
@@ -356,92 +406,42 @@ const portfolioData = {
                         "Git & Version Control"
                     ]
                 }
-            ]
+            }
         },
 
         // Projects Section
         projects: {
             title: "פרויקטים מובילים",
             subtitle: "פתרונות Shopify אמיתיים שבניתי",
-            list: [
-                {
-                    id: "ai-image-generation",
-                    image: "images/project-ai-image.jpg",
-                    title: "אפליקציית יצירת תמונות AI",
-                    description: "אפליקציה משולבת ב-Shopify שמאחזרת נתוני מוצרים ויוצרת תמונות מוצר מותאמות אישית באמצעות OpenAI ו-Gemini APIs.",
-                    tags: ["Shopify API", "OpenAI", "Node.js"],
-                    year: "2024",
-                    tech: "JavaScript, Node.js",
-                    link: "projects/ai-image-generation.html"
-                },
-                {
-                    id: "erp-integration",
-                    image: "images/project-erp.jpg",
-                    title: "מערכת אינטגרציה ERP-Shopify",
-                    description: "מערכת סנכרון דו-כיוונית מקיפה בין Fantasy ERP ו-Shopify, המטפלת במוצרים, מלאי, הזמנות ונתוני לקוחות.",
-                    tags: ["Integration", "GraphQL", "REST API"],
-                    year: "2023-2024",
-                    tech: "Node.js, GraphQL",
-                    link: "projects/erp-integration.html"
-                },
-                {
-                    id: "automation-workflows",
-                    image: "images/project-automation.jpg",
-                    title: "תהליכי אוטומציה Shopify",
-                    description: "אפליקציות מונעות אירועים אוטומטיות באמצעות Shopify webhooks לעדכוני מוצרים, עיבוד הזמנות וניהול מלאי.",
-                    tags: ["Webhooks", "Automation", "Real-time"],
-                    year: "2022-2024",
-                    tech: "Node.js, Webhooks",
-                    link: "projects/automation-workflows.html"
-                },
-                {
-                    id: "hubspot-sync",
-                    image: "images/project-hubspot.jpg",
-                    title: "אפליקציית סנכרון Shopify-HubSpot",
-                    description: "מערכת סנכרון בזמן אמת למוצרים, הזמנות ונתוני לקוחות בין Shopify ל-HubSpot CRM.",
-                    tags: ["CRM", "Integration", "Sync"],
-                    year: "2023",
-                    tech: "Node.js, REST API",
-                    link: "projects/hubspot-sync.html"
-                },
-                {
-                    id: "ai-descriptions",
-                    image: "images/project-ai-desc.jpg",
-                    title: "מחולל תיאורי מוצרים AI",
-                    description: "מערכת מבוססת AI ליצירת תיאורי מוצרים משכנעים באמצעות Gemini ו-OpenAI APIs, משולבת עם Shopify.",
-                    tags: ["AI", "OpenAI", "Automation"],
-                    year: "2024",
-                    tech: "JavaScript, AI APIs",
-                    link: "projects/ai-descriptions.html"
-                },
-                {
-                    id: "b2b-platform",
-                    image: "images/project-b2b.jpg",
-                    title: "פלטפורמת שיתוף מוצרים B2B",
-                    description: "פלטפורמה משולבת ב-Shopify המאפשרת לסוחרים לשתף ולשתף פעולה בקטלוגי מוצרים עם ניהול הרשאות מתקדם.",
-                    tags: ["B2B", "Platform", "Real-time"],
-                    year: "2023",
-                    tech: "Node.js, React",
-                    link: "projects/b2b-platform.html"
-                }
-            ]
+            projectTitles: {
+                "ai-image-generation": "אפליקציית יצירת תמונות AI",
+                "erp-integration": "מערכת אינטגרציה ERP-Shopify",
+                "automation-workflows": "תהליכי אוטומציה Shopify",
+                "hubspot-sync": "אפליקציית סנכרון Shopify-HubSpot",
+                "ai-descriptions": "מחולל תיאורי מוצרים AI",
+                "b2b-platform": "פלטפורמת שיתוף מוצרים B2B"
+            },
+            projectDescriptions: {
+                "ai-image-generation": "אפליקציה משולבת ב-Shopify שמאחזרת נתוני מוצרים ויוצרת תמונות מוצר מותאמות אישית באמצעות OpenAI ו-Gemini APIs.",
+                "erp-integration": "מערכת סנכרון דו-כיוונית מקיפה בין Fantasy ERP ו-Shopify, המטפלת במוצרים, מלאי, הזמנות ונתוני לקוחות.",
+                "automation-workflows": "אפליקציות מונעות אירועים אוטומטיות באמצעות Shopify webhooks לעדכוני מוצרים, עיבוד הזמנות וניהול מלאי.",
+                "hubspot-sync": "מערכת סנכרון בזמן אמת למוצרים, הזמנות ונתוני לקוחות בין Shopify ל-HubSpot CRM.",
+                "ai-descriptions": "מערכת מבוססת AI ליצירת תיאורי מוצרים משכנעים באמצעות Gemini ו-OpenAI APIs, משולבת עם Shopify.",
+                "b2b-platform": "פלטפורמה משולבת ב-Shopify המאפשרת לסוחרים לשתף ולשתף פעולה בקטלוגי מוצרים עם ניהול הרשאות מתקדם."
+            }
         },
 
         // Contact Section
         contact: {
             title: "צור קשר",
             subtitle: "בואו נדבר על הפרויקט הבא שלך ב-Shopify",
-            items: [
-                { icon: "fas fa-envelope", title: "אימייל", value: "hadasa.schweitzer@gmail.com" },
-                { icon: "fas fa-phone", title: "טלפון", value: "058-326-1441" },
-                { icon: "fas fa-map-marker-alt", title: "מיקום", value: "תל אביב, ישראל" }
-            ],
+            itemLabels: {
+                email: "אימייל",
+                phone: "טלפון",
+                location: "מיקום"
+            },
             social: {
-                title: "התחבר אליי",
-                links: [
-                    { icon: "fab fa-linkedin", name: "LinkedIn", url: "https://linkedin.com/in/hadas-schweitzer" },
-                    { icon: "fab fa-github", name: "GitHub", url: "https://github.com/hadas-schweitzer" }
-                ]
+                title: "התחבר אליי"
             },
             form: {
                 title: "שלח לי הודעה",
@@ -478,5 +478,100 @@ const portfolioData = {
     }
 };
 
+// ========== Data Merger Function ==========
+/**
+ * Merges static data with translations for a given language
+ * This eliminates the need to duplicate static data for each language
+ */
+function getPortfolioData(lang = 'en') {
+    const trans = translations[lang];
+    const data = {
+        // Personal Info
+        name: trans.name,
+        email: staticData.email,
+        phone: staticData.phone,
+        location: trans.location,
+
+        // Navigation
+        nav: trans.nav,
+
+        // Hero Section
+        hero: {
+            ...trans.hero,
+            stats: staticData.stats.map((stat, index) => ({
+                number: stat.number,
+                label: trans.hero.statsLabels[index]
+            }))
+        },
+
+        // About Section
+        about: trans.about,
+
+        // Skills Section
+        skills: {
+            title: trans.skills.title,
+            subtitle: trans.skills.subtitle,
+            categories: staticData.skills.categories.map(cat => ({
+                icon: cat.icon,
+                title: trans.skills.categories[cat.id].title,
+                items: trans.skills.categories[cat.id].items
+            }))
+        },
+
+        // Projects Section
+        projects: {
+            title: trans.projects.title,
+            subtitle: trans.projects.subtitle,
+            list: staticData.projects.list.map(project => ({
+                ...project,
+                title: trans.projects.projectTitles[project.id],
+                description: trans.projects.projectDescriptions[project.id]
+            }))
+        },
+
+        // Contact Section
+        contact: {
+            title: trans.contact.title,
+            subtitle: trans.contact.subtitle,
+            items: staticData.contact.items.map(item => ({
+                icon: item.icon,
+                title: trans.contact.itemLabels[item.id],
+                value: item.id === 'email' ? staticData.email :
+                       item.id === 'phone' ? staticData.phone :
+                       trans.location
+            })),
+            social: {
+                title: trans.contact.social.title,
+                links: staticData.contact.social.links
+            },
+            form: trans.contact.form,
+            cta: trans.contact.cta
+        },
+
+        // Footer
+        footer: trans.footer,
+
+        // Project Pages
+        backToPortfolio: trans.backToPortfolio,
+        breadcrumb: trans.breadcrumb
+    };
+
+    return data;
+}
+
+// ========== Backward Compatibility ==========
+// Keep the old portfolioData structure for existing code
+const portfolioData = {
+    en: getPortfolioData('en'),
+    he: getPortfolioData('he')
+};
+
 // Default language
 let currentLanguage = 'en';
+
+// Export functions
+if (typeof window !== 'undefined') {
+    window.getPortfolioData = getPortfolioData;
+    window.staticData = staticData;
+    window.translations = translations;
+}

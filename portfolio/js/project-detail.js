@@ -238,35 +238,30 @@ function buildProjectPage(lang = 'en') {
     // Note: Footer is updated by updatePageComponents() from components.js
 }
 
+// ========== Language Switcher (Deprecated - use LanguageManager) ==========
+// Kept for backward compatibility
 function switchProjectLanguage(lang) {
-    buildProjectPage(lang);
-    localStorage.setItem('preferredLanguage', lang);
+    if (typeof LanguageManager !== 'undefined') {
+        LanguageManager.switchLanguage(lang, 'project');
+    } else {
+        // Fallback if LanguageManager not loaded
+        buildProjectPage(lang);
+        localStorage.setItem('preferredLanguage', lang);
+    }
 }
 
-// Initialize on page load
+// ========== Initialize on page load ==========
 document.addEventListener('DOMContentLoaded', function() {
-    // Get language from localStorage or default to English
-    const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
-    buildProjectPage(savedLanguage);
-
-    // Add language switcher to navbar
-    const navbar = document.querySelector('.navbar .container');
-    if (navbar && !document.querySelector('.language-switcher')) {
-        const languageSwitcher = document.createElement('button');
-        languageSwitcher.className = 'language-switcher';
-        languageSwitcher.setAttribute('aria-label', 'Switch Language');
-        languageSwitcher.innerHTML = `
-            <i class="fas fa-language"></i>
-            <span class="lang-text">עב / EN</span>
-        `;
-
-        // Insert before nav-menu
-        const navMenu = navbar.querySelector('.nav-menu');
-        navbar.insertBefore(languageSwitcher, navMenu.nextSibling);
-
-        languageSwitcher.addEventListener('click', () => {
-            const newLang = currentProjectLanguage === 'en' ? 'he' : 'en';
-            switchProjectLanguage(newLang);
+    // Initialize Language Manager (handles language loading and switching)
+    if (typeof LanguageManager !== 'undefined') {
+        LanguageManager.init({
+            onLanguageChange: buildProjectPage,
+            pageType: 'project'
         });
+        currentProjectLanguage = LanguageManager.getCurrentLanguage();
+    } else {
+        // Fallback if LanguageManager not loaded
+        const savedLanguage = localStorage.getItem('preferredLanguage') || 'en';
+        buildProjectPage(savedLanguage);
     }
 });
