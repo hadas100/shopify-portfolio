@@ -107,18 +107,7 @@ const staticData = {
             { icon: "fas fa-map-marker-alt", id: "location" }
         ],
         social: {
-            links: [
-                {
-                    icon: "fab fa-linkedin",
-                    name: "LinkedIn",
-                    url: "https://linkedin.com/in/hadas-schweitzer"
-                },
-                {
-                    icon: "fab fa-github",
-                    name: "GitHub",
-                    url: "https://github.com/hadas-schweitzer"
-                }
-            ]
+            links: []
         }
     }
 };
@@ -345,7 +334,7 @@ const translations = {
                 btnEmail: "Send Email",
                 btnPhone: "Call Now",
                 btnConsultation: "Book Free Consultation",
-                consultationUrl: "https://calendly.com/hadas-schweitzer" // Replace with your Calendly link
+                consultationUrl: "https://calendly.com/441dasis/30min"
             }
         },
 
@@ -583,7 +572,7 @@ const translations = {
                 btnEmail: "שלח אימייל",
                 btnPhone: "התקשר עכשיו",
                 btnConsultation: "קביעת ייעוץ חינם",
-                consultationUrl: "https://calendly.com/hadas-schweitzer" // Replace with your Calendly link
+                consultationUrl: "https://calendly.com/441dasis/30min"
             }
         },
 
@@ -652,6 +641,12 @@ function getPortfolioData(lang = 'en') {
                 description: trans.projects.projectDescriptions[project.id]
             }))
         },
+
+        // Testimonials Section
+        testimonials: trans.testimonials,
+
+        // FAQ Section
+        faq: trans.faq,
 
         // Contact Section
         contact: {
