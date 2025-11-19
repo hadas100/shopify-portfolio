@@ -112,6 +112,55 @@ function buildDynamicContent(lang = 'en') {
         `).join('');
     }
 
+    // Build testimonials section
+    const testimonialsGrid = document.querySelector('.testimonials-grid');
+    if (testimonialsGrid && data.testimonials) {
+        testimonialsGrid.innerHTML = data.testimonials.reviews.map(review => `
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    ${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)}
+                </div>
+                <p class="testimonial-text">"${review.text}"</p>
+                <div class="testimonial-author">
+                    <div class="author-info">
+                        <h4>${review.name}</h4>
+                        <p>${review.role}</p>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    // Build FAQ section
+    const faqContainer = document.querySelector('.faq-container');
+    if (faqContainer && data.faq) {
+        faqContainer.innerHTML = data.faq.questions.map((item, index) => `
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(${index})">
+                    <span>${item.question}</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>${item.answer}</p>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    // Update testimonials section titles
+    const testimonialsTitle = document.querySelector('.testimonials .section-title');
+    if (testimonialsTitle && data.testimonials) testimonialsTitle.textContent = data.testimonials.title;
+
+    const testimonialsSubtitle = document.querySelector('.testimonials .section-subtitle');
+    if (testimonialsSubtitle && data.testimonials) testimonialsSubtitle.textContent = data.testimonials.subtitle;
+
+    // Update FAQ section titles
+    const faqTitle = document.querySelector('.faq .section-title');
+    if (faqTitle && data.faq) faqTitle.textContent = data.faq.title;
+
+    const faqSubtitle = document.querySelector('.faq .section-subtitle');
+    if (faqSubtitle && data.faq) faqSubtitle.textContent = data.faq.subtitle;
+
     // Update contact section
     const contactTitle = document.querySelector('.contact .section-title');
     if (contactTitle) contactTitle.textContent = data.contact.title;
@@ -179,6 +228,9 @@ function buildDynamicContent(lang = 'en') {
     const contactButtons = document.querySelector('.contact-buttons');
     if (contactButtons) {
         contactButtons.innerHTML = `
+            <a href="${data.contact.cta.consultationUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-accent">
+                <i class="fas fa-calendar-check"></i> ${data.contact.cta.btnConsultation}
+            </a>
             <a href="mailto:${data.email}" class="btn btn-primary">
                 <i class="fas fa-envelope"></i> ${data.contact.cta.btnEmail}
             </a>
@@ -483,6 +535,26 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize
     highlightNavigation();
 });
+
+// ========== FAQ Toggle Function ==========
+function toggleFAQ(index) {
+    const faqItems = document.querySelectorAll('.faq-item');
+    const clickedItem = faqItems[index];
+
+    if (!clickedItem) return;
+
+    const isActive = clickedItem.classList.contains('active');
+
+    // Close all FAQ items
+    faqItems.forEach(item => {
+        item.classList.remove('active');
+    });
+
+    // Toggle the clicked item
+    if (!isActive) {
+        clickedItem.classList.add('active');
+    }
+}
 
 // ========== Typed Text Effect ==========
 function typeWriter(element, text, speed = 100) {

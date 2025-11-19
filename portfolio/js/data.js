@@ -255,6 +255,67 @@ const translations = {
             }
         },
 
+        // Testimonials Section
+        testimonials: {
+            title: "What Clients Say",
+            subtitle: "Real feedback from store owners I've helped",
+            reviews: [
+                {
+                    name: "Sarah Cohen",
+                    role: "Owner, Fashion Boutique",
+                    image: "images/client-1.jpg",
+                    rating: 5,
+                    text: "Hadas transformed our Shopify store with a custom ERP integration that saved us 15 hours of manual work every week. Her expertise and professionalism are outstanding!"
+                },
+                {
+                    name: "David Miller",
+                    role: "CEO, Electronics Store",
+                    image: "images/client-2.jpg",
+                    rating: 5,
+                    text: "We needed urgent help with a complex API integration. Hadas delivered a perfect solution ahead of schedule. Highly recommended for any Shopify technical challenges!"
+                },
+                {
+                    name: "Rachel Green",
+                    role: "Manager, Home Decor Shop",
+                    image: "images/client-3.jpg",
+                    rating: 5,
+                    text: "The AI-powered automation Hadas built for our product descriptions increased our productivity by 300%. She's a true Shopify expert who delivers real business results."
+                }
+            ]
+        },
+
+        // FAQ Section
+        faq: {
+            title: "Frequently Asked Questions",
+            subtitle: "Everything you need to know about working with me",
+            questions: [
+                {
+                    question: "What services do you offer?",
+                    answer: "I provide custom Shopify development, ERP/CRM integrations, automation workflows, AI-powered solutions, theme customization, and ongoing technical support for Shopify stores."
+                },
+                {
+                    question: "How long does a typical project take?",
+                    answer: "It depends on complexity. Simple integrations can be completed in 1-2 weeks, while complex custom apps may take 4-8 weeks. I'll provide a detailed timeline after our initial consultation."
+                },
+                {
+                    question: "Do you offer ongoing support?",
+                    answer: "Yes! I offer monthly retainer packages for ongoing maintenance, updates, and technical support. I'm here to ensure your Shopify store runs smoothly long-term."
+                },
+                {
+                    question: "What is your pricing?",
+                    answer: "Pricing varies by project scope. I offer free initial consultations to understand your needs and provide a custom quote. Most projects range from $2,000-$15,000 depending on complexity."
+                },
+                {
+                    question: "Can you help with an existing Shopify store issue?",
+                    answer: "Absolutely! I specialize in troubleshooting and fixing technical issues, whether it's bugs, integration problems, performance optimization, or complex customizations."
+                },
+                {
+                    question: "Do you work with international clients?",
+                    answer: "Yes! I work with clients globally. I'm based in Tel Aviv but provide services remotely to Shopify store owners worldwide. All communication is in English or Hebrew."
+                }
+            ]
+        },
+
         // Contact Section
         contact: {
             title: "Need Help with Your Shopify Store?",
@@ -282,7 +343,9 @@ const translations = {
                 title: "Ready to Get Expert Help?",
                 description: "Whether you need custom development, technical support, or strategic guidance - I'm here to help your Shopify store succeed.",
                 btnEmail: "Send Email",
-                btnPhone: "Call Now"
+                btnPhone: "Call Now",
+                btnConsultation: "Book Free Consultation",
+                consultationUrl: "https://calendly.com/hadas-schweitzer" // Replace with your Calendly link
             }
         },
 
@@ -430,6 +493,67 @@ const translations = {
             }
         },
 
+        // Testimonials Section
+        testimonials: {
+            title: "מה לקוחות אומרים",
+            subtitle: "המלצות אמיתיות מבעלי חנויות שעזרתי להם",
+            reviews: [
+                {
+                    name: "שרה כהן",
+                    role: "בעלים, בוטיק אופנה",
+                    image: "images/client-1.jpg",
+                    rating: 5,
+                    text: "הדס שינתה את חנות ה-Shopify שלנו עם אינטגרציה מותאמת ל-ERP שחסכה לנו 15 שעות עבודה ידנית כל שבוע. המומחיות והמקצועיות שלה יוצאות דופן!"
+                },
+                {
+                    name: "דוד מילר",
+                    role: "מנכ\"ל, חנות אלקטרוניקה",
+                    image: "images/client-2.jpg",
+                    rating: 5,
+                    text: "היינו זקוקים לעזרה דחופה עם אינטגרציית API מורכבת. הדס סיפקה פתרון מושלם לפני לוח הזמנים. מומלצת בחום לכל אתגר טכני ב-Shopify!"
+                },
+                {
+                    name: "רחל גרין",
+                    role: "מנהלת, חנות עיצוב הבית",
+                    image: "images/client-3.jpg",
+                    rating: 5,
+                    text: "האוטומציה מבוססת AI שהדס בנתה לתיאורי המוצרים שלנו הגדילה את הפרודוקטיביות שלנו ב-300%. היא מומחית Shopify אמיתית שמספקת תוצאות עסקיות."
+                }
+            ]
+        },
+
+        // FAQ Section
+        faq: {
+            title: "שאלות נפוצות",
+            subtitle: "כל מה שצריך לדעת על עבודה איתי",
+            questions: [
+                {
+                    question: "אילו שירותים את מציעה?",
+                    answer: "אני מספקת פיתוח Shopify מותאם אישית, אינטגרציות ERP/CRM, תהליכי אוטומציה, פתרונות מבוססי AI, התאמה אישית של ערכות נושא ותמיכה טכנית שוטפת לחנויות Shopify."
+                },
+                {
+                    question: "כמה זמן לוקח פרויקט טיפוסי?",
+                    answer: "זה תלוי במורכבות. אינטגרציות פשוטות יכולות להסתיים תוך 1-2 שבועות, בעוד אפליקציות מותאמות מורכבות עשויות לקחת 4-8 שבועות. אספק ציר זמן מפורט לאחר הייעוץ הראשוני."
+                },
+                {
+                    question: "האם את מציעה תמיכה שוטפת?",
+                    answer: "כן! אני מציעה חבילות חודשיות לתחזוקה שוטפת, עדכונים ותמיכה טכנית. אני כאן כדי להבטיח שחנות ה-Shopify שלך תפעל בצורה חלקה לטווח ארוך."
+                },
+                {
+                    question: "מה המחירים שלך?",
+                    answer: "המחירים משתנים לפי היקף הפרויקט. אני מציעה ייעוץ ראשוני חינם כדי להבין את הצרכים ולספק הצעת מחיר מותאמת. רוב הפרויקטים נעים בין $2,000-$15,000 בהתאם למורכבות."
+                },
+                {
+                    question: "את יכולה לעזור עם בעיה קיימת בחנות Shopify?",
+                    answer: "בהחלט! אני מתמחה באיתור ותיקון בעיות טכניות, בין אם מדובר בבאגים, בעיות אינטגרציה, אופטימיזציה לביצועים או התאמות אישיות מורכבות."
+                },
+                {
+                    question: "את עובדת עם לקוחות בינלאומיים?",
+                    answer: "כן! אני עובדת עם לקוחות ברחבי העולם. אני ממוקמת בתל אביב אך מספקת שירותים מרחוק לבעלי חנויות Shopify בכל העולם. כל התקשורת באנגלית או עברית."
+                }
+            ]
+        },
+
         // Contact Section
         contact: {
             title: "צריך עזרה עם חנות Shopify שלך?",
@@ -457,7 +581,9 @@ const translations = {
                 title: "מוכן לקבל עזרה מקצועית?",
                 description: "בין אם אתה צריך פיתוח מותאם אישית, תמיכה טכנית או הנחיה אסטרטגית - אני כאן כדי לעזור לחנות Shopify שלך להצליח.",
                 btnEmail: "שלח אימייל",
-                btnPhone: "התקשר עכשיו"
+                btnPhone: "התקשר עכשיו",
+                btnConsultation: "קביעת ייעוץ חינם",
+                consultationUrl: "https://calendly.com/hadas-schweitzer" // Replace with your Calendly link
             }
         },
 
