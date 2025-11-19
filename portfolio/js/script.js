@@ -487,7 +487,7 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.style.cursor = 'not-allowed';
 
             try {
-                // Submit form using AJAX
+                // Submit form using AJAX to FormSubmit
                 const formData = new FormData(contactForm);
                 const response = await fetch(contactForm.action, {
                     method: 'POST',
@@ -497,16 +497,20 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 });
 
-                if (response.ok) {
+                const result = await response.json();
+
+                if (response.ok && result.success) {
                     // Success
                     showFormMessage(portfolioData[currentLanguage].contact.form.successMessage, 'success');
                     contactForm.reset(); // Clear form
                 } else {
-                    // Error
-                    showFormMessage(portfolioData[currentLanguage].contact.form.errorMessage, 'error');
+                    // Error - could be validation or server error
+                    const errorMsg = result.message || portfolioData[currentLanguage].contact.form.errorMessage;
+                    showFormMessage(errorMsg, 'error');
                 }
             } catch (error) {
                 // Network error
+                console.error('Form submission error:', error);
                 showFormMessage(portfolioData[currentLanguage].contact.form.errorMessage, 'error');
             } finally {
                 // Reset button state
