@@ -185,9 +185,6 @@ function buildDynamicContent(lang = 'en') {
             <a href="tel:+972583261441" class="btn btn-secondary">
                 <i class="fas fa-phone"></i> ${data.contact.cta.btnPhone}
             </a>
-            <a href="cv/Hadas-Schweitzer-CV.pdf" download class="btn btn-accent">
-                <i class="fas fa-download"></i> ${data.contact.cta.btnCV}
-            </a>
         `;
     }
 

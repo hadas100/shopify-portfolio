@@ -141,21 +141,21 @@ const translations = {
 
         // Hero Section
         hero: {
-            title: "Shopify Developer &",
-            titleGradient: "Full-Stack Expert",
-            description: "Specialized in building custom Shopify applications, automations, and complex third-party integrations. 5+ years of experience delivering high-quality e-commerce solutions.",
-            btnProjects: "View Projects",
-            btnContact: "Get in Touch",
+            title: "Shopify Expert &",
+            titleGradient: "Technical Consultant",
+            description: "I help Shopify store owners solve complex technical challenges, optimize their stores, and implement custom solutions. 5+ years of experience providing expert support and development services.",
+            btnProjects: "View Solutions",
+            btnContact: "Get Expert Help",
             statsLabels: ["Years Experience", "Projects Completed", "Client Satisfaction"]
         },
 
         // About Section
         about: {
             title: "About Me",
-            subtitle: "Full-Stack Shopify Developer with a passion for e-commerce",
+            subtitle: "Your Shopify Technical Partner for Growth & Success",
             paragraphs: [
-                "I'm a Shopify Developer with 5+ years of full-stack development experience, specializing in Shopify customization, theme development, and complex third-party integrations. Currently working at Leibish Online, a leading jewelry e-commerce platform.",
-                "My expertise includes building automated workflows, custom Shopify apps, API integrations, and AI-powered solutions. I'm proficient in JavaScript, React, Vue, Node.js, and have extensive experience with Shopify REST & GraphQL APIs."
+                "With 5+ years of specialized Shopify experience, I provide expert technical support and consulting services to help store owners overcome challenges, optimize performance, and implement custom solutions that drive business growth.",
+                "Whether you need to integrate your ERP system, automate workflows, build custom functionality, or solve complex technical issues - I deliver reliable, professional solutions tailored to your specific business needs. My expertise spans the entire Shopify ecosystem, from theme customization to advanced API integrations and AI-powered automation."
             ],
             highlights: [
                 "Custom Shopify App Development",
@@ -169,8 +169,8 @@ const translations = {
 
         // Skills Section
         skills: {
-            title: "Technical Skills",
-            subtitle: "Technologies and tools I work with",
+            title: "Services & Expertise",
+            subtitle: "Technical solutions I provide for your Shopify store",
             categories: {
                 shopify: {
                     title: "Shopify Platform",
@@ -235,8 +235,8 @@ const translations = {
 
         // Projects Section
         projects: {
-            title: "Featured Projects",
-            subtitle: "Real-world Shopify solutions I've built",
+            title: "Client Success Stories",
+            subtitle: "Real problems solved for Shopify store owners",
             projectTitles: {
                 "ai-image-generation": "AI Image Generation App",
                 "erp-integration": "ERP-Shopify Integration System",
@@ -257,8 +257,8 @@ const translations = {
 
         // Contact Section
         contact: {
-            title: "Get In Touch",
-            subtitle: "Let's discuss your next Shopify project",
+            title: "Need Help with Your Shopify Store?",
+            subtitle: "Let's solve your technical challenges together",
             itemLabels: {
                 email: "Email",
                 phone: "Phone",
@@ -279,11 +279,10 @@ const translations = {
                 errorMessage: "Oops! Something went wrong. Please try again or email me directly."
             },
             cta: {
-                title: "Ready to Start Your Project?",
-                description: "I'm available for freelance projects and full-time opportunities. Let's create something amazing together!",
+                title: "Ready to Get Expert Help?",
+                description: "Whether you need custom development, technical support, or strategic guidance - I'm here to help your Shopify store succeed.",
                 btnEmail: "Send Email",
-                btnPhone: "Call Now",
-                btnCV: "Download CV"
+                btnPhone: "Call Now"
             }
         },
 
@@ -317,21 +316,21 @@ const translations = {
 
         // Hero Section
         hero: {
-            title: "מפתחת Shopify ו",
-            titleGradient: "מומחית Full-Stack",
-            description: "מתמחה בבניית אפליקציות Shopify מותאמות אישית, אוטומציות ואינטגרציות מורכבות עם מערכות צד שלישי. 5+ שנות ניסיון במתן פתרונות מסחר אלקטרוני איכותיים.",
-            btnProjects: "לפרויקטים",
-            btnContact: "צור קשר",
+            title: "מומחית Shopify ו",
+            titleGradient: "יועצת טכנית",
+            description: "אני עוזרת לבעלי חנויות Shopify לפתור אתגרים טכניים מורכבים, לבצע אופטימיזציה ולהטמיע פתרונות מותאמים אישית. 5+ שנות ניסיון במתן שירותי תמיכה ופיתוח מומחים.",
+            btnProjects: "לפתרונות",
+            btnContact: "קבל עזרה מקצועית",
             statsLabels: ["שנות ניסיון", "פרויקטים שהושלמו", "שביעות רצון לקוחות"]
         },
 
         // About Section
         about: {
             title: "אודות",
-            subtitle: "מפתחת Shopify Full-Stack עם תשוקה למסחר אלקטרוני",
+            subtitle: "השותפה הטכנית שלך ל-Shopify להצלחה וצמיחה",
             paragraphs: [
-                "אני מפתחת Shopify עם 5+ שנות ניסיון בפיתוח Full-Stack, המתמחה בהתאמה אישית של Shopify, פיתוח ערכות נושא ואינטגרציות מורכבות עם מערכות צד שלישי. כיום עובדת ב-Leibish Online, פלטפורמת מסחר אלקטרוני מובילה לתכשיטים.",
-                "המומחיות שלי כוללת בניית תהליכי עבודה אוטומטיים, אפליקציות Shopify מותאמות אישית, אינטגרציות API ופתרונות מבוססי בינה מלאכותית. אני בקיאה ב-JavaScript, React, Vue, Node.js, ויש לי ניסיון נרחב עם Shopify REST & GraphQL APIs."
+                "עם 5+ שנות ניסיון מיוחד ב-Shopify, אני מספקת שירותי תמיכה וייעוץ טכניים מומחים כדי לעזור לבעלי חנויות להתגבר על אתגרים, לבצע אופטימיזציה לביצועים ולהטמיע פתרונות מותאמים אישית שמניעים צמיחה עסקית.",
+                "בין אם אתם צריכים לשלב את מערכת ה-ERP שלכם, לבצע אוטומציה לתהליכי עבודה, לבנות פונקציונליות מותאמת אישית או לפתור בעיות טכניות מורכבות - אני מספקת פתרונות אמינים ומקצועיים המותאמים לצרכים העסקיים הספציפיים שלכם. המומחיות שלי משתרעת על כל האקוסיסטם של Shopify, מהתאמה אישית של ערכות נושא ועד אינטגרציות API מתקדמות ואוטומציה מבוססת בינה מלאכותית."
             ],
             highlights: [
                 "פיתוח אפליקציות Shopify מותאמות אישית",
@@ -345,8 +344,8 @@ const translations = {
 
         // Skills Section
         skills: {
-            title: "כישורים טכניים",
-            subtitle: "טכנולוגיות וכלים שאני עובדת איתם",
+            title: "שירותים ומומחיות",
+            subtitle: "פתרונות טכניים שאני מספקת לחנות Shopify שלך",
             categories: {
                 shopify: {
                     title: "פלטפורמת Shopify",
@@ -411,8 +410,8 @@ const translations = {
 
         // Projects Section
         projects: {
-            title: "פרויקטים מובילים",
-            subtitle: "פתרונות Shopify אמיתיים שבניתי",
+            title: "סיפורי הצלחה של לקוחות",
+            subtitle: "בעיות אמיתיות שנפתרו עבור בעלי חנויות Shopify",
             projectTitles: {
                 "ai-image-generation": "אפליקציית יצירת תמונות AI",
                 "erp-integration": "מערכת אינטגרציה ERP-Shopify",
@@ -433,8 +432,8 @@ const translations = {
 
         // Contact Section
         contact: {
-            title: "צור קשר",
-            subtitle: "בואו נדבר על הפרויקט הבא שלך ב-Shopify",
+            title: "צריך עזרה עם חנות Shopify שלך?",
+            subtitle: "בואו נפתור את האתגרים הטכניים שלך ביחד",
             itemLabels: {
                 email: "אימייל",
                 phone: "טלפון",
@@ -455,11 +454,10 @@ const translations = {
                 errorMessage: "אופס! משהו השתבש. אנא נסה שוב או שלח לי מייל ישירות."
             },
             cta: {
-                title: "מוכן להתחיל את הפרויקט שלך?",
-                description: "אני זמינה לפרויקטים פרילנסריים והזדמנויות מלאות. בואו ניצור משהו מדהים ביחד!",
+                title: "מוכן לקבל עזרה מקצועית?",
+                description: "בין אם אתה צריך פיתוח מותאם אישית, תמיכה טכנית או הנחיה אסטרטגית - אני כאן כדי לעזור לחנות Shopify שלך להצליח.",
                 btnEmail: "שלח אימייל",
-                btnPhone: "התקשר עכשיו",
-                btnCV: "הורד קורות חיים"
+                btnPhone: "התקשר עכשיו"
             }
         },
 
