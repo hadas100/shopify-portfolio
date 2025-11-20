@@ -1062,6 +1062,202 @@ const projectsDetailData = {
             nav: { back: "חזרה לתיק העבודות" },
             footer: { copyright: "© 2026 הדס שוויצר. כל הזכויות שמורות.", back: "חזרה לתיק העבודות" }
         }
+    },
+    'data-sync-platform': {
+        en: {
+            title: "Multi-Store Data Synchronization Platform",
+            lead: "Advanced platform for seamless data import/export between multiple Shopify stores",
+            meta: { year: "2023-2024", company: "Leibish Online", tech: "Node.js, Shopify API, REST API, GraphQL" },
+            breadcrumb: { home: "Home", projects: "Projects", current: "Data Sync Platform" },
+            sections: {
+                overview: {
+                    title: "Project Overview",
+                    content: "Built a comprehensive data synchronization platform that enables seamless import and export of product catalogs, inventory data, and customer information between multiple Shopify stores. The system allows businesses with multiple store locations to maintain consistent data across their entire network while supporting selective synchronization based on business rules. This solution eliminates manual data entry, reduces errors, and ensures real-time consistency across all connected stores."
+                },
+                challenge: {
+                    title: "The Business Challenge",
+                    content: "Managing multiple Shopify stores with consistent product catalogs and inventory was a significant operational challenge. The business needed to synchronize thousands of products across 5+ stores, maintain accurate inventory levels, and ensure pricing consistency. Manual data entry was time-consuming, error-prone, and couldn't scale with the growing store network. The company needed an automated solution that could handle bulk operations while maintaining data integrity and supporting custom business logic."
+                },
+                solution: {
+                    title: "The Solution",
+                    intro: "I developed a robust data synchronization platform with these core capabilities:",
+                    points: [
+                        { title: "Bidirectional Sync", text: "Two-way data flow between stores with intelligent conflict resolution to handle simultaneous updates" },
+                        { title: "Product Catalog Sync", text: "Complete synchronization of products including variants, images, metafields, and all product attributes" },
+                        { title: "Inventory Management", text: "Real-time inventory synchronization across the store network with threshold-based alerts" },
+                        { title: "Selective Sync Rules", text: "Flexible rule-based filtering allowing businesses to control which products sync to which stores" },
+                        { title: "Bulk Operations", text: "Efficient batch processing for large-scale data imports and exports with progress tracking" },
+                        { title: "Data Validation", text: "Automated validation checks to ensure data integrity and prevent sync errors" }
+                    ]
+                },
+                implementation: { title: "Technical Implementation" },
+                features: {
+                    title: "Key Features",
+                    list: [
+                        { icon: "fas fa-exchange-alt", title: "Bidirectional Sync", text: "Two-way data flow with conflict resolution" },
+                        { icon: "fas fa-boxes", title: "Product Catalog", text: "Complete product data including variants and images" },
+                        { icon: "fas fa-warehouse", title: "Inventory Sync", text: "Real-time inventory updates across stores" },
+                        { icon: "fas fa-filter", title: "Smart Filtering", text: "Rule-based selective synchronization" },
+                        { icon: "fas fa-file-export", title: "Bulk Processing", text: "Efficient batch import/export operations" },
+                        { icon: "fas fa-shield-alt", title: "Data Validation", text: "Automated quality checks and error prevention" }
+                    ]
+                },
+                results: {
+                    title: "Results & Impact",
+                    items: [
+                        { number: "90%", label: "Time Reduction", text: "Eliminated manual data entry work" },
+                        { number: "5+", label: "Stores Connected", text: "Synchronized across network" },
+                        { number: "99.9%", label: "Data Accuracy", text: "Consistent across all stores" }
+                    ]
+                },
+                architecture: {
+                    title: "System Architecture",
+                    intro: "The platform uses a scalable, event-driven architecture:",
+                    points: [
+                        { title: "API Integration Layer", text: "Handles communication with multiple Shopify stores using REST and GraphQL APIs" },
+                        { title: "Sync Engine", text: "Core synchronization logic with field mapping, data transformation, and conflict resolution" },
+                        { title: "Queue System", text: "Message queues for reliable batch processing and async operations" },
+                        { title: "Validation Service", text: "Ensures data integrity before and after synchronization" }
+                    ]
+                },
+                lessons: {
+                    title: "Technical Learnings",
+                    content: "This project deepened my expertise in building scalable data synchronization systems, managing API rate limits across multiple stores, and designing efficient batch processing pipelines. I gained valuable experience in handling large-scale data operations, implementing robust error handling, and building systems that maintain data consistency in distributed environments."
+                }
+            },
+            sidebar: {
+                details: {
+                    title: "Project Details",
+                    items: {
+                        client: { label: "Client", value: "Leibish Online" },
+                        industry: { label: "Industry", value: "Multi-Store E-commerce" },
+                        year: { label: "Year", value: "2023-2024" },
+                        duration: { label: "Duration", value: "3 months" },
+                        role: { label: "Role", value: "Full-Stack Developer" }
+                    }
+                },
+                technologies: {
+                    title: "Technologies Used",
+                    tags: ["Node.js", "Express", "Shopify REST API", "Shopify GraphQL", "Redis", "Message Queue", "Batch Processing", "Webhooks"]
+                },
+                achievements: {
+                    title: "Key Achievements",
+                    list: ["90% time savings", "5+ stores connected", "99.9% data accuracy", "Zero data loss", "Automated sync rules"]
+                },
+                cta: {
+                    title: "Need Multi-Store Sync?",
+                    text: "Let's connect and synchronize your Shopify store network.",
+                    button: "Get in Touch"
+                }
+            },
+            related: {
+                title: "Related Projects",
+                projects: [
+                    { id: "erp-integration", title: "ERP-Shopify Integration", desc: "Comprehensive bidirectional data synchronization" },
+                    { id: "hubspot-sync", title: "HubSpot Sync", desc: "CRM synchronization system" },
+                    { id: "b2b-platform", title: "B2B Platform", desc: "Collaborative product sharing platform" }
+                ]
+            },
+            nav: { back: "Back to Portfolio" },
+            footer: { copyright: "© 2026 Hadas Schweitzer. All rights reserved.", back: "Back to Portfolio" }
+        },
+        he: {
+            title: "פלטפורמת סנכרון נתונים בין חנויות",
+            lead: "פלטפורמה מתקדמת ליבוא/יצוא נתונים חלק בין מספר חנויות שופיפיי",
+            meta: { year: "2023-2024", company: "Leibish Online", tech: "Node.js, Shopify API, REST API, GraphQL" },
+            breadcrumb: { home: "בית", projects: "פרויקטים", current: "פלטפורמת סנכרון נתונים" },
+            sections: {
+                overview: {
+                    title: "סקירת הפרויקט",
+                    content: "בניתי פלטפורמת סנכרון נתונים מקיפה המאפשרת יבוא ויצוא חלק של קטלוגי מוצרים, נתוני מלאי ומידע לקוחות בין מספר חנויות שופיפיי. המערכת מאפשרת לעסקים עם מספר מיקומי חנויות לשמור על עקביות נתונים ברחבי הרשת שלהם תוך תמיכה בסנכרון סלקטיבי המבוסס על כללים עסקיים. פתרון זה מבטל הזנת נתונים ידנית, מפחית שגיאות ומבטיח עקביות בזמן אמת בכל החנויות המחוברות."
+                },
+                challenge: {
+                    title: "האתגר העסקי",
+                    content: "ניהול מספר חנויות שופיפיי עם קטלוגי מוצרים ומלאי עקביים היה אתגר תפעולי משמעותי. העסק היה צריך לסנכרן אלפי מוצרים על פני 5+ חנויות, לשמור על רמות מלאי מדויקות ולהבטיח עקביות תמחור. הזנת נתונים ידנית הייתה גוזלת זמן, נוטה לשגיאות ולא יכלה להתרחב עם רשת החנויות הגדלה. החברה הייתה זקוקה לפתרון אוטומטי שיכול להתמודד עם פעולות המוניות תוך שמירה על שלמות הנתונים ותמיכה בלוגיקה עסקית מותאמת אישית."
+                },
+                solution: {
+                    title: "הפתרון",
+                    intro: "פיתחתי פלטפורמת סנכרון נתונים חזקה עם היכולות המרכזיות הבאות:",
+                    points: [
+                        { title: "סנכרון דו-כיווני", text: "זרימת נתונים דו-כיוונית בין חנויות עם פתרון קונפליקטים חכם לטיפול בעדכונים בו-זמניים" },
+                        { title: "סנכרון קטלוג מוצרים", text: "סנכרון מלא של מוצרים כולל גרסאות, תמונות, metafields וכל תכונות המוצר" },
+                        { title: "ניהול מלאי", text: "סנכרון מלאי בזמן אמת ברחבי רשת החנויות עם התראות מבוססות סף" },
+                        { title: "כללי סנכרון סלקטיביים", text: "סינון גמיש מבוסס כללים המאפשר לעסקים לשלוט אילו מוצרים מסתנכרנים לאילו חנויות" },
+                        { title: "פעולות המוניות", text: "עיבוד אצווה יעיל ליבוא ויצוא נתונים בקנה מידה גדול עם מעקב התקדמות" },
+                        { title: "אימות נתונים", text: "בדיקות אימות אוטומטיות להבטחת שלמות נתונים ומניעת שגיאות סנכרון" }
+                    ]
+                },
+                implementation: { title: "יישום טכני" },
+                features: {
+                    title: "תכונות עיקריות",
+                    list: [
+                        { icon: "fas fa-exchange-alt", title: "סנכרון דו-כיווני", text: "זרימת נתונים דו-כיוונית עם פתרון קונפליקטים" },
+                        { icon: "fas fa-boxes", title: "קטלוג מוצרים", text: "נתוני מוצר מלאים כולל גרסאות ותמונות" },
+                        { icon: "fas fa-warehouse", title: "סנכרון מלאי", text: "עדכוני מלאי בזמן אמת על פני חנויות" },
+                        { icon: "fas fa-filter", title: "סינון חכם", text: "סנכרון סלקטיבי מבוסס כללים" },
+                        { icon: "fas fa-file-export", title: "עיבוד המוני", text: "פעולות יבוא/יצוא אצווה יעילות" },
+                        { icon: "fas fa-shield-alt", title: "אימות נתונים", text: "בדיקות איכות אוטומטיות ומניעת שגיאות" }
+                    ]
+                },
+                results: {
+                    title: "תוצאות והשפעה",
+                    items: [
+                        { number: "90%", label: "הפחתת זמן", text: "ביטול עבודת הזנת נתונים ידנית" },
+                        { number: "5+", label: "חנויות מחוברות", text: "מסונכרנות ברחבי הרשת" },
+                        { number: "99.9%", label: "דיוק נתונים", text: "עקביות בכל החנויות" }
+                    ]
+                },
+                architecture: {
+                    title: "ארכיטקטורת המערכת",
+                    intro: "הפלטפורמה משתמשת בארכיטקטורה מדרגית מונעת אירועים:",
+                    points: [
+                        { title: "שכבת אינטגרציית API", text: "מטפלת בתקשורת עם מספר חנויות שופיפיי באמצעות REST ו-GraphQL APIs" },
+                        { title: "מנוע סנכרון", text: "לוגיקת סנכרון ליבה עם מיפוי שדות, טרנספורמציית נתונים ופתרון קונפליקטים" },
+                        { title: "מערכת תורים", text: "תורי הודעות לעיבוד אצווה אמין ופעולות אסינכרוניות" },
+                        { title: "שירות אימות", text: "מבטיח שלמות נתונים לפני ואחרי סנכרון" }
+                    ]
+                },
+                lessons: {
+                    title: "למידה טכנית",
+                    content: "פרויקט זה העמיק את המומחיות שלי בבניית מערכות סנכרון נתונים מדרגיות, ניהול מגבלות קצב API על פני חנויות מרובות ועיצוב צינורות עיבוד אצווה יעילים. רכשתי ניסיון רב ערך בטיפול בפעולות נתונים בקנה מידה גדול, יישום טיפול חזק בשגיאות ובניית מערכות השומרות על עקביות נתונים בסביבות מבוזרות."
+                }
+            },
+            sidebar: {
+                details: {
+                    title: "פרטי הפרויקט",
+                    items: {
+                        client: { label: "לקוח", value: "Leibish Online" },
+                        industry: { label: "תעשייה", value: "מסחר אלקטרוני רב-חנויות" },
+                        year: { label: "שנה", value: "2023-2024" },
+                        duration: { label: "משך זמן", value: "3 חודשים" },
+                        role: { label: "תפקיד", value: "מפתחת Full-Stack" }
+                    }
+                },
+                technologies: {
+                    title: "טכנולוגיות בשימוש",
+                    tags: ["Node.js", "Express", "Shopify REST API", "Shopify GraphQL", "Redis", "Message Queue", "Batch Processing", "Webhooks"]
+                },
+                achievements: {
+                    title: "הישגים מרכזיים",
+                    list: ["חיסכון של 90% בזמן", "5+ חנויות מחוברות", "דיוק נתונים של 99.9%", "אפס אובדן נתונים", "כללי סנכרון אוטומטיים"]
+                },
+                cta: {
+                    title: "צריך סנכרון רב-חנויות?",
+                    text: "בואו נחבר ונסנכרן את רשת חנויות השופיפיי שלך.",
+                    button: "צור קשר"
+                }
+            },
+            related: {
+                title: "פרויקטים קשורים",
+                projects: [
+                    { id: "erp-integration", title: "אינטגרציה ERP-Shopify", desc: "סנכרון נתונים דו-כיווני מקיף" },
+                    { id: "hubspot-sync", title: "סנכרון HubSpot", desc: "מערכת סנכרון CRM" },
+                    { id: "b2b-platform", title: "פלטפורמת B2B", desc: "פלטפורמה לשיתוף מוצרים משותף" }
+                ]
+            },
+            nav: { back: "חזרה לתיק העבודות" },
+            footer: { copyright: "© 2026 הדס שוויצר. כל הזכויות שמורות.", back: "חזרה לתיק העבודות" }
+        }
     }
 };
 
