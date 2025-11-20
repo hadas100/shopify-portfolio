@@ -165,3 +165,86 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// ========== Navbar Scroll Effect ==========
+let lastScroll = 0;
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll > 100) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+
+    lastScroll = currentScroll;
+});
+
+// ========== Lazy Load Images ==========
+document.addEventListener('DOMContentLoaded', () => {
+    const images = document.querySelectorAll('img[data-src]');
+
+    const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.removeAttribute('data-src');
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+
+    images.forEach(img => imageObserver.observe(img));
+});
+
+// ========== Stats Counter Animation ==========
+document.addEventListener('DOMContentLoaded', () => {
+    const stats = document.querySelectorAll('.stat-number');
+
+    const animateCounter = (element) => {
+        const target = element.textContent;
+        const hasPlus = target.includes('+');
+        const number = parseInt(target.replace(/\D/g, ''));
+
+        if (isNaN(number)) return;
+
+        const duration = 2000;
+        const increment = number / (duration / 16);
+        let current = 0;
+
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= number) {
+                element.textContent = hasPlus ? `${number}+` : number;
+                clearInterval(timer);
+            } else {
+                element.textContent = Math.floor(current);
+            }
+        }, 16);
+    };
+
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                statsObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    stats.forEach(stat => statsObserver.observe(stat));
+});
+
+// ========== Parallax Effect for Hero ==========
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const parallaxElements = document.querySelectorAll('.hero, .hero-title, .hero-description');
+
+    parallaxElements.forEach((element, index) => {
+        const speed = (index + 1) * 0.2;
+        element.style.transform = `translateY(${scrolled * speed}px)`;
+    });
+});
