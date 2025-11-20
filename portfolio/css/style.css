@@ -960,7 +960,7 @@ section {
         width: 100%;
         background: rgba(10, 14, 26, 0.98);
         backdrop-filter: blur(10px);
-        flex-direction: column;
+        flex-direction: column !important;
         padding: 2rem;
         gap: 1rem;
         transition: var(--transition);
@@ -969,6 +969,11 @@ section {
 
     .nav-menu.active {
         right: 0;
+    }
+
+    /* Override RTL row-reverse in mobile */
+    [dir="rtl"] .nav-menu {
+        flex-direction: column !important;
     }
 
     .hamburger {
