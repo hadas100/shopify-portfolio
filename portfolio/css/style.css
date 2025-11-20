@@ -956,7 +956,7 @@ section {
     .nav-menu {
         position: fixed;
         top: 70px;
-        left: -100%;
+        right: -100%;
         width: 100%;
         background: rgba(10, 14, 26, 0.98);
         backdrop-filter: blur(10px);
@@ -968,7 +968,7 @@ section {
     }
 
     .nav-menu.active {
-        left: 0;
+        right: 0;
     }
 
     .hamburger {
