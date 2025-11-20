@@ -1,40 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <title>Project - Hadas Schweitzer</title>
+    <title>מערכת אינטגרציה ERP-Shopify - הדס שוויצר</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/utilities.css">
     <link rel="stylesheet" href="../css/project-detail.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
                 <i class="fas fa-code"></i>
-                <span>Hadas Schweitzer</span>
+                <span>הדס שוויצר</span>
             </div>
             <ul class="nav-menu">
-                <li><a href="../index.html" class="nav-link">Back to Portfolio</a></li>
+                <li><a href="../index.html" class="nav-link">חזרה לתיק העבודות</a></li>
             </ul>
         </div>
     </nav>
 
+    <!-- Project Hero -->
     <section class="project-hero">
         <div class="container">
             <div class="breadcrumb">
-                <a href="../index.html">Home</a>
+                <a href="../index.html">בית</a>
                 <span>/</span>
-                <a href="../index.html#projects">Projects</a>
+                <a href="../index.html#projects">פרויקטים</a>
                 <span>/</span>
-                <span>ERP Integration</span>
+                <span>אינטגרציה ERP</span>
             </div>
-            <h1 class="project-title">ERP-Shopify Integration System</h1>
-            <p class="project-lead">Comprehensive bidirectional synchronization between Fantasy ERP and Shopify for seamless data flow</p>
+            <h1 class="project-title">מערכת אינטגרציה ERP-Shopify</h1>
+            <p class="project-lead">סנכרון דו-כיווני מקיף בין Fantasy ERP ו-Shopify</p>
             <div class="project-meta-header">
                 <span><i class="fas fa-calendar"></i> 2023-2024</span>
                 <span><i class="fas fa-building"></i> Leibish Online</span>
@@ -43,47 +45,40 @@
         </div>
     </section>
 
+    <!-- Project Details -->
     <section class="project-details">
         <div class="container">
             <div class="project-content-grid">
+                <!-- Main Content -->
                 <div class="project-main">
                     <div class="project-image-showcase">
-                        <img src="../images/project-erp.jpg" alt="ERP-Shopify Integration Dashboard">
+                        <img src="../images/project-erp.jpg" alt="ממשק מערכת אינטגרציה ERP">
                     </div>
 
-                    <h2>Project Overview</h2>
+                    <h2>סקירת הפרויקט</h2>
                     <p>
-                        Developed a comprehensive bidirectional synchronization system between Fantasy ERP and Shopify, handling
-                        real-time data exchange for products, inventory, orders, customer information, and custom business logic.
-                        This enterprise-level integration serves as the backbone of e-commerce operations, ensuring data consistency
-                        across all business systems.
+                        פיתחתי מערכת סנכרון דו-כיוונית מקיפה בין Fantasy ERP ו-Shopify, המטפלת בחילופי נתונים בזמן אמת עבור מוצרים, מלאי, הזמנות, מידע על לקוחות ולוגיקה עסקית מותאמת אישית.
                     </p>
 
-                    <h2>Business Challenge</h2>
+                    <h2>האתגר</h2>
                     <p>
-                        The jewelry e-commerce business was facing critical challenges with manual data entry and synchronization
-                        between their ERP system and Shopify store. This led to inventory discrepancies, delayed order processing,
-                        and customer satisfaction issues. The complexity was amplified by the need to handle multiple product types
-                        (diamonds, gemstones, jewelry) each with unique attributes and business rules.
+                        עסק המסחר האלקטרוני בתכשיטים התמודד עם אתגרים קריטיים עם הזנת נתונים ידנית וסנכרון בין מערכת ה-ERP שלהם לחנות Shopify, מה שהוביל לפערי מלאי ועיכובים בעיבוד הזמנות.
                     </p>
 
-                    <h2>Technical Solution</h2>
+                    <h2>הפתרון</h2>
                     <p>
-                        I designed and implemented a robust, scalable integration system with the following capabilities:
+                        עיצבתי ויישמתי מערכת אינטגרציה חזקה וניתנת להרחבה:
                     </p>
                     <ul>
-                        <li><strong>Bidirectional Product Sync:</strong> Real-time synchronization of product data including titles, descriptions, pricing, and images between ERP and Shopify</li>
-                        <li><strong>Inventory Management:</strong> Live inventory updates ensuring accurate stock levels across all sales channels</li>
-                        <li><strong>Order Processing:</strong> Automatic order creation in ERP when orders are placed on Shopify, with status updates flowing back</li>
-                        <li><strong>Customer Data Sync:</strong> Seamless customer profile synchronization including contact information and order history</li>
-                        <li><strong>Metafield Management:</strong> Custom metafield mapping for product-specific data like certificates, dimensions, and quality grades</li>
-                        <li><strong>Error Handling & Logging:</strong> Comprehensive error tracking and automated retry mechanisms</li>
+                        <li><strong>סנכרון מוצרים דו-כיווני:</strong> סנכרון בזמן אמת של נתוני מוצר כולל כותרות, תיאורים, תמחור ותמונות</li>
+                        <li><strong>ניהול מלאי:</strong> עדכוני מלאי חיים המבטיחים רמות מלאי מדויקות</li>
+                        <li><strong>עיבוד הזמנות:</strong> יצירת הזמנות אוטומטית ב-ERP עם עדכוני סטטוס</li>
+                        <li><strong>סנכרון נתוני לקוחות:</strong> סנכרון חלק של פרופילי לקוחות</li>
+                        <li><strong>ניהול Metafields:</strong> מיפוי metafield מותאם אישית לנתונים ספציפיים למוצר</li>
+                        <li><strong>טיפול בשגיאות ורישום:</strong> מעקב שגיאות ומנגנוני ניסיון חוזר מקיפים</li>
                     </ul>
 
-                    <h2>Architecture & Implementation</h2>
-                    <p>
-                        The system utilizes a microservices architecture with the following components:
-                    </p>
+                    <h2>יישום טכני</h2>
                     <div class="tech-stack">
                         <div class="tech-item">
                             <i class="fab fa-node"></i>
@@ -105,136 +100,118 @@
                             <i class="fas fa-server"></i>
                             <span>REST API</span>
                         </div>
-                        <div class="tech-item">
-                            <i class="fas fa-cloud"></i>
-                            <span>Cloud Deploy</span>
-                        </div>
                     </div>
 
-                    <h2>Key Features</h2>
+                    <h2>תכונות עיקריות</h2>
                     <div class="features-grid">
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-sync-alt"></i>
                             </div>
-                            <h4>Real-Time Synchronization</h4>
-                            <p>Instant data updates between ERP and Shopify ensuring consistency</p>
+                            <h4>סנכרון בזמן אמת</h4>
+                            <p>עדכוני נתונים מיידיים בין ERP ו-Shopify</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-boxes"></i>
                             </div>
-                            <h4>Multi-Product Support</h4>
-                            <p>Handles diamonds, gemstones, and jewelry with unique attributes</p>
+                            <h4>תמיכה במספר מוצרים</h4>
+                            <p>מטפל ביהלומים, אבני חן ותכשיטים</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-warehouse"></i>
                             </div>
-                            <h4>Inventory Tracking</h4>
-                            <p>Live stock level updates across all sales channels</p>
+                            <h4>מעקב מלאי</h4>
+                            <p>עדכוני רמות מלאי חיים</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-shopping-cart"></i>
                             </div>
-                            <h4>Order Automation</h4>
-                            <p>Automated order creation and status updates</p>
+                            <h4>אוטומציה של הזמנות</h4>
+                            <p>יצירת הזמנות ועדכוני סטטוס אוטומטיים</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-shield-alt"></i>
                             </div>
-                            <h4>Error Recovery</h4>
-                            <p>Automatic retry mechanisms and comprehensive logging</p>
+                            <h4>התאוששות משגיאות</h4>
+                            <p>מנגנוני ניסיון חוזר אוטומטיים</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-tags"></i>
                             </div>
-                            <h4>Custom Metafields</h4>
-                            <p>Advanced data mapping for product-specific attributes</p>
+                            <h4>Metafields מותאמים אישית</h4>
+                            <p>מיפוי נתונים מתקדם</p>
                         </div>
                     </div>
 
-                    <h2>Data Flow Architecture</h2>
-                    <p>
-                        The integration implements a sophisticated event-driven architecture:
-                    </p>
-                    <ul>
-                        <li><strong>ERP to Shopify:</strong> Product updates, new inventory, price changes trigger Shopify updates via GraphQL mutations</li>
-                        <li><strong>Shopify to ERP:</strong> Orders, customer data, inventory changes trigger ERP API calls</li>
-                        <li><strong>Conflict Resolution:</strong> Timestamp-based conflict resolution ensures data integrity</li>
-                        <li><strong>Queue Management:</strong> Message queuing for handling high-volume data synchronization</li>
-                    </ul>
-
-                    <h2>Results & Business Impact</h2>
+                    <h2>תוצאות והשפעה</h2>
                     <div class="results-grid">
                         <div class="result-item">
                             <div class="result-number">95%</div>
-                            <div class="result-label">Automation</div>
-                            <p>Eliminated 95% of manual data entry</p>
+                            <div class="result-label">אוטומציה</div>
+                            <p>ביטול 95% מהזנת נתונים ידנית</p>
                         </div>
                         <div class="result-item">
                             <div class="result-number">30%</div>
-                            <div class="result-label">Faster Processing</div>
-                            <p>Reduced order processing time by 30%</p>
+                            <div class="result-label">עיבוד מהיר יותר</div>
+                            <p>הפחתת זמן עיבוד הזמנות</p>
                         </div>
                         <div class="result-item">
                             <div class="result-number">99.9%</div>
-                            <div class="result-label">Accuracy</div>
-                            <p>Achieved 99.9% data accuracy rate</p>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-number">10k+</div>
-                            <div class="result-label">Products</div>
-                            <p>Managing 10,000+ product SKUs</p>
+                            <div class="result-label">דיוק</div>
+                            <p>השגת שיעור דיוק נתונים של 99.9%</p>
                         </div>
                     </div>
 
-                    <h2>Technical Challenges & Solutions</h2>
+                    <h2>ארכיטקטורה טכנית</h2>
+                    <p>
+                        המערכת משתמשת בארכיטקטורת microservices:
+                    </p>
                     <ul>
-                        <li><strong>API Rate Limits:</strong> Implemented intelligent request batching and caching to stay within Shopify API limits</li>
-                        <li><strong>Data Transformation:</strong> Created flexible mapping system to handle different data structures between systems</li>
-                        <li><strong>Performance Optimization:</strong> Utilized concurrent processing to reduce sync time by 40%</li>
-                        <li><strong>Error Handling:</strong> Built comprehensive error tracking and automatic retry mechanisms</li>
+                        <li><strong>API Gateway:</strong> ניתוב ואימות מרכזיים</li>
+                        <li><strong>מנוע סנכרון:</strong> לוגיקת סנכרון ליבה עם עיבוד מונע אירועים</li>
+                        <li><strong>ניהול תורים:</strong> תורי הודעות לעיבוד אסינכרוני אמין</li>
+                        <li><strong>מיפוי נתונים:</strong> שכבת טרנספורמציה גמישה</li>
                     </ul>
 
-                    <h2>Lessons Learned</h2>
+                    <h2>למידה מרכזית</h2>
                     <p>
-                        This project deepened my expertise in enterprise integration patterns, API optimization, and handling
-                        complex business logic. I learned the importance of robust error handling, comprehensive logging, and
-                        building systems that can gracefully handle failures and recover automatically.
+                        הפרויקט הזה העמיק את ההבנה שלי בדפוסי אינטגרציה ארגוניים, אופטימיזציה של GraphQL וטיפול בלוגיקה עסקית מורכבת במערכות מבוזרות.
                     </p>
                 </div>
 
+                <!-- Sidebar -->
                 <div class="project-sidebar">
                     <div class="sidebar-card">
-                        <h3>Project Details</h3>
+                        <h3>פרטי הפרויקט</h3>
                         <div class="detail-item">
-                            <strong>Client</strong>
+                            <strong>לקוח</strong>
                             <span>Leibish Online</span>
                         </div>
                         <div class="detail-item">
-                            <strong>Industry</strong>
-                            <span>Jewelry E-commerce</span>
+                            <strong>תעשייה</strong>
+                            <span>מסחר אלקטרוני בתכשיטים</span>
                         </div>
                         <div class="detail-item">
-                            <strong>Year</strong>
+                            <strong>שנה</strong>
                             <span>2023-2024</span>
                         </div>
                         <div class="detail-item">
-                            <strong>Duration</strong>
-                            <span>6 months</span>
+                            <strong>משך זמן</strong>
+                            <span>6 חודשים</span>
                         </div>
                         <div class="detail-item">
-                            <strong>Role</strong>
-                            <span>Lead Developer</span>
+                            <strong>תפקיד</strong>
+                            <span>מפתחת ראשית</span>
                         </div>
                     </div>
 
                     <div class="sidebar-card">
-                        <h3>Technologies Used</h3>
+                        <h3>טכנולוגיות בשימוש</h3>
                         <div class="tech-tags">
                             <span class="tech-tag">Node.js</span>
                             <span class="tech-tag">Express</span>
@@ -248,66 +225,62 @@
                     </div>
 
                     <div class="sidebar-card">
-                        <h3>Key Achievements</h3>
+                        <h3>הישגים מרכזיים</h3>
                         <ul class="achievements-list">
-                            <li><i class="fas fa-check"></i> Eliminated 95% manual data entry</li>
-                            <li><i class="fas fa-check"></i> 99.9% data accuracy achieved</li>
-                            <li><i class="fas fa-check"></i> 30% faster order processing</li>
-                            <li><i class="fas fa-check"></i> Managing 10,000+ products</li>
-                            <li><i class="fas fa-check"></i> Zero downtime deployment</li>
+                            <li><i class="fas fa-check"></i> ביטול 95% מהזנת נתונים ידנית</li>
+                            <li><i class="fas fa-check"></i> דיוק נתונים של 99.9%</li>
+                            <li><i class="fas fa-check"></i> עיבוד הזמנות מהיר יותר ב-30%</li>
+                            <li><i class="fas fa-check"></i> ניהול למעלה מ-10,000 מוצרים</li>
+                            <li><i class="fas fa-check"></i> פריסה ללא זמן השבתה</li>
                         </ul>
                     </div>
 
                     <div class="sidebar-card cta-card">
-                        <h3>Need ERP Integration?</h3>
-                        <p>Let's discuss how I can integrate your systems for seamless operations.</p>
-                        <a href="../index.html#contact" class="btn btn-primary btn-block">Get in Touch</a>
+                        <h3>צריך אינטגרציה ERP?</h3>
+                        <p>בוא נבנה פתרון אינטגרציה חזק לעסק שלך.</p>
+                        <a href="../index.html#contact" class="btn btn-primary btn-block">צור קשר</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Related Projects -->
     <section class="related-projects">
         <div class="container">
-            <h2>Related Projects</h2>
+            <h2>פרויקטים קשורים</h2>
             <div class="related-grid">
                 <a href="automation-workflows.html" class="related-card">
-                    <img src="../images/project-automation.jpg" alt="Automation Workflows">
-                    <h4>Shopify Automation Workflows</h4>
-                    <p>Event-driven automation with webhooks</p>
+                    <img src="../images/project-automation.jpg" alt="תהליכי אוטומציה">
+                    <h4>תהליכי אוטומציה</h4>
+                    <p>אוטומציה מונעת אירועים</p>
                 </a>
                 <a href="hubspot-sync.html" class="related-card">
-                    <img src="../images/project-hubspot.jpg" alt="HubSpot Sync">
-                    <h4>Shopify-HubSpot Sync</h4>
-                    <p>Real-time CRM data synchronization</p>
+                    <img src="../images/project-hubspot.jpg" alt="סנכרון HubSpot">
+                    <h4>סנכרון HubSpot</h4>
+                    <p>סנכרון CRM בזמן אמת</p>
                 </a>
                 <a href="b2b-platform.html" class="related-card">
-                    <img src="../images/project-b2b.jpg" alt="B2B Platform">
-                    <h4>B2B Product Sharing Platform</h4>
-                    <p>Collaborative product catalog management</p>
+                    <img src="../images/project-b2b.jpg" alt="פלטפורמת B2B">
+                    <h4>פלטפורמת B2B</h4>
+                    <p>שיתוף מוצרים שיתופי</p>
                 </a>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-left">
-                    <p>&copy; 2026 Hadas Schweitzer. All rights reserved.</p>
+                    <p><i class="far fa-copyright"></i> 2026 הדס שוויצר. כל הזכויות שמורות.</p>
                 </div>
                 <div class="footer-right">
-                    <a href="../index.html"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+                    <a href="../index.html"><i class="fas fa-arrow-left"></i> חזרה לתיק העבודות</a>
                 </div>
             </div>
         </div>
     </footer>
-
-    <script src="../js/data.js"></script>
-    <script src="../js/components.js"></script>
-    <script src="../js/language-manager.js"></script>
-    <script src="../js/projects-data.js"></script>
-    <script src="../js/project-detail.js"></script>
 </body>
 </html>

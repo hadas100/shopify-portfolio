@@ -1,179 +1,287 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <title>Project - Hadas Schweitzer</title>
+    <title>תהליכי אוטומציה מונעי אירועים - הדס שוויצר</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/utilities.css">
     <link rel="stylesheet" href="../css/project-detail.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
                 <i class="fas fa-code"></i>
-                <span>Hadas Schweitzer</span>
+                <span>הדס שוויצר</span>
             </div>
             <ul class="nav-menu">
-                <li><a href="../index.html" class="nav-link">Back to Portfolio</a></li>
+                <li><a href="../index.html" class="nav-link">חזרה לתיק העבודות</a></li>
             </ul>
         </div>
     </nav>
 
+    <!-- Project Hero -->
     <section class="project-hero">
         <div class="container">
             <div class="breadcrumb">
-                <a href="../index.html">Home</a>
+                <a href="../index.html">בית</a>
                 <span>/</span>
-                <a href="../index.html#projects">Projects</a>
+                <a href="../index.html#projects">פרויקטים</a>
                 <span>/</span>
-                <span>Automation Workflows</span>
+                <span>תהליכי אוטומציה</span>
             </div>
-            <h1 class="project-title">Shopify Automation Workflows</h1>
-            <p class="project-lead">Event-driven automation system using Shopify webhooks for real-time business process automation</p>
+            <h1 class="project-title">תהליכי אוטומציה מונעי אירועים</h1>
+            <p class="project-lead">תהליכים עסקיים אוטומטיים באמצעות webhooks של Shopify וארכיטקטורה מונעת אירועים</p>
             <div class="project-meta-header">
-                <span><i class="fas fa-calendar"></i> 2022-2024</span>
+                <span><i class="fas fa-calendar"></i> 2024</span>
                 <span><i class="fas fa-building"></i> Leibish Online</span>
                 <span><i class="fas fa-code"></i> Node.js, Webhooks, Event-Driven</span>
             </div>
         </div>
     </section>
 
+    <!-- Project Details -->
     <section class="project-details">
         <div class="container">
             <div class="project-content-grid">
+                <!-- Main Content -->
                 <div class="project-main">
                     <div class="project-image-showcase">
-                        <img src="../images/project-automation.jpg" alt="Automation Workflows Dashboard">
+                        <img src="../images/project-automation.jpg" alt="ממשק תהליכי אוטומציה">
                     </div>
 
-                    <h2>Project Overview</h2>
+                    <h2>סקירת הפרויקט</h2>
                     <p>
-                        Developed a comprehensive automation system leveraging Shopify webhooks to create event-driven workflows
-                        that automatically handle product updates, order processing, inventory management, and custom business logic.
-                        This system processes thousands of events daily, ensuring real-time responsiveness to business operations.
+                        פיתחתי מערכת אוטומציה מקיפה מונעת אירועים שמנצלת webhooks של Shopify להפעלה ויישום אוטומטי של תהליכי עבודה עסקיים, מעבדת למעלה מ-5,000 אירועים יומיים.
                     </p>
 
-                    <h2>Key Automations Implemented</h2>
+                    <h2>האתגר</h2>
+                    <p>
+                        העסק השקיע שעות רבות במשימות ידניות חוזרות המופעלות על ידי אירועים שונים בחנות Shopify - הזמנות חדשות, שינויי מלאי, עדכוני לקוחות ועוד.
+                    </p>
+
+                    <h2>הפתרון</h2>
+                    <p>
+                        עיצבתי ובניתי פלטפורמת אוטומציה חזקה מונעת אירועים:
+                    </p>
                     <ul>
-                        <li><strong>Product Update Workflows:</strong> Automatic processing when products are created, updated, or deleted</li>
-                        <li><strong>Order Processing:</strong> Real-time order notification, fulfillment automation, and status tracking</li>
-                        <li><strong>Inventory Management:</strong> Automatic inventory adjustments and low-stock notifications</li>
-                        <li><strong>Customer Engagement:</strong> Triggered emails and notifications based on customer actions</li>
-                        <li><strong>Data Synchronization:</strong> Automatic sync with external systems when Shopify data changes</li>
+                        <li><strong>ניהול Webhooks:</strong> יישום נקודות קצה מאובטחות לקבלת אירועים בזמן אמת מ-Shopify</li>
+                        <li><strong>מנוע עיבוד אירועים:</strong> בניית מערכת עיבוד אירועים ניתנת להרחבה</li>
+                        <li><strong>תזמור תהליכי עבודה:</strong> יצירת שרשראות תהליכי עבודה להרצה ברצף או במקביל</li>
+                        <li><strong>טיפול בשגיאות וניסיון חוזר:</strong> מנגנוני ניסיון חוזר מתוחכמים עם backoff אקספוננציאלי</li>
+                        <li><strong>ניטור בזמן אמת:</strong> לוחות מחוונים מקיפים לרישום וניטור</li>
+                        <li><strong>שכבת אינטגרציה:</strong> חיבור תהליכי עבודה למערכות חיצוניות כולל ERP</li>
                     </ul>
 
-                    <h2>Technical Implementation</h2>
+                    <h2>יישום טכני</h2>
+                    <div class="tech-stack">
+                        <div class="tech-item">
+                            <i class="fab fa-node"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-bolt"></i>
+                            <span>Webhooks</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-shopify"></i>
+                            <span>Shopify API</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Event-Driven</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-database"></i>
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
+
+                    <h2>תכונות עיקריות</h2>
                     <div class="features-grid">
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-bolt"></i>
                             </div>
-                            <h4>Webhook Management</h4>
-                            <p>Robust webhook handling with validation and retry logic</p>
+                            <h4>עיבוד בזמן אמת</h4>
+                            <p>תגובה מיידית לאירועי Shopify</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
-                                <i class="fas fa-layer-group"></i>
+                                <i class="fas fa-project-diagram"></i>
                             </div>
-                            <h4>Event Processing</h4>
-                            <p>Asynchronous event processing with queue management</p>
+                            <h4>שרשראות תהליכי עבודה</h4>
+                            <p>בניית תהליכי אוטומציה מורכבים</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
-                                <i class="fas fa-code-branch"></i>
+                                <i class="fas fa-shield-alt"></i>
                             </div>
-                            <h4>Business Logic</h4>
-                            <p>Custom business rules and conditional workflows</p>
+                            <h4>Webhooks מאובטחים</h4>
+                            <p>אימות חתימת HMAC</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-redo"></i>
+                            </div>
+                            <h4>לוגיקת ניסיון חוזר אוטומטי</h4>
+                            <p>מנגנוני ניסיון חוזר חכמים</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-chart-line"></i>
                             </div>
-                            <h4>Monitoring</h4>
-                            <p>Real-time monitoring and performance analytics</p>
+                            <h4>לוח מחוונים אנליטי</h4>
+                            <p>ניטור בזמן אמת</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-plug"></i>
+                            </div>
+                            <h4>אינטגרציה מרובה</h4>
+                            <p>התחברות למספר מערכות</p>
                         </div>
                     </div>
 
-                    <h2>Results & Impact</h2>
+                    <h2>תוצאות והשפעה</h2>
                     <div class="results-grid">
                         <div class="result-item">
-                            <div class="result-number">5000+</div>
-                            <div class="result-label">Daily Events</div>
-                            <p>Processing 5000+ webhook events daily</p>
+                            <div class="result-number">80%</div>
+                            <div class="result-label">חיסכון בזמן</div>
+                            <p>הפחתת זמן משימות ידניות ב-80%</p>
                         </div>
                         <div class="result-item">
-                            <div class="result-number">80%</div>
-                            <div class="result-label">Time Saved</div>
-                            <p>Reduced manual processing by 80%</p>
+                            <div class="result-number">5000+</div>
+                            <div class="result-label">אירועים יומיים</div>
+                            <p>עיבוד למעלה מ-5000 אירועים ביום</p>
                         </div>
                         <div class="result-item">
                             <div class="result-number">99.9%</div>
-                            <div class="result-label">Uptime</div>
-                            <p>System reliability of 99.9%</p>
+                            <div class="result-label">זמן פעילות</div>
+                            <p>השגת אמינות מערכת של 99.9%</p>
                         </div>
                     </div>
+
+                    <h2>ארכיטקטורה טכנית</h2>
+                    <p>
+                        המערכת בנויה על ארכיטקטורת microservices מונעת אירועים:
+                    </p>
+                    <ul>
+                        <li><strong>מקלט Webhook:</strong> נקודות קצה מאובטחות לקבלת webhooks</li>
+                        <li><strong>תור אירועים:</strong> מערכת תור הודעות לעיבוד אמין</li>
+                        <li><strong>מנוע תהליכי עבודה:</strong> מתזמר תהליכי עבודה עסקיים מורכבים</li>
+                        <li><strong>שירותי אינטגרציה:</strong> Microservices למערכות חיצוניות</li>
+                    </ul>
+
+                    <h2>למידה מרכזית</h2>
+                    <p>
+                        הפרויקט הזה העמיק את המומחיות שלי בארכיטקטורות מונעות אירועים, דפוסי עיבוד אסינכרוני ובניית מערכות מבוזרות עמידות.
+                    </p>
                 </div>
 
+                <!-- Sidebar -->
                 <div class="project-sidebar">
                     <div class="sidebar-card">
-                        <h3>Project Details</h3>
+                        <h3>פרטי הפרויקט</h3>
                         <div class="detail-item">
-                            <strong>Client</strong>
+                            <strong>לקוח</strong>
                             <span>Leibish Online</span>
                         </div>
                         <div class="detail-item">
-                            <strong>Year</strong>
-                            <span>2022-2024</span>
+                            <strong>תעשייה</strong>
+                            <span>מסחר אלקטרוני בתכשיטים</span>
                         </div>
                         <div class="detail-item">
-                            <strong>Role</strong>
-                            <span>Full-Stack Developer</span>
+                            <strong>שנה</strong>
+                            <span>2024</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>משך זמן</strong>
+                            <span>4 חודשים</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>תפקיד</strong>
+                            <span>מפתחת ראשית</span>
                         </div>
                     </div>
 
                     <div class="sidebar-card">
-                        <h3>Technologies</h3>
+                        <h3>טכנולוגיות בשימוש</h3>
                         <div class="tech-tags">
                             <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express</span>
                             <span class="tech-tag">Webhooks</span>
-                            <span class="tech-tag">Shopify API</span>
                             <span class="tech-tag">Message Queue</span>
-                            <span class="tech-tag">Event-Driven</span>
+                            <span class="tech-tag">Event-Driven Architecture</span>
+                            <span class="tech-tag">Shopify API</span>
+                            <span class="tech-tag">Redis</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Docker</span>
                         </div>
                     </div>
 
+                    <div class="sidebar-card">
+                        <h3>הישגים מרכזיים</h3>
+                        <ul class="achievements-list">
+                            <li><i class="fas fa-check"></i> הפחתה של 80% במשימות ידניות</li>
+                            <li><i class="fas fa-check"></i> למעלה מ-5000 אירועים יומיים</li>
+                            <li><i class="fas fa-check"></i> זמן פעילות של 99.9%</li>
+                            <li><i class="fas fa-check"></i> עיבוד אירועים בזמן אמת</li>
+                            <li><i class="fas fa-check"></i> אפס אובדן נתונים</li>
+                        </ul>
+                    </div>
+
                     <div class="sidebar-card cta-card">
-                        <h3>Automate Your Workflows?</h3>
-                        <p>Let's discuss automation solutions for your business.</p>
-                        <a href="../index.html#contact" class="btn btn-primary btn-block">Contact Me</a>
+                        <h3>צריך אוטומציה של תהליכי עבודה?</h3>
+                        <p>בוא נאוטמט את התהליכים העסקיים שלך עם תהליכי עבודה מונעי אירועים.</p>
+                        <a href="../index.html#contact" class="btn btn-primary btn-block">צור קשר</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Related Projects -->
+    <section class="related-projects">
+        <div class="container">
+            <h2>פרויקטים קשורים</h2>
+            <div class="related-grid">
+                <a href="erp-integration.html" class="related-card">
+                    <img src="../images/project-erp.jpg" alt="אינטגרציה ERP">
+                    <h4>אינטגרציה ERP-Shopify</h4>
+                    <p>סנכרון נתונים מקיף</p>
+                </a>
+                <a href="hubspot-sync.html" class="related-card">
+                    <img src="../images/project-hubspot.jpg" alt="סנכרון HubSpot">
+                    <h4>סנכרון HubSpot</h4>
+                    <p>סנכרון CRM בזמן אמת</p>
+                </a>
+                <a href="b2b-platform.html" class="related-card">
+                    <img src="../images/project-b2b.jpg" alt="פלטפורמת B2B">
+                    <h4>פלטפורמת B2B</h4>
+                    <p>שיתוף מוצרים שיתופי</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-left">
-                    <p>&copy; 2026 Hadas Schweitzer. All rights reserved.</p>
+                    <p><i class="far fa-copyright"></i> 2026 הדס שוויצר. כל הזכויות שמורות.</p>
                 </div>
                 <div class="footer-right">
-                    <a href="../index.html"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+                    <a href="../index.html"><i class="fas fa-arrow-left"></i> חזרה לתיק העבודות</a>
                 </div>
             </div>
         </div>
     </footer>
-
-    <script src="../js/data.js"></script>
-    <script src="../js/components.js"></script>
-    <script src="../js/language-manager.js"></script>
-    <script src="../js/projects-data.js"></script>
-    <script src="../js/project-detail.js"></script>
 </body>
 </html>

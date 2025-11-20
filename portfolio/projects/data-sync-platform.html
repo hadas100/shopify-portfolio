@@ -1,193 +1,285 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <title>Project - Hadas Schweitzer</title>
+    <title>פלטפורמת סנכרון נתונים בין חנויות - הדס שוויצר</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/utilities.css">
     <link rel="stylesheet" href="../css/project-detail.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
                 <i class="fas fa-code"></i>
-                <span>Hadas Schweitzer</span>
+                <span>הדס שוויצר</span>
             </div>
             <ul class="nav-menu">
-                <li><a href="../index.html" class="nav-link">Back to Portfolio</a></li>
+                <li><a href="../index.html" class="nav-link">חזרה לתיק העבודות</a></li>
             </ul>
         </div>
     </nav>
 
+    <!-- Project Hero -->
     <section class="project-hero">
         <div class="container">
             <div class="breadcrumb">
-                <a href="../index.html">Home</a>
+                <a href="../index.html">בית</a>
                 <span>/</span>
-                <a href="../index.html#projects">Projects</a>
+                <a href="../index.html#projects">פרויקטים</a>
                 <span>/</span>
-                <span>Multi-Store Data Sync</span>
+                <span>פלטפורמת סנכרון נתונים</span>
             </div>
-            <h1 class="project-title">Multi-Store Data Sync Platform</h1>
-            <p class="project-lead">Advanced platform for seamless data import/export between multiple Shopify stores</p>
+            <h1 class="project-title">פלטפורמת סנכרון נתונים בין חנויות</h1>
+            <p class="project-lead">פלטפורמה מתקדמת ליבוא/יצוא נתונים חלק בין מספר חנויות שופיפיי</p>
             <div class="project-meta-header">
                 <span><i class="fas fa-calendar"></i> 2023-2024</span>
                 <span><i class="fas fa-building"></i> Leibish Online</span>
-                <span><i class="fas fa-code"></i> Node.js, Shopify API, REST API</span>
+                <span><i class="fas fa-code"></i> Node.js, Shopify API, REST API, GraphQL</span>
             </div>
         </div>
     </section>
 
+    <!-- Project Details -->
     <section class="project-details">
         <div class="container">
             <div class="project-content-grid">
+                <!-- Main Content -->
                 <div class="project-main">
                     <div class="project-image-showcase">
-                        <img src="../images/project-data-sync.jpg" alt="Data Sync Platform">
+                        <img src="../images/project-data-sync.jpg" alt="ממשק פלטפורמת סנכרון נתונים">
                     </div>
 
-                    <h2>Project Overview</h2>
+                    <h2>סקירת הפרויקט</h2>
                     <p>
-                        Built a comprehensive data synchronization platform that enables seamless import and export of product catalogs,
-                        inventory data, and customer information between multiple Shopify stores. The system allows businesses with
-                        multiple store locations to maintain consistent data across their entire network while supporting selective
-                        synchronization based on business rules.
+                        בניתי פלטפורמת סנכרון נתונים מקיפה שמאפשרת חילופי קטלוג מוצרים, מלאי ונתוני לקוחות חלקים בין מספר חנויות שופיפיי.
                     </p>
 
-                    <h2>Key Features</h2>
+                    <h2>האתגר</h2>
+                    <p>
+                        ניהול מספר חנויות שופיפיי עם אלפי מוצרים דרש מאמץ ידני משמעותי כדי לשמור על קטלוגים מסונכרנים ורמות מלאי מדויקות בכל החנויות.
+                    </p>
+
+                    <h2>הפתרון</h2>
+                    <p>
+                        פיתחתי פלטפורמת סנכרון מתקדמת:
+                    </p>
+                    <ul>
+                        <li><strong>סנכרון דו-כיווני:</strong> זרימת נתונים דו-כיוונית בין מספר חנויות שופיפיי</li>
+                        <li><strong>סנכרון קטלוג מוצרים:</strong> סנכרון מלא של נתוני מוצר, תמונות וגרסאות</li>
+                        <li><strong>ניהול מלאי:</strong> מעקב מלאי בזמן אמת בכל החנויות</li>
+                        <li><strong>סנכרון בררני:</strong> כללים הניתנים להגדרה למה לסנכרן</li>
+                        <li><strong>פעולות בכמות גדולה:</strong> יבוא/יצוא אלפי מוצרים ביעילות</li>
+                        <li><strong>אימות נתונים:</strong> מבטיח שלמות נתונים במהלך הסנכרון</li>
+                    </ul>
+
+                    <h2>יישום טכני</h2>
+                    <div class="tech-stack">
+                        <div class="tech-item">
+                            <i class="fab fa-node"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-shopify"></i>
+                            <span>Shopify API</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>GraphQL</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-server"></i>
+                            <span>REST API</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-database"></i>
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
+
+                    <h2>תכונות עיקריות</h2>
                     <div class="features-grid">
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-exchange-alt"></i>
                             </div>
-                            <h4>Bidirectional Sync</h4>
-                            <p>Two-way data flow between stores with conflict resolution</p>
+                            <h4>סנכרון דו-כיווני</h4>
+                            <p>סנכרון נתונים דו-כיווני</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
-                                <i class="fas fa-boxes"></i>
+                                <i class="fas fa-cubes"></i>
                             </div>
-                            <h4>Product Catalog Sync</h4>
-                            <p>Complete product data including variants, images, and metafields</p>
+                            <h4>קטלוג מוצרים</h4>
+                            <p>סנכרון נתוני מוצר מלא</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-warehouse"></i>
                             </div>
-                            <h4>Inventory Management</h4>
-                            <p>Real-time inventory synchronization across store network</p>
+                            <h4>סנכרון מלאי</h4>
+                            <p>עדכוני רמות מלאי בזמן אמת</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-filter"></i>
                             </div>
-                            <h4>Selective Sync</h4>
-                            <p>Rule-based filtering for targeted data synchronization</p>
+                            <h4>סנכרון בררני</h4>
+                            <p>כללי סנכרון הניתנים להתאמה אישית</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-file-export"></i>
                             </div>
-                            <h4>Bulk Export/Import</h4>
-                            <p>Efficient batch processing for large datasets</p>
+                            <h4>יצוא/יבוא בכמות גדולה</h4>
+                            <p>טיפול במערכי נתונים גדולים</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
-                                <i class="fas fa-shield-alt"></i>
+                                <i class="fas fa-check-double"></i>
                             </div>
-                            <h4>Data Validation</h4>
-                            <p>Automated validation to ensure data integrity</p>
+                            <h4>אימות נתונים</h4>
+                            <p>מבטיח שלמות נתונים</p>
                         </div>
                     </div>
 
-                    <h2>Technical Implementation</h2>
-                    <p>
-                        The platform leverages Shopify's REST and GraphQL APIs to efficiently handle data transfer between stores.
-                        Built with Node.js for optimal performance, the system processes thousands of products and maintains
-                        real-time synchronization through webhooks and scheduled jobs. Custom mapping logic allows for flexible
-                        field transformations between different store configurations.
-                    </p>
-
-                    <h2>Business Impact</h2>
+                    <h2>תוצאות והשפעה</h2>
                     <div class="results-grid">
                         <div class="result-item">
                             <div class="result-number">90%</div>
-                            <div class="result-label">Time Reduction</div>
-                            <p>Eliminated manual data entry work</p>
+                            <div class="result-label">הפחתת זמן</div>
+                            <p>הפחתת זמן סנכרון ידני</p>
                         </div>
                         <div class="result-item">
                             <div class="result-number">5+</div>
-                            <div class="result-label">Stores Connected</div>
-                            <p>Synchronized across network</p>
+                            <div class="result-label">חנויות מחוברות</div>
+                            <p>סנכרון מוצלח של 5+ חנויות</p>
                         </div>
                         <div class="result-item">
                             <div class="result-number">99.9%</div>
-                            <div class="result-label">Data Accuracy</div>
-                            <p>Consistent across all stores</p>
+                            <div class="result-label">דיוק נתונים</div>
+                            <p>שמירה על דיוק נתונים גבוה</p>
                         </div>
                     </div>
+
+                    <h2>ארכיטקטורה טכנית</h2>
+                    <p>
+                        ארכיטקטורת פלטפורמה ניתנת להרחבה:
+                    </p>
+                    <ul>
+                        <li><strong>רכז סנכרון:</strong> מתזמר סנכרון רב-חנויות</li>
+                        <li><strong>צינור נתונים:</strong> מטפל בטרנספורמציה ואימות נתונים</li>
+                        <li><strong>מערכת תורים:</strong> מנהלת פעולות נתונים בקנה מידה גדול</li>
+                        <li><strong>פתרון קונפליקטים:</strong> מטפל בקונפליקטי נתונים בצורה חכמה</li>
+                    </ul>
+
+                    <h2>למידה מרכזית</h2>
+                    <p>
+                        הפרויקט הזה לימד אותי על סנכרון נתונים מבוזר, אסטרטגיות פתרון קונפליקטים ובניית צינורות נתונים ניתנים להרחבה למערכות רב-דיירות.
+                    </p>
                 </div>
 
+                <!-- Sidebar -->
                 <div class="project-sidebar">
                     <div class="sidebar-card">
-                        <h3>Project Details</h3>
+                        <h3>פרטי הפרויקט</h3>
                         <div class="detail-item">
-                            <strong>Client</strong>
+                            <strong>לקוח</strong>
                             <span>Leibish Online</span>
                         </div>
                         <div class="detail-item">
-                            <strong>Year</strong>
+                            <strong>תעשייה</strong>
+                            <span>מסחר אלקטרוני רב-חנויות</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>שנה</strong>
                             <span>2023-2024</span>
                         </div>
                         <div class="detail-item">
-                            <strong>Duration</strong>
-                            <span>3 months</span>
+                            <strong>משך זמן</strong>
+                            <span>5 חודשים</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>תפקיד</strong>
+                            <span>מפתחת ראשית</span>
                         </div>
                     </div>
 
                     <div class="sidebar-card">
-                        <h3>Technologies</h3>
+                        <h3>טכנולוגיות בשימוש</h3>
                         <div class="tech-tags">
                             <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">Shopify REST API</span>
-                            <span class="tech-tag">Shopify GraphQL</span>
-                            <span class="tech-tag">Webhooks</span>
-                            <span class="tech-tag">Batch Processing</span>
+                            <span class="tech-tag">Shopify API</span>
+                            <span class="tech-tag">REST API</span>
+                            <span class="tech-tag">GraphQL</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Message Queue</span>
+                            <span class="tech-tag">Data Pipeline</span>
                         </div>
                     </div>
 
+                    <div class="sidebar-card">
+                        <h3>הישגים מרכזיים</h3>
+                        <ul class="achievements-list">
+                            <li><i class="fas fa-check"></i> הפחתת 90% בסנכרון ידני</li>
+                            <li><i class="fas fa-check"></i> 5+ חנויות מסונכרנות</li>
+                            <li><i class="fas fa-check"></i> דיוק נתונים של 99.9%</li>
+                            <li><i class="fas fa-check"></i> מטפלת ב-10,000+ מוצרים</li>
+                            <li><i class="fas fa-check"></i> אפס אובדן נתונים</li>
+                        </ul>
+                    </div>
+
                     <div class="sidebar-card cta-card">
-                        <h3>Need Multi-Store Sync?</h3>
-                        <p>Connect and synchronize your Shopify store network.</p>
-                        <a href="../index.html#contact" class="btn btn-primary btn-block">Contact Me</a>
+                        <h3>צריך סנכרון רב-חנויות?</h3>
+                        <p>בוא נבנה פתרון סנכרון חזק לרשת החנויות שלך.</p>
+                        <a href="../index.html#contact" class="btn btn-primary btn-block">צור קשר</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Related Projects -->
+    <section class="related-projects">
+        <div class="container">
+            <h2>פרויקטים קשורים</h2>
+            <div class="related-grid">
+                <a href="erp-integration.html" class="related-card">
+                    <img src="../images/project-erp.jpg" alt="אינטגרציה ERP">
+                    <h4>אינטגרציה ERP</h4>
+                    <p>אינטגרציה של מערכת ארגונית</p>
+                </a>
+                <a href="hubspot-sync.html" class="related-card">
+                    <img src="../images/project-hubspot.jpg" alt="סנכרון HubSpot">
+                    <h4>סנכרון HubSpot</h4>
+                    <p>סנכרון CRM</p>
+                </a>
+                <a href="automation-workflows.html" class="related-card">
+                    <img src="../images/project-automation.jpg" alt="תהליכי אוטומציה">
+                    <h4>תהליכי אוטומציה</h4>
+                    <p>אוטומציה מונעת אירועים</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-left">
-                    <p>&copy; 2026 Hadas Schweitzer. All rights reserved.</p>
+                    <p><i class="far fa-copyright"></i> 2026 הדס שוויצר. כל הזכויות שמורות.</p>
                 </div>
                 <div class="footer-right">
-                    <a href="../index.html"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+                    <a href="../index.html"><i class="fas fa-arrow-left"></i> חזרה לתיק העבודות</a>
                 </div>
             </div>
         </div>
     </footer>
-
-    <script src="../js/data.js"></script>
-    <script src="../js/components.js"></script>
-    <script src="../js/language-manager.js"></script>
-    <script src="../js/projects-data.js"></script>
-    <script src="../js/project-detail.js"></script>
 </body>
 </html>

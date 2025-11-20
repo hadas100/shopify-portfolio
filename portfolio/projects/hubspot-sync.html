@@ -1,169 +1,284 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <title>Project - Hadas Schweitzer</title>
+    <title>אפליקציית סנכרון Shopify-HubSpot - הדס שוויצר</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/utilities.css">
     <link rel="stylesheet" href="../css/project-detail.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
                 <i class="fas fa-code"></i>
-                <span>Hadas Schweitzer</span>
+                <span>הדס שוויצר</span>
             </div>
             <ul class="nav-menu">
-                <li><a href="../index.html" class="nav-link">Back to Portfolio</a></li>
+                <li><a href="../index.html" class="nav-link">חזרה לתיק העבודות</a></li>
             </ul>
         </div>
     </nav>
 
+    <!-- Project Hero -->
     <section class="project-hero">
         <div class="container">
             <div class="breadcrumb">
-                <a href="../index.html">Home</a>
+                <a href="../index.html">בית</a>
                 <span>/</span>
-                <a href="../index.html#projects">Projects</a>
+                <a href="../index.html#projects">פרויקטים</a>
                 <span>/</span>
-                <span>HubSpot Sync</span>
+                <span>סנכרון HubSpot</span>
             </div>
-            <h1 class="project-title">Shopify-HubSpot Sync Application</h1>
-            <p class="project-lead">Real-time CRM synchronization for products, orders, and customer data</p>
+            <h1 class="project-title">אפליקציית סנכרון Shopify-HubSpot</h1>
+            <p class="project-lead">מערכת סנכרון בזמן אמת למוצרים, הזמנות ונתוני לקוחות בין Shopify ו-HubSpot CRM</p>
             <div class="project-meta-header">
                 <span><i class="fas fa-calendar"></i> 2023</span>
                 <span><i class="fas fa-building"></i> Leibish Online</span>
-                <span><i class="fas fa-code"></i> Node.js, HubSpot API, Shopify API</span>
+                <span><i class="fas fa-code"></i> Node.js, REST API</span>
             </div>
         </div>
     </section>
 
+    <!-- Project Details -->
     <section class="project-details">
         <div class="container">
             <div class="project-content-grid">
+                <!-- Main Content -->
                 <div class="project-main">
                     <div class="project-image-showcase">
-                        <img src="../images/project-hubspot.jpg" alt="HubSpot Sync Dashboard">
+                        <img src="../images/project-hubspot.jpg" alt="ממשק סנכרון HubSpot">
                     </div>
 
-                    <h2>Project Overview</h2>
+                    <h2>סקירת הפרויקט</h2>
                     <p>
-                        Developed a real-time synchronization system between Shopify and HubSpot CRM, enabling seamless data flow
-                        for products, orders, and customer information. This integration provides the sales and marketing teams with
-                        up-to-date e-commerce data within their CRM platform.
+                        פיתחתי אפליקציית סנכרון בזמן אמת שמשלבת בצורה חלקה Shopify עם HubSpot CRM, מאפשרת זרימת נתונים אוטומטית בין פלטפורמות מסחר אלקטרוני ושיווק.
                     </p>
 
-                    <h2>Key Features</h2>
+                    <h2>האתגר</h2>
+                    <p>
+                        צוות השיווק היה זקוק לנתוני לקוחות והזמנות ב-HubSpot לקמפיינים ממוקדים, אבל הזנת נתונים ידנית הייתה גוזלת זמן ונוטה לטעויות.
+                    </p>
+
+                    <h2>הפתרון</h2>
+                    <p>
+                        בניתי אפליקציית סנכרון חזקה:
+                    </p>
+                    <ul>
+                        <li><strong>סנכרון דו-כיווני:</strong> סנכרון נתונים דו-כיווני בין הפלטפורמות</li>
+                        <li><strong>פרופילי לקוחות:</strong> יצירה ועדכון אוטומטי של רשומות לקוחות</li>
+                        <li><strong>מעקב הזמנות:</strong> סנכרון נתוני הזמנות בזמן אמת למיקוד קמפיינים</li>
+                        <li><strong>קטלוג מוצרים:</strong> סנכרון מידע על מוצרים</li>
+                        <li><strong>מאפיינים מותאמים אישית:</strong> מיפוי שדות ומאפיינים מותאמים אישית</li>
+                        <li><strong>אינטגרציית Webhook:</strong> עדכונים בזמן אמת באמצעות webhooks</li>
+                    </ul>
+
+                    <h2>יישום טכני</h2>
+                    <div class="tech-stack">
+                        <div class="tech-item">
+                            <i class="fab fa-node"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-shopify"></i>
+                            <span>Shopify API</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-hubspot"></i>
+                            <span>HubSpot API</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-server"></i>
+                            <span>REST API</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-database"></i>
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
+
+                    <h2>תכונות עיקריות</h2>
                     <div class="features-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <h4>סנכרון בזמן אמת</h4>
+                            <p>עדכוני נתונים מיידיים בין הפלטפורמות</p>
+                        </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-users"></i>
                             </div>
-                            <h4>Customer Sync</h4>
-                            <p>Automatic contact creation and updates in HubSpot</p>
+                            <h4>סנכרון לקוחות</h4>
+                            <p>ניהול פרופילי לקוחות אוטומטי</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-shopping-bag"></i>
                             </div>
-                            <h4>Order Tracking</h4>
-                            <p>Real-time order data for sales insights</p>
+                            <h4>סנכרון הזמנות</h4>
+                            <p>סנכרון נתוני הזמנות בזמן אמת</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
-                                <i class="fas fa-box"></i>
+                                <i class="fas fa-tag"></i>
                             </div>
-                            <h4>Product Catalog</h4>
-                            <p>Synchronized product information for marketing</p>
+                            <h4>סנכרון מוצרים</h4>
+                            <p>סנכרון קטלוג מוצרים</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
-                                <i class="fas fa-map"></i>
+                                <i class="fas fa-cog"></i>
                             </div>
-                            <h4>Custom Mapping</h4>
-                            <p>Flexible field mapping for business needs</p>
+                            <h4>מיפוי מותאם אישית</h4>
+                            <p>תצורת מיפוי שדות גמישה</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h4>אנליטיקה</h4>
+                            <p>ניטור ביצועי סנכרון</p>
                         </div>
                     </div>
 
-                    <h2>Business Impact</h2>
+                    <h2>תוצאות והשפעה</h2>
                     <div class="results-grid">
                         <div class="result-item">
                             <div class="result-number">100%</div>
-                            <div class="result-label">Data Accuracy</div>
-                            <p>Eliminated data entry errors</p>
+                            <div class="result-label">אוטומציה</div>
+                            <p>ביטול הזנת נתונים ידנית</p>
                         </div>
                         <div class="result-item">
                             <div class="result-number">50%</div>
-                            <div class="result-label">Time Saved</div>
-                            <p>Reduced manual CRM updates</p>
+                            <div class="result-label">יעילות קמפיין</div>
+                            <p>שיפור מיקוד קמפיינים שיווקיים</p>
                         </div>
                         <div class="result-item">
-                            <div class="result-number">Real-time</div>
-                            <div class="result-label">Sync Speed</div>
-                            <p>Instant data availability</p>
+                            <div class="result-number">בזמן אמת</div>
+                            <div class="result-label">סנכרון נתונים</div>
+                            <p>זמינות נתונים מיידית ב-HubSpot</p>
                         </div>
                     </div>
+
+                    <h2>ארכיטקטורה טכנית</h2>
+                    <p>
+                        ארכיטקטורת microservices נקייה:
+                    </p>
+                    <ul>
+                        <li><strong>אינטגרציית API:</strong> מטפלת ב-APIs של Shopify ו-HubSpot</li>
+                        <li><strong>טרנספורמר נתונים:</strong> ממפה נתונים בין הפלטפורמות</li>
+                        <li><strong>תור סנכרון:</strong> מבטיח העברת נתונים אמינה</li>
+                        <li><strong>מטפל שגיאות:</strong> מנהל כשלי סנכרון וניסיונות חוזרים</li>
+                    </ul>
+
+                    <h2>למידה מרכזית</h2>
+                    <p>
+                        הפרויקט הזה לימד אותי על אסטרטגיות הגבלת קצב API, דפוסי טרנספורמציה של נתונים ובניית מערכות סנכרון אמינות בין פלטפורמות שונות.
+                    </p>
                 </div>
 
+                <!-- Sidebar -->
                 <div class="project-sidebar">
                     <div class="sidebar-card">
-                        <h3>Project Details</h3>
+                        <h3>פרטי הפרויקט</h3>
                         <div class="detail-item">
-                            <strong>Client</strong>
+                            <strong>לקוח</strong>
                             <span>Leibish Online</span>
                         </div>
                         <div class="detail-item">
-                            <strong>Year</strong>
+                            <strong>תעשייה</strong>
+                            <span>מסחר אלקטרוני בתכשיטים</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>שנה</strong>
                             <span>2023</span>
                         </div>
                         <div class="detail-item">
-                            <strong>Duration</strong>
-                            <span>2 months</span>
+                            <strong>משך זמן</strong>
+                            <span>3 חודשים</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>תפקיד</strong>
+                            <span>מפתחת Full-Stack</span>
                         </div>
                     </div>
 
                     <div class="sidebar-card">
-                        <h3>Technologies</h3>
+                        <h3>טכנולוגיות בשימוש</h3>
                         <div class="tech-tags">
                             <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">HubSpot API</span>
+                            <span class="tech-tag">Express</span>
                             <span class="tech-tag">Shopify API</span>
+                            <span class="tech-tag">HubSpot API</span>
+                            <span class="tech-tag">REST API</span>
                             <span class="tech-tag">Webhooks</span>
+                            <span class="tech-tag">MongoDB</span>
                         </div>
                     </div>
 
+                    <div class="sidebar-card">
+                        <h3>הישגים מרכזיים</h3>
+                        <ul class="achievements-list">
+                            <li><i class="fas fa-check"></i> אוטומציה של 100% מהזנת נתונים</li>
+                            <li><i class="fas fa-check"></i> סנכרון נתונים בזמן אמת</li>
+                            <li><i class="fas fa-check"></i> שיפור של 50% ביעילות שיווקית</li>
+                            <li><i class="fas fa-check"></i> אפס אובדן נתונים</li>
+                        </ul>
+                    </div>
+
                     <div class="sidebar-card cta-card">
-                        <h3>Need CRM Integration?</h3>
-                        <p>Connect your Shopify store with your CRM.</p>
-                        <a href="../index.html#contact" class="btn btn-primary btn-block">Contact Me</a>
+                        <h3>צריך אינטגרציה CRM?</h3>
+                        <p>בוא נבנה אינטגרציה חלקה עם מערכת ה-CRM שלך.</p>
+                        <a href="../index.html#contact" class="btn btn-primary btn-block">צור קשר</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Related Projects -->
+    <section class="related-projects">
+        <div class="container">
+            <h2>פרויקטים קשורים</h2>
+            <div class="related-grid">
+                <a href="erp-integration.html" class="related-card">
+                    <img src="../images/project-erp.jpg" alt="אינטגרציה ERP">
+                    <h4>אינטגרציה ERP</h4>
+                    <p>סנכרון ERP מקיף</p>
+                </a>
+                <a href="automation-workflows.html" class="related-card">
+                    <img src="../images/project-automation.jpg" alt="תהליכי אוטומציה">
+                    <h4>תהליכי אוטומציה</h4>
+                    <p>אוטומציה מונעת אירועים</p>
+                </a>
+                <a href="data-sync-platform.html" class="related-card">
+                    <img src="../images/project-data-sync.jpg" alt="פלטפורמת סנכרון נתונים">
+                    <h4>פלטפורמת סנכרון נתונים</h4>
+                    <p>סנכרון רב-חנויות</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-left">
-                    <p>&copy; 2026 Hadas Schweitzer. All rights reserved.</p>
+                    <p><i class="far fa-copyright"></i> 2026 הדס שוויצר. כל הזכויות שמורות.</p>
                 </div>
                 <div class="footer-right">
-                    <a href="../index.html"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+                    <a href="../index.html"><i class="fas fa-arrow-left"></i> חזרה לתיק העבודות</a>
                 </div>
             </div>
         </div>
     </footer>
-
-    <script src="../js/data.js"></script>
-    <script src="../js/components.js"></script>
-    <script src="../js/language-manager.js"></script>
-    <script src="../js/projects-data.js"></script>
-    <script src="../js/project-detail.js"></script>
 </body>
 </html>

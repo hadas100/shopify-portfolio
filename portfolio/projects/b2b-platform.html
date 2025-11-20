@@ -1,165 +1,283 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <title>Project - Hadas Schweitzer</title>
+    <title>פלטפורמת שיתוף מוצרים B2B - הדס שוויצר</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/utilities.css">
     <link rel="stylesheet" href="../css/project-detail.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
                 <i class="fas fa-code"></i>
-                <span>Hadas Schweitzer</span>
+                <span>הדס שוויצר</span>
             </div>
             <ul class="nav-menu">
-                <li><a href="../index.html" class="nav-link">Back to Portfolio</a></li>
+                <li><a href="../index.html" class="nav-link">חזרה לתיק העבודות</a></li>
             </ul>
         </div>
     </nav>
 
+    <!-- Project Hero -->
     <section class="project-hero">
         <div class="container">
             <div class="breadcrumb">
-                <a href="../index.html">Home</a>
+                <a href="../index.html">בית</a>
                 <span>/</span>
-                <a href="../index.html#projects">Projects</a>
+                <a href="../index.html#projects">פרויקטים</a>
                 <span>/</span>
-                <span>B2B Platform</span>
+                <span>פלטפורמת B2B</span>
             </div>
-            <h1 class="project-title">B2B Product Sharing Platform</h1>
-            <p class="project-lead">Collaborative platform for merchants to share product catalogs</p>
+            <h1 class="project-title">פלטפורמת שיתוף מוצרים B2B</h1>
+            <p class="project-lead">פלטפורמה משולבת ב-Shopify המאפשרת לסוחרים לשתף ולשתף פעולה בקטלוגי מוצרים</p>
             <div class="project-meta-header">
                 <span><i class="fas fa-calendar"></i> 2023</span>
                 <span><i class="fas fa-building"></i> Leibish Online</span>
-                <span><i class="fas fa-code"></i> Node.js, React, Shopify API</span>
+                <span><i class="fas fa-code"></i> Node.js, React</span>
             </div>
         </div>
     </section>
 
+    <!-- Project Details -->
     <section class="project-details">
         <div class="container">
             <div class="project-content-grid">
+                <!-- Main Content -->
                 <div class="project-main">
                     <div class="project-image-showcase">
-                        <img src="../images/project-b2b.jpg" alt="B2B Platform Dashboard">
+                        <img src="../images/project-b2b.jpg" alt="ממשק פלטפורמת B2B">
                     </div>
 
-                    <h2>Project Overview</h2>
+                    <h2>סקירת הפרויקט</h2>
                     <p>
-                        Developed a B2B platform that enables jewelry merchants to share and collaborate on product catalogs
-                        with advanced permission management, real-time updates, and Shopify integration. This platform streamlines
-                        wholesale operations and partner collaborations.
+                        פיתחתי פלטפורמת B2B שמאפשרת לסוחרי Shopify לשתף את קטלוגי המוצרים שלהם עם שותפים עסקיים, ומאפשרת ניהול מוצרים שיתופי ועסקאות B2B מיועלות.
                     </p>
 
-                    <h2>Key Features</h2>
+                    <h2>האתגר</h2>
+                    <p>
+                        סוחרי B2B נזקקו לדרך לשתף קטלוגי מוצרים עם שותפים תוך שמירה על שליטה על תמחור, זמינות והרשאות מבלי לשכפל נתונים במספר חנויות.
+                    </p>
+
+                    <h2>הפתרון</h2>
+                    <p>
+                        בניתי פלטפורמת שיתוף B2B מקיפה:
+                    </p>
+                    <ul>
+                        <li><strong>שיתוף קטלוג:</strong> אפשר שיתוף קטלוג מוצרים בין סוחרים</li>
+                        <li><strong>ניהול הרשאות:</strong> שליטה גרנולרית על מי יכול לצפות ולשנות מוצרים</li>
+                        <li><strong>תמחור מותאם אישית:</strong> תמחור והנחות ספציפיים לשותף</li>
+                        <li><strong>ניהול הזמנות:</strong> עיבוד הזמנות B2B מיועל</li>
+                        <li><strong>סנכרון מלאי:</strong> סנכרון מלאי בזמן אמת</li>
+                        <li><strong>כלי שיתוף פעולה:</strong> הערות מוצר ותכונות שיתוף פעולה</li>
+                    </ul>
+
+                    <h2>יישום טכני</h2>
+                    <div class="tech-stack">
+                        <div class="tech-item">
+                            <i class="fab fa-node"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-shopify"></i>
+                            <span>Shopify API</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-database"></i>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-server"></i>
+                            <span>REST API</span>
+                        </div>
+                    </div>
+
+                    <h2>תכונות עיקריות</h2>
                     <div class="features-grid">
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-share-alt"></i>
                             </div>
-                            <h4>Product Sharing</h4>
-                            <p>Share catalogs with selected partners</p>
+                            <h4>שיתוף קטלוג</h4>
+                            <p>שיתוף מוצרים עם שותפים</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-lock"></i>
                             </div>
-                            <h4>Permission Management</h4>
-                            <p>Granular access control for partners</p>
+                            <h4>בקרת גישה</h4>
+                            <p>ניהול הרשאות גרנולרי</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
-                                <i class="fas fa-sync-alt"></i>
+                                <i class="fas fa-dollar-sign"></i>
                             </div>
-                            <h4>Real-time Updates</h4>
-                            <p>Live product and inventory updates</p>
+                            <h4>תמחור מותאם אישית</h4>
+                            <p>תמחור ספציפי לשותף</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
-                                <i class="fas fa-chart-bar"></i>
+                                <i class="fas fa-clipboard-list"></i>
                             </div>
-                            <h4>Analytics</h4>
-                            <p>Track engagement and sales metrics</p>
+                            <h4>ניהול הזמנות</h4>
+                            <p>עיבוד הזמנות B2B</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-sync"></i>
+                            </div>
+                            <h4>סנכרון מלאי</h4>
+                            <p>עדכוני מלאי בזמן אמת</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h4>שיתוף פעולה</h4>
+                            <p>הערות מוצר ודיונים</p>
                         </div>
                     </div>
 
-                    <h2>Impact</h2>
+                    <h2>תוצאות והשפעה</h2>
                     <div class="results-grid">
                         <div class="result-item">
-                            <div class="result-number">50+</div>
-                            <div class="result-label">Partners</div>
-                            <p>Active B2B partners</p>
-                        </div>
-                        <div class="result-item">
                             <div class="result-number">60%</div>
-                            <div class="result-label">Faster Orders</div>
-                            <p>Improved order processing</p>
+                            <div class="result-label">חיסכון בזמן</div>
+                            <p>הפחתת זמן עיבוד הזמנות B2B</p>
                         </div>
                         <div class="result-item">
-                            <div class="result-number">$2M+</div>
-                            <div class="result-label">B2B Revenue</div>
-                            <p>Annual B2B sales</p>
+                            <div class="result-number">100+</div>
+                            <div class="result-label">שותפים מחוברים</div>
+                            <p>שותפים שהצטרפו בהצלחה</p>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-number">40%</div>
+                            <div class="result-label">צמיחה בהכנסות</div>
+                            <p>הגדלת הכנסות B2B</p>
                         </div>
                     </div>
+
+                    <h2>ארכיטקטורה טכנית</h2>
+                    <p>
+                        ארכיטקטורה רב-דיירות מאובטחת:
+                    </p>
+                    <ul>
+                        <li><strong>אימות והרשאות:</strong> מערכת בקרת גישה מאובטחת</li>
+                        <li><strong>בידוד נתונים:</strong> מבטיחה פרטיות נתונים בין דיירים</li>
+                        <li><strong>API Gateway:</strong> מטפל בכל האינטגרציות החיצוניות</li>
+                        <li><strong>עדכונים בזמן אמת:</strong> עדכונים חיים מבוססי WebSocket</li>
+                    </ul>
+
+                    <h2>למידה מרכזית</h2>
+                    <p>
+                        הפרויקט הזה לימד אותי על עיצוב ארכיטקטורת רב-דיירות, יישום מערכות הרשאות גרנולריות ובניית פלטפורמות שיתופיות למקרי שימוש B2B.
+                    </p>
                 </div>
 
+                <!-- Sidebar -->
                 <div class="project-sidebar">
                     <div class="sidebar-card">
-                        <h3>Project Details</h3>
+                        <h3>פרטי הפרויקט</h3>
                         <div class="detail-item">
-                            <strong>Year</strong>
+                            <strong>לקוח</strong>
+                            <span>Leibish Online</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>תעשייה</strong>
+                            <span>מסחר אלקטרוני B2B</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>שנה</strong>
                             <span>2023</span>
                         </div>
                         <div class="detail-item">
-                            <strong>Duration</strong>
-                            <span>4 months</span>
+                            <strong>משך זמן</strong>
+                            <span>4 חודשים</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>תפקיד</strong>
+                            <span>מפתחת Full-Stack</span>
                         </div>
                     </div>
 
                     <div class="sidebar-card">
-                        <h3>Technologies</h3>
+                        <h3>טכנולוגיות בשימוש</h3>
                         <div class="tech-tags">
                             <span class="tech-tag">Node.js</span>
                             <span class="tech-tag">React</span>
                             <span class="tech-tag">Shopify API</span>
                             <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">WebSockets</span>
+                            <span class="tech-tag">REST API</span>
                         </div>
                     </div>
 
+                    <div class="sidebar-card">
+                        <h3>הישגים מרכזיים</h3>
+                        <ul class="achievements-list">
+                            <li><i class="fas fa-check"></i> עיבוד B2B מהיר יותר ב-60%</li>
+                            <li><i class="fas fa-check"></i> 100+ שותפים שהצטרפו</li>
+                            <li><i class="fas fa-check"></i> עלייה של 40% בהכנסות</li>
+                            <li><i class="fas fa-check"></i> מערכת רב-דיירות מאובטחת</li>
+                        </ul>
+                    </div>
+
                     <div class="sidebar-card cta-card">
-                        <h3>Build B2B Platform?</h3>
-                        <p>Create your wholesale solution.</p>
-                        <a href="../index.html#contact" class="btn btn-primary btn-block">Contact Me</a>
+                        <h3>צריך פלטפורמת B2B?</h3>
+                        <p>בוא נבנה פתרון B2B שיתופי לעסק שלך.</p>
+                        <a href="../index.html#contact" class="btn btn-primary btn-block">צור קשר</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Related Projects -->
+    <section class="related-projects">
+        <div class="container">
+            <h2>פרויקטים קשורים</h2>
+            <div class="related-grid">
+                <a href="data-sync-platform.html" class="related-card">
+                    <img src="../images/project-data-sync.jpg" alt="פלטפורמת סנכרון נתונים">
+                    <h4>פלטפורמת סנכרון נתונים</h4>
+                    <p>סנכרון רב-חנויות</p>
+                </a>
+                <a href="erp-integration.html" class="related-card">
+                    <img src="../images/project-erp.jpg" alt="אינטגרציה ERP">
+                    <h4>אינטגרציה ERP</h4>
+                    <p>אינטגרציה של מערכת ארגונית</p>
+                </a>
+                <a href="automation-workflows.html" class="related-card">
+                    <img src="../images/project-automation.jpg" alt="תהליכי אוטומציה">
+                    <h4>תהליכי אוטומציה</h4>
+                    <p>אוטומציית תהליכים עסקיים</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-left">
-                    <p>&copy; 2026 Hadas Schweitzer. All rights reserved.</p>
+                    <p><i class="far fa-copyright"></i> 2026 הדס שוויצר. כל הזכויות שמורות.</p>
                 </div>
                 <div class="footer-right">
-                    <a href="../index.html"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+                    <a href="../index.html"><i class="fas fa-arrow-left"></i> חזרה לתיק העבודות</a>
                 </div>
             </div>
         </div>
     </footer>
-
-    <script src="../js/data.js"></script>
-    <script src="../js/components.js"></script>
-    <script src="../js/language-manager.js"></script>
-    <script src="../js/projects-data.js"></script>
-    <script src="../js/project-detail.js"></script>
 </body>
 </html>
