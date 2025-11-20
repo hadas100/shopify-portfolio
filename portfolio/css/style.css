@@ -300,8 +300,9 @@ a {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(ellipse at top, rgba(150, 191, 72, 0.1), transparent 50%),
-                radial-gradient(ellipse at bottom right, rgba(94, 142, 62, 0.1), transparent 50%);
+    background:
+        linear-gradient(to bottom, rgba(10, 14, 26, 0.85), rgba(10, 14, 26, 0.75)),
+        url('../images/desktop-banner.jpg') center center / cover no-repeat;
     z-index: -1;
 }
 
