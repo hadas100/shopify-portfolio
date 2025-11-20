@@ -132,25 +132,6 @@ function buildDynamicContent(lang = 'en') {
         `).join('');
     }
 
-    // Build testimonials section
-    const testimonialsGrid = document.querySelector('.testimonials-grid');
-    if (testimonialsGrid && data.testimonials) {
-        testimonialsGrid.innerHTML = data.testimonials.reviews.map(review => `
-            <div class="testimonial-card">
-                <div class="testimonial-rating">
-                    ${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)}
-                </div>
-                <p class="testimonial-text">"${review.text}"</p>
-                <div class="testimonial-author">
-                    <div class="author-info">
-                        <h4>${review.name}</h4>
-                        <p>${review.role}</p>
-                    </div>
-                </div>
-            </div>
-        `).join('');
-    }
-
     // Build process section (How I Work)
     const processTitle = document.querySelector('.process .section-title');
     if (processTitle) processTitle.textContent = data.process?.title || 'How I Work';
@@ -187,13 +168,6 @@ function buildDynamicContent(lang = 'en') {
             </div>
         `).join('');
     }
-
-    // Update testimonials section titles
-    const testimonialsTitle = document.querySelector('.testimonials .section-title');
-    if (testimonialsTitle && data.testimonials) testimonialsTitle.textContent = data.testimonials.title;
-
-    const testimonialsSubtitle = document.querySelector('.testimonials .section-subtitle');
-    if (testimonialsSubtitle && data.testimonials) testimonialsSubtitle.textContent = data.testimonials.subtitle;
 
     // Update FAQ section titles
     const faqTitle = document.querySelector('.faq .section-title');

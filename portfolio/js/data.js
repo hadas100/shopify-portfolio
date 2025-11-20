@@ -81,12 +81,12 @@ const staticData = {
                 link: "projects/hubspot-sync.html"
             },
             {
-                id: "ai-descriptions",
-                image: "images/project-ai-desc.jpg",
-                tags: ["AI", "OpenAI", "Automation"],
-                year: "2024",
-                tech: "JavaScript, AI APIs",
-                link: "projects/ai-descriptions.html"
+                id: "data-sync-platform",
+                image: "images/project-data-sync.jpg",
+                tags: ["Data Sync", "API", "Integration"],
+                year: "2023-2024",
+                tech: "Node.js, REST API",
+                link: "projects/data-sync-platform.html"
             },
             {
                 id: "b2b-platform",
@@ -271,7 +271,7 @@ const translations = {
                 "erp-integration": "ERP-Shopify Integration System",
                 "automation-workflows": "Shopify Automation Workflows",
                 "hubspot-sync": "Shopify-HubSpot Sync Application",
-                "ai-descriptions": "AI Product Description Generator",
+                "data-sync-platform": "Multi-Store Data Sync Platform",
                 "b2b-platform": "B2B Product Sharing Platform"
             },
             projectDescriptions: {
@@ -279,38 +279,9 @@ const translations = {
                 "erp-integration": "Comprehensive bidirectional synchronization system between Fantasy ERP and Shopify, handling products, inventory, orders, and customer data.",
                 "automation-workflows": "Automated event-driven applications using Shopify webhooks for product updates, order processing, and inventory management.",
                 "hubspot-sync": "Real-time synchronization system for products, orders, and customer data between Shopify and HubSpot CRM.",
-                "ai-descriptions": "AI-powered system for generating compelling product descriptions using Gemini and OpenAI APIs, integrated with Shopify.",
+                "data-sync-platform": "Advanced platform for importing and exporting data between multiple Shopify stores, enabling seamless product catalog synchronization and inventory management across store networks.",
                 "b2b-platform": "Shopify-integrated platform enabling merchants to share and collaborate on product catalogs with advanced permission management."
             }
-        },
-
-        // Testimonials Section
-        testimonials: {
-            title: "What Clients Say",
-            subtitle: "Real feedback from store owners I've helped",
-            reviews: [
-                {
-                    name: "Sarah Cohen",
-                    role: "Owner, Fashion Boutique",
-                    image: "images/client-1.jpg",
-                    rating: 5,
-                    text: "Hadas transformed our Shopify store with a custom ERP integration that saved us 15 hours of manual work every week. Her expertise and professionalism are outstanding!"
-                },
-                {
-                    name: "David Miller",
-                    role: "CEO, Electronics Store",
-                    image: "images/client-2.jpg",
-                    rating: 5,
-                    text: "We needed urgent help with a complex API integration. Hadas delivered a perfect solution ahead of schedule. Highly recommended for any Shopify technical challenges!"
-                },
-                {
-                    name: "Rachel Green",
-                    role: "Manager, Home Decor Shop",
-                    image: "images/client-3.jpg",
-                    rating: 5,
-                    text: "The AI-powered automation Hadas built for our product descriptions increased our productivity by 300%. She's a true Shopify expert who delivers real business results."
-                }
-            ]
         },
 
         // Process Section (How I Work)
@@ -581,7 +552,7 @@ const translations = {
                 "erp-integration": "מערכת אינטגרציה ERP-Shopify",
                 "automation-workflows": "תהליכי אוטומציה Shopify",
                 "hubspot-sync": "אפליקציית סנכרון Shopify-HubSpot",
-                "ai-descriptions": "מחולל תיאורי מוצרים AI",
+                "data-sync-platform": "פלטפורמת סנכרון נתונים בין חנויות",
                 "b2b-platform": "פלטפורמת שיתוף מוצרים B2B"
             },
             projectDescriptions: {
@@ -589,38 +560,9 @@ const translations = {
                 "erp-integration": "מערכת סנכרון דו-כיוונית מקיפה בין Fantasy ERP ו-Shopify, המטפלת במוצרים, מלאי, הזמנות ונתוני לקוחות.",
                 "automation-workflows": "אפליקציות מונעות אירועים אוטומטיות באמצעות Shopify webhooks לעדכוני מוצרים, עיבוד הזמנות וניהול מלאי.",
                 "hubspot-sync": "מערכת סנכרון בזמן אמת למוצרים, הזמנות ונתוני לקוחות בין Shopify ל-HubSpot CRM.",
-                "ai-descriptions": "מערכת מבוססת AI ליצירת תיאורי מוצרים משכנעים באמצעות Gemini ו-OpenAI APIs, משולבת עם Shopify.",
+                "data-sync-platform": "פלטפורמה מתקדמת ליבוא ויצוא נתונים בין מספר חנויות שופיפיי, המאפשרת סנכרון קטלוג מוצרים וניהול מלאי חלק ברשת של חנויות.",
                 "b2b-platform": "פלטפורמה משולבת ב-Shopify המאפשרת לסוחרים לשתף ולשתף פעולה בקטלוגי מוצרים עם ניהול הרשאות מתקדם."
             }
-        },
-
-        // Testimonials Section
-        testimonials: {
-            title: "מה לקוחות אומרים",
-            subtitle: "בעלי חנויות שעבדו איתי והצליחו",
-            reviews: [
-                {
-                    name: "שרה כהן",
-                    role: "בעלת בוטיק אופנה",
-                    image: "images/client-1.jpg",
-                    rating: 5,
-                    text: "הדס חיברה לי את החנות למערכת הניהול וחסכה לי 15 שעות עבודה ידנית כל שבוע! עכשיו הכל מסונכרן אוטומטית. פשוט מדהים!"
-                },
-                {
-                    name: "דוד מילר",
-                    role: "מנכ\"ל חנות אלקטרוניקה",
-                    image: "images/client-2.jpg",
-                    rating: 5,
-                    text: "הייתי נתקע עם בעיה טכנית מורכבת והדס פתרה את זה תוך יומיים. מקצועית, מהירה וממש יודעת את שלה. ממליץ בחום!"
-                },
-                {
-                    name: "רחל גרין",
-                    role: "בעלת חנות עיצוב הבית",
-                    image: "images/client-3.jpg",
-                    rating: 5,
-                    text: "בנתה לי מערכת AI שכותבת תיאורי מוצרים אוטומטית. חסכתי שעות של עבודה והמכירות עלו! שווה כל שקל."
-                }
-            ]
         },
 
         // FAQ Section
@@ -788,9 +730,6 @@ function getPortfolioData(lang = 'en') {
                 description: trans.projects.projectDescriptions[project.id]
             }))
         },
-
-        // Testimonials Section
-        testimonials: trans.testimonials,
 
         // Process Section
         process: trans.process,
