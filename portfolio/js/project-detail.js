@@ -16,6 +16,7 @@ function buildProjectPage(lang = 'en') {
     }
 
     const data = projectData[lang];
+    const sectionTitles = projectsCommonData[lang].sectionTitles;
     currentProjectLanguage = lang;
 
     // Update document direction and lang
@@ -60,7 +61,7 @@ function buildProjectPage(lang = 'en') {
         // Overview
         if (data.sections.overview) {
             sectionsHTML += `
-                <h2>${data.sections.overview.title}</h2>
+                <h2>${sectionTitles.overview}</h2>
                 <p>${data.sections.overview.content}</p>
             `;
         }
@@ -68,7 +69,7 @@ function buildProjectPage(lang = 'en') {
         // Challenge
         if (data.sections.challenge) {
             sectionsHTML += `
-                <h2>${data.sections.challenge.title}</h2>
+                <h2>${sectionTitles.challenge}</h2>
                 <p>${data.sections.challenge.content}</p>
             `;
         }
@@ -76,7 +77,7 @@ function buildProjectPage(lang = 'en') {
         // Solution
         if (data.sections.solution) {
             sectionsHTML += `
-                <h2>${data.sections.solution.title}</h2>
+                <h2>${sectionTitles.solution}</h2>
                 <p>${data.sections.solution.intro}</p>
                 <ul>
                     ${data.sections.solution.points.map(point =>
@@ -89,7 +90,7 @@ function buildProjectPage(lang = 'en') {
         // Technical Implementation
         if (data.sections.implementation) {
             sectionsHTML += `
-                <h2>${data.sections.implementation.title}</h2>
+                <h2>${sectionTitles.implementation}</h2>
                 <div class="tech-stack">
                     <div class="tech-item"><i class="fab fa-js"></i><span>JavaScript</span></div>
                     <div class="tech-item"><i class="fab fa-node"></i><span>Node.js</span></div>
@@ -103,7 +104,7 @@ function buildProjectPage(lang = 'en') {
         // Features
         if (data.sections.features) {
             sectionsHTML += `
-                <h2>${data.sections.features.title}</h2>
+                <h2>${sectionTitles.features}</h2>
                 <div class="features-grid">
                     ${data.sections.features.list.map(feature => `
                         <div class="feature-item">
@@ -119,7 +120,7 @@ function buildProjectPage(lang = 'en') {
         // Results
         if (data.sections.results) {
             sectionsHTML += `
-                <h2>${data.sections.results.title}</h2>
+                <h2>${sectionTitles.results}</h2>
                 <div class="results-grid">
                     ${data.sections.results.items.map(result => `
                         <div class="result-item">
@@ -135,7 +136,7 @@ function buildProjectPage(lang = 'en') {
         // Architecture
         if (data.sections.architecture) {
             sectionsHTML += `
-                <h2>${data.sections.architecture.title}</h2>
+                <h2>${sectionTitles.architecture}</h2>
                 <p>${data.sections.architecture.intro}</p>
                 <ul>
                     ${data.sections.architecture.points.map(point =>
@@ -148,7 +149,7 @@ function buildProjectPage(lang = 'en') {
         // Lessons Learned
         if (data.sections.lessons) {
             sectionsHTML += `
-                <h2>${data.sections.lessons.title}</h2>
+                <h2>${sectionTitles.lessons}</h2>
                 <p>${data.sections.lessons.content}</p>
             `;
         }
