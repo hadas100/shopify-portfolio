@@ -1,5 +1,5 @@
 // ========== Dynamic Content Builder ==========
-function buildDynamicContent(lang = 'en') {
+function buildDynamicContent(lang = 'he') {
     const data = portfolioData[lang];
     currentLanguage = lang;
 

@@ -3,34 +3,6 @@
 
 // ========== Common Data (Shared across all projects) ==========
 const projectsCommonData = {
-    en: {
-        nav: { back: "Back to Portfolio" },
-        footer: {
-            copyright: "© 2026 Hadas Schweitzer. All rights reserved.",
-            back: "Back to Portfolio"
-        },
-        breadcrumb: {
-            home: "Home",
-            projects: "Projects"
-        },
-        sectionTitles: {
-            overview: "Project Overview",
-            challenge: "The Challenge",
-            solution: "The Solution",
-            implementation: "Technical Implementation",
-            features: "Key Features",
-            results: "Results & Impact",
-            architecture: "System Architecture",
-            lessons: "Lessons Learned"
-        },
-        sidebar: {
-            detailsTitle: "Project Details",
-            techTitle: "Technologies Used",
-            achievementsTitle: "Key Achievements",
-            ctaButton: "Get in Touch"
-        },
-        relatedTitle: "Related Projects"
-    },
     he: {
         nav: { back: "חזרה לתיק העבודות" },
         footer: {
@@ -144,11 +116,11 @@ function buildProjectData(projectId, langData, lang) {
             details: {
                 title: common.sidebar.detailsTitle,
                 items: {
-                    client: { label: lang === 'en' ? 'Client' : 'לקוח', value: staticMeta.company },
-                    industry: { label: lang === 'en' ? 'Industry' : 'תעשייה', value: langData.sidebar.details.industry },
-                    year: { label: lang === 'en' ? 'Year' : 'שנה', value: staticMeta.year },
-                    duration: { label: lang === 'en' ? 'Duration' : 'משך זמן', value: langData.sidebar.details.duration },
-                    role: { label: lang === 'en' ? 'Role' : 'תפקיד', value: langData.sidebar.details.role }
+                    client: { label: 'לקוח', value: staticMeta.company },
+                    industry: { label: 'תעשייה', value: langData.sidebar.details.industry },
+                    year: { label: 'שנה', value: staticMeta.year },
+                    duration: { label: 'משך זמן', value: langData.sidebar.details.duration },
+                    role: { label: 'תפקיד', value: langData.sidebar.details.role }
                 }
             },
             technologies: {
@@ -174,77 +146,6 @@ function buildProjectData(projectId, langData, lang) {
 // ========== Project Translations (Language-Specific Content) ==========
 const projectsDetailData = {
     'ai-image-generation': {
-        en: buildProjectData('ai-image-generation', {
-            title: "AI-Powered Image Generation App",
-            lead: "Shopify-integrated application for automated product image generation using AI",
-            breadcrumbCurrent: "AI Image Generation",
-            sections: {
-                overview: {
-                    content: "Developed a sophisticated Shopify-integrated application that leverages artificial intelligence to automatically generate customized product images. This solution streamlines the product photography workflow for e-commerce businesses, significantly reducing time and costs associated with traditional product photography."
-                },
-                challenge: {
-                    content: "E-commerce businesses often struggle with creating consistent, high-quality product images at scale. Traditional photography is time-consuming and expensive, especially when dealing with thousands of product variations. The jewelry industry, in particular, requires beautiful, detailed images that showcase products from multiple angles and in various settings."
-                },
-                solution: {
-                    intro: "I built an automated system that integrates seamlessly with Shopify's product catalog:",
-                    points: [
-                        { title: "SKU-Based Retrieval", text: "The application fetches product data directly from Shopify using SKU identifiers via the Shopify REST API" },
-                        { title: "AI Image Generation", text: "Utilizes both OpenAI's DALL-E and Google's Gemini APIs to generate high-quality product images based on product specifications" },
-                        { title: "Automated Upload", text: "Generated images are automatically uploaded back to the corresponding Shopify product records" },
-                        { title: "Batch Processing", text: "Supports bulk image generation for multiple products simultaneously" },
-                        { title: "Quality Control", text: "Implements validation checks to ensure generated images meet quality standards" }
-                    ]
-                },
-                implementation: {},
-                features: {
-                    list: [
-                        { icon: "fas fa-search", title: "Product Data Retrieval", text: "Automatically fetches product information from Shopify using SKU or product ID" },
-                        { icon: "fas fa-magic", title: "AI-Powered Generation", text: "Creates unique, high-quality images using advanced AI models" },
-                        { icon: "fas fa-cloud-upload-alt", title: "Automatic Upload", text: "Seamlessly uploads generated images back to Shopify product records" },
-                        { icon: "fas fa-layer-group", title: "Batch Processing", text: "Process multiple products in a single operation for efficiency" },
-                        { icon: "fas fa-check-circle", title: "Quality Validation", text: "Ensures generated images meet predefined quality standards" },
-                        { icon: "fas fa-sync", title: "Real-time Updates", text: "Provides instant feedback on generation status and progress" }
-                    ]
-                },
-                results: {
-                    items: [
-                        { number: "70%", label: "Time Savings", text: "Reduced product photography time by 70%" },
-                        { number: "1000+", label: "Images Generated", text: "Successfully generated over 1000 product images" },
-                        { number: "$50k", label: "Cost Reduction", text: "Saved approximately $50k in photography costs" }
-                    ]
-                },
-                architecture: {
-                    intro: "The application follows a modular architecture with clear separation of concerns:",
-                    points: [
-                        { title: "API Layer", text: "Handles communication with Shopify, OpenAI, and Gemini APIs" },
-                        { title: "Processing Layer", text: "Manages image generation logic and workflow orchestration" },
-                        { title: "Validation Layer", text: "Ensures data integrity and image quality" },
-                        { title: "Storage Layer", text: "Manages temporary storage and cleanup of generated assets" }
-                    ]
-                },
-                lessons: {
-                    content: "This project taught me valuable lessons about working with AI APIs at scale, including handling rate limits, optimizing API costs, and ensuring consistent quality across different AI models. I also gained deep expertise in Shopify's media management APIs and best practices for large-scale asset handling."
-                }
-            },
-            sidebar: {
-                details: {
-                    industry: "Jewelry E-commerce",
-                    duration: "3 months",
-                    role: "Full-Stack Developer"
-                },
-                technologies: ["JavaScript", "Node.js", "Express", "Shopify API", "OpenAI API", "Gemini API", "REST API", "Cloud Storage"],
-                achievements: ["Reduced photography costs by 60%", "Improved product listing speed by 70%", "Generated 1000+ product images", "95% image quality approval rate"],
-                cta: {
-                    title: "Interested in This Solution?",
-                    text: "Let's discuss how I can build a similar solution for your business."
-                }
-            },
-            related: [
-                { id: "erp-integration", title: "ERP-Shopify Integration", desc: "Comprehensive bidirectional data synchronization" },
-                { id: "automation-workflows", title: "Automation Workflows", desc: "Event-driven automation with Shopify webhooks" }
-            ]
-        }, 'en'),
-
         he: buildProjectData('ai-image-generation', {
             title: "אפליקציית יצירת תמונות AI",
             lead: "אפליקציה משולבת ב-Shopify ליצירת תמונות מוצר אוטומטית באמצעות בינה מלאכותית",
@@ -317,55 +218,6 @@ const projectsDetailData = {
         }, 'he')
     },
     'erp-integration': {
-        en: buildProjectData('erp-integration', {
-            title: "ERP-Shopify Integration System",
-            lead: "Comprehensive bidirectional synchronization between Fantasy ERP and Shopify",
-            breadcrumbCurrent: "ERP Integration",
-            sections: {
-                overview: { content: "Developed a comprehensive bidirectional synchronization system between Fantasy ERP and Shopify, handling real-time data exchange for products, inventory, orders, customer information, and custom business logic." },
-                challenge: { content: "The jewelry e-commerce business was facing critical challenges with manual data entry and synchronization between their ERP system and Shopify store, leading to inventory discrepancies and delayed order processing." },
-                solution: { intro: "I designed and implemented a robust, scalable integration system:", points: [
-                    { title: "Bidirectional Product Sync", text: "Real-time synchronization of product data including titles, descriptions, pricing, and images" },
-                    { title: "Inventory Management", text: "Live inventory updates ensuring accurate stock levels" },
-                    { title: "Order Processing", text: "Automatic order creation in ERP with status updates" },
-                    { title: "Customer Data Sync", text: "Seamless customer profile synchronization" },
-                    { title: "Metafield Management", text: "Custom metafield mapping for product-specific data" },
-                    { title: "Error Handling & Logging", text: "Comprehensive error tracking and retry mechanisms" }
-                ]},
-                implementation: {},
-                features: { list: [
-                    { icon: "fas fa-sync-alt", title: "Real-Time Synchronization", text: "Instant data updates between ERP and Shopify" },
-                    { icon: "fas fa-boxes", title: "Multi-Product Support", text: "Handles diamonds, gemstones, and jewelry" },
-                    { icon: "fas fa-warehouse", title: "Inventory Tracking", text: "Live stock level updates" },
-                    { icon: "fas fa-shopping-cart", title: "Order Automation", text: "Automated order creation and status updates" },
-                    { icon: "fas fa-shield-alt", title: "Error Recovery", text: "Automatic retry mechanisms" },
-                    { icon: "fas fa-tags", title: "Custom Metafields", text: "Advanced data mapping" }
-                ]},
-                results: { items: [
-                    { number: "95%", label: "Automation", text: "Eliminated 95% of manual data entry" },
-                    { number: "30%", label: "Faster Processing", text: "Reduced order processing time" },
-                    { number: "99.9%", label: "Accuracy", text: "Achieved 99.9% data accuracy rate" }
-                ]},
-                architecture: { intro: "The system utilizes a microservices architecture:", points: [
-                    { title: "API Gateway", text: "Centralized routing and authentication" },
-                    { title: "Sync Engine", text: "Core synchronization logic with event-driven processing" },
-                    { title: "Queue Management", text: "Message queues for reliable async processing" },
-                    { title: "Data Mapping", text: "Flexible transformation layer" }
-                ]},
-                lessons: { content: "This project deepened my understanding of enterprise integration patterns, GraphQL optimization, and handling complex business logic in distributed systems." }
-            },
-            sidebar: {
-                details: { industry: "Jewelry E-commerce", duration: "6 months", role: "Lead Developer" },
-                technologies: ["Node.js", "Express", "GraphQL", "Shopify API", "REST API", "MySQL", "Message Queue", "Cloud Hosting"],
-                achievements: ["Eliminated 95% manual data entry", "99.9% data accuracy", "30% faster order processing", "Managing 10,000+ products", "Zero downtime deployment"],
-                cta: { title: "Need an ERP Integration?", text: "Let's build a robust integration solution for your business." }
-            },
-            related: [
-                { id: "automation-workflows", title: "Automation Workflows", desc: "Event-driven automation" },
-                { id: "hubspot-sync", title: "HubSpot Sync", desc: "Real-time CRM synchronization" },
-                { id: "b2b-platform", title: "B2B Platform", desc: "Collaborative product sharing" }
-            ]
-        }, 'en'),
         he: buildProjectData('erp-integration', {
             title: "מערכת אינטגרציה ERP-Shopify",
             lead: "סנכרון דו-כיווני מקיף בין Fantasy ERP ו-Shopify",
@@ -417,55 +269,6 @@ const projectsDetailData = {
         }, 'he')
     },
     'automation-workflows': {
-        en: buildProjectData('automation-workflows', {
-            title: "Event-Driven Automation Workflows",
-            lead: "Automated business processes using Shopify webhooks and event-driven architecture",
-            breadcrumbCurrent: "Automation Workflows",
-            sections: {
-                overview: { content: "Developed a comprehensive event-driven automation system that leverages Shopify webhooks to automatically trigger and execute business workflows, processing over 5,000 daily events." },
-                challenge: { content: "The business was spending countless hours on repetitive manual tasks triggered by various events in the Shopify store - new orders, inventory changes, customer updates, and more." },
-                solution: { intro: "I designed and built a robust event-driven automation platform:", points: [
-                    { title: "Webhook Management", text: "Implemented secure webhook endpoints to receive real-time events from Shopify" },
-                    { title: "Event Processing Engine", text: "Built a scalable event processing system that routes events to workflow handlers" },
-                    { title: "Workflow Orchestration", text: "Created customizable workflow chains for sequential or parallel execution" },
-                    { title: "Error Handling & Retry", text: "Sophisticated retry mechanisms with exponential backoff" },
-                    { title: "Real-time Monitoring", text: "Comprehensive logging and monitoring dashboards" },
-                    { title: "Integration Layer", text: "Connected workflows to external systems including ERP and email services" }
-                ]},
-                implementation: {},
-                features: { list: [
-                    { icon: "fas fa-bolt", title: "Real-Time Processing", text: "Instant response to Shopify events" },
-                    { icon: "fas fa-project-diagram", title: "Workflow Chains", text: "Build complex automation workflows" },
-                    { icon: "fas fa-shield-alt", title: "Secure Webhooks", text: "HMAC signature verification" },
-                    { icon: "fas fa-redo", title: "Auto-Retry Logic", text: "Intelligent retry mechanisms" },
-                    { icon: "fas fa-chart-line", title: "Analytics Dashboard", text: "Real-time monitoring" },
-                    { icon: "fas fa-plug", title: "Multi-Integration", text: "Connect to multiple systems" }
-                ]},
-                results: { items: [
-                    { number: "80%", label: "Time Saved", text: "Reduced manual task time by 80%" },
-                    { number: "5000+", label: "Daily Events", text: "Processing over 5000 events per day" },
-                    { number: "99.9%", label: "Uptime", text: "Achieved 99.9% system reliability" }
-                ]},
-                architecture: { intro: "The system is built on event-driven microservices architecture:", points: [
-                    { title: "Webhook Receiver", text: "Secure endpoints for receiving webhooks" },
-                    { title: "Event Queue", text: "Message queue system for reliable processing" },
-                    { title: "Workflow Engine", text: "Orchestrates complex business workflows" },
-                    { title: "Integration Services", text: "Microservices for external systems" }
-                ]},
-                lessons: { content: "This project deepened my expertise in event-driven architectures, asynchronous processing patterns, and building resilient distributed systems." }
-            },
-            sidebar: {
-                details: { industry: "Jewelry E-commerce", duration: "4 months", role: "Lead Developer" },
-                technologies: ["Node.js", "Express", "Webhooks", "Message Queue", "Event-Driven Architecture", "Shopify API", "Redis", "MongoDB", "Docker"],
-                achievements: ["80% reduction in manual tasks", "5000+ daily events processed", "99.9% system uptime", "Real-time event processing", "Zero data loss"],
-                cta: { title: "Need Workflow Automation?", text: "Let's automate your business processes with event-driven workflows." }
-            },
-            related: [
-                { id: "erp-integration", title: "ERP-Shopify Integration", desc: "Comprehensive data synchronization" },
-                { id: "hubspot-sync", title: "HubSpot Sync", desc: "Real-time CRM synchronization" },
-                { id: "b2b-platform", title: "B2B Platform", desc: "Collaborative product sharing" }
-            ]
-        }, 'en'),
         he: buildProjectData('automation-workflows', {
             title: "תהליכי אוטומציה מונעי אירועים",
             lead: "תהליכים עסקיים אוטומטיים באמצעות webhooks של Shopify וארכיטקטורה מונעת אירועים",
@@ -517,55 +320,6 @@ const projectsDetailData = {
         }, 'he')
     },
     'hubspot-sync': {
-        en: buildProjectData('hubspot-sync', {
-            title: "Shopify-HubSpot Sync Application",
-            lead: "Real-time synchronization system for products, orders, and customer data between Shopify and HubSpot CRM",
-            breadcrumbCurrent: "HubSpot Sync",
-            sections: {
-                overview: { content: "Developed a real-time synchronization application that seamlessly integrates Shopify with HubSpot CRM, enabling automated data flow between e-commerce and marketing platforms." },
-                challenge: { content: "The marketing team needed customer and order data in HubSpot for targeted campaigns, but manual data entry was time-consuming and error-prone." },
-                solution: { intro: "I built a robust sync application:", points: [
-                    { title: "Bidirectional Sync", text: "Two-way data synchronization between platforms" },
-                    { title: "Customer Profiles", text: "Automatic creation and updates of customer records" },
-                    { title: "Order Tracking", text: "Real-time order data sync for campaign targeting" },
-                    { title: "Product Catalog", text: "Product information synchronization" },
-                    { title: "Custom Properties", text: "Mapping of custom fields and properties" },
-                    { title: "Webhook Integration", text: "Real-time updates using webhooks" }
-                ]},
-                implementation: {},
-                features: { list: [
-                    { icon: "fas fa-sync-alt", title: "Real-Time Sync", text: "Instant data updates between platforms" },
-                    { icon: "fas fa-users", title: "Customer Sync", text: "Automated customer profile management" },
-                    { icon: "fas fa-shopping-bag", title: "Order Sync", text: "Real-time order data synchronization" },
-                    { icon: "fas fa-tag", title: "Product Sync", text: "Product catalog synchronization" },
-                    { icon: "fas fa-cog", title: "Custom Mapping", text: "Flexible field mapping configuration" },
-                    { icon: "fas fa-chart-bar", title: "Analytics", text: "Sync performance monitoring" }
-                ]},
-                results: { items: [
-                    { number: "100%", label: "Automation", text: "Eliminated manual data entry" },
-                    { number: "50%", label: "Campaign Efficiency", text: "Improved marketing campaign targeting" },
-                    { number: "Real-time", label: "Data Sync", text: "Instant data availability in HubSpot" }
-                ]},
-                architecture: { intro: "Clean microservices architecture:", points: [
-                    { title: "API Integration", text: "Handles Shopify and HubSpot APIs" },
-                    { title: "Data Transformer", text: "Maps data between platforms" },
-                    { title: "Sync Queue", text: "Ensures reliable data transfer" },
-                    { title: "Error Handler", text: "Manages sync failures and retries" }
-                ]},
-                lessons: { content: "This project taught me about API rate limiting strategies, data transformation patterns, and building reliable sync systems between different platforms." }
-            },
-            sidebar: {
-                details: { industry: "Jewelry E-commerce", duration: "3 months", role: "Full-Stack Developer" },
-                technologies: ["Node.js", "Express", "Shopify API", "HubSpot API", "REST API", "Webhooks", "MongoDB"],
-                achievements: ["100% automation of data entry", "Real-time data synchronization", "50% improved marketing efficiency", "Zero data loss"],
-                cta: { title: "Need CRM Integration?", text: "Let's build a seamless integration with your CRM system." }
-            },
-            related: [
-                { id: "erp-integration", title: "ERP Integration", desc: "Comprehensive ERP synchronization" },
-                { id: "automation-workflows", title: "Automation Workflows", desc: "Event-driven automation" },
-                { id: "data-sync-platform", title: "Data Sync Platform", desc: "Multi-store synchronization" }
-            ]
-        }, 'en'),
         he: buildProjectData('hubspot-sync', {
             title: "אפליקציית סנכרון Shopify-HubSpot",
             lead: "מערכת סנכרון בזמן אמת למוצרים, הזמנות ונתוני לקוחות בין Shopify ו-HubSpot CRM",
@@ -617,55 +371,6 @@ const projectsDetailData = {
         }, 'he')
     },
     'data-sync-platform': {
-        en: buildProjectData('data-sync-platform', {
-            title: "Multi-Store Data Synchronization Platform",
-            lead: "Advanced platform for seamless data import/export between multiple Shopify stores",
-            breadcrumbCurrent: "Data Sync Platform",
-            sections: {
-                overview: { content: "Built a comprehensive data synchronization platform that enables seamless product catalog, inventory, and customer data exchange between multiple Shopify stores." },
-                challenge: { content: "Managing multiple Shopify stores with thousands of products required significant manual effort to keep catalogs synchronized and inventory levels accurate across all stores." },
-                solution: { intro: "I developed an advanced synchronization platform:", points: [
-                    { title: "Bidirectional Sync", text: "Two-way data flow between multiple Shopify stores" },
-                    { title: "Product Catalog Sync", text: "Complete synchronization of product data, images, and variants" },
-                    { title: "Inventory Management", text: "Real-time inventory tracking across all stores" },
-                    { title: "Selective Sync", text: "Configurable rules for what data to synchronize" },
-                    { title: "Bulk Operations", text: "Import/export thousands of products efficiently" },
-                    { title: "Data Validation", text: "Ensures data integrity during synchronization" }
-                ]},
-                implementation: {},
-                features: { list: [
-                    { icon: "fas fa-exchange-alt", title: "Bidirectional Sync", text: "Two-way data synchronization" },
-                    { icon: "fas fa-cubes", title: "Product Catalog", text: "Complete product data sync" },
-                    { icon: "fas fa-warehouse", title: "Inventory Sync", text: "Real-time stock level updates" },
-                    { icon: "fas fa-filter", title: "Selective Sync", text: "Customizable sync rules" },
-                    { icon: "fas fa-file-export", title: "Bulk Export/Import", text: "Handle large datasets" },
-                    { icon: "fas fa-check-double", title: "Data Validation", text: "Ensures data integrity" }
-                ]},
-                results: { items: [
-                    { number: "90%", label: "Time Reduction", text: "Reduced manual synchronization time" },
-                    { number: "5+", label: "Stores Connected", text: "Successfully synchronized 5+ stores" },
-                    { number: "99.9%", label: "Data Accuracy", text: "Maintained high data accuracy" }
-                ]},
-                architecture: { intro: "Scalable platform architecture:", points: [
-                    { title: "Sync Coordinator", text: "Orchestrates multi-store synchronization" },
-                    { title: "Data Pipeline", text: "Handles data transformation and validation" },
-                    { title: "Queue System", text: "Manages large-scale data operations" },
-                    { title: "Conflict Resolution", text: "Handles data conflicts intelligently" }
-                ]},
-                lessons: { content: "This project taught me about distributed data synchronization, conflict resolution strategies, and building scalable data pipelines for multi-tenant systems." }
-            },
-            sidebar: {
-                details: { industry: "Multi-Store E-commerce", duration: "5 months", role: "Lead Developer" },
-                technologies: ["Node.js", "Shopify API", "REST API", "GraphQL", "MongoDB", "Message Queue", "Data Pipeline"],
-                achievements: ["90% time reduction in manual sync", "5+ stores synchronized", "99.9% data accuracy", "Handles 10,000+ products", "Zero data loss"],
-                cta: { title: "Need Multi-Store Sync?", text: "Let's build a robust synchronization solution for your store network." }
-            },
-            related: [
-                { id: "erp-integration", title: "ERP Integration", desc: "Enterprise system integration" },
-                { id: "hubspot-sync", title: "HubSpot Sync", desc: "CRM synchronization" },
-                { id: "automation-workflows", title: "Automation Workflows", desc: "Event-driven automation" }
-            ]
-        }, 'en'),
         he: buildProjectData('data-sync-platform', {
             title: "פלטפורמת סנכרון נתונים בין חנויות",
             lead: "פלטפורמה מתקדמת ליבוא/יצוא נתונים חלק בין מספר חנויות שופיפיי",
@@ -718,55 +423,6 @@ const projectsDetailData = {
     },
     
     'b2b-platform': {
-        en: buildProjectData('b2b-platform', {
-            title: "B2B Product Sharing Platform",
-            lead: "Shopify-integrated platform enabling merchants to share and collaborate on product catalogs",
-            breadcrumbCurrent: "B2B Platform",
-            sections: {
-                overview: { content: "Developed a B2B platform that allows Shopify merchants to share their product catalogs with business partners, enabling collaborative product management and streamlined B2B transactions." },
-                challenge: { content: "B2B merchants needed a way to share product catalogs with partners while maintaining control over pricing, availability, and permissions without duplicating data across multiple stores." },
-                solution: { intro: "I built a comprehensive B2B sharing platform:", points: [
-                    { title: "Catalog Sharing", text: "Enable product catalog sharing between merchants" },
-                    { title: "Permission Management", text: "Granular control over who can view and modify products" },
-                    { title: "Custom Pricing", text: "Partner-specific pricing and discounts" },
-                    { title: "Order Management", text: "Streamlined B2B order processing" },
-                    { title: "Inventory Sync", text: "Real-time inventory synchronization" },
-                    { title: "Collaboration Tools", text: "Product notes and collaboration features" }
-                ]},
-                implementation: {},
-                features: { list: [
-                    { icon: "fas fa-share-alt", title: "Catalog Sharing", text: "Share products with partners" },
-                    { icon: "fas fa-lock", title: "Access Control", text: "Granular permission management" },
-                    { icon: "fas fa-dollar-sign", title: "Custom Pricing", text: "Partner-specific pricing" },
-                    { icon: "fas fa-clipboard-list", title: "Order Management", text: "B2B order processing" },
-                    { icon: "fas fa-sync", title: "Inventory Sync", text: "Real-time stock updates" },
-                    { icon: "fas fa-comments", title: "Collaboration", text: "Product notes and discussions" }
-                ]},
-                results: { items: [
-                    { number: "60%", label: "Time Savings", text: "Reduced B2B order processing time" },
-                    { number: "100+", label: "Partners Connected", text: "Successfully onboarded partners" },
-                    { number: "40%", label: "Revenue Growth", text: "Increased B2B revenue" }
-                ]},
-                architecture: { intro: "Secure multi-tenant architecture:", points: [
-                    { title: "Auth & Permissions", text: "Secure access control system" },
-                    { title: "Data Isolation", text: "Ensures data privacy between tenants" },
-                    { title: "API Gateway", text: "Handles all external integrations" },
-                    { title: "Real-time Updates", text: "WebSocket-based live updates" }
-                ]},
-                lessons: { content: "This project taught me about multi-tenant architecture design, implementing granular permission systems, and building collaborative platforms for B2B use cases." }
-            },
-            sidebar: {
-                details: { industry: "B2B E-commerce", duration: "4 months", role: "Full-Stack Developer" },
-                technologies: ["Node.js", "React", "Shopify API", "MongoDB", "WebSockets", "REST API"],
-                achievements: ["60% faster B2B processing", "100+ partners onboarded", "40% revenue increase", "Secure multi-tenant system"],
-                cta: { title: "Need a B2B Platform?", text: "Let's build a collaborative B2B solution for your business." }
-            },
-            related: [
-                { id: "data-sync-platform", title: "Data Sync Platform", desc: "Multi-store synchronization" },
-                { id: "erp-integration", title: "ERP Integration", desc: "Enterprise system integration" },
-                { id: "automation-workflows", title: "Automation Workflows", desc: "Business process automation" }
-            ]
-        }, 'en'),
         he: buildProjectData('b2b-platform', {
             title: "פלטפורמת שיתוף מוצרים B2B",
             lead: "פלטפורמה משולבת ב-Shopify המאפשרת לסוחרים לשתף ולשתף פעולה בקטלוגי מוצרים",

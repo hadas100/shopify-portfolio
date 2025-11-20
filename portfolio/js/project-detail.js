@@ -6,7 +6,7 @@ function getProjectIdFromURL() {
     return filename.replace('.html', '');
 }
 
-function buildProjectPage(lang = 'en') {
+function buildProjectPage(lang = 'he') {
     const projectId = getProjectIdFromURL();
     const projectData = projectsDetailData[projectId];
 
