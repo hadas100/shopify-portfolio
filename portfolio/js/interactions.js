@@ -238,13 +238,22 @@ document.addEventListener('DOMContentLoaded', () => {
     stats.forEach(stat => statsObserver.observe(stat));
 });
 
-// ========== Parallax Effect for Hero ==========
+// ========== Parallax Effect for Hero Background ==========
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
-    const parallaxElements = document.querySelectorAll('.hero, .hero-title, .hero-description');
+    const heroBg = document.querySelector('.hero-bg');
 
-    parallaxElements.forEach((element, index) => {
-        const speed = (index + 1) * 0.2;
-        element.style.transform = `translateY(${scrolled * speed}px)`;
-    });
+    if (heroBg) {
+        // Parallax movement - background moves slower than scroll
+        const parallaxSpeed = scrolled * 0.5;
+
+        // Zoom effect - background scales up slightly as you scroll
+        const maxScroll = 800; // Maximum scroll distance for the effect
+        const scrollProgress = Math.min(scrolled / maxScroll, 1);
+        const scale = 1 + (scrollProgress * 0.15); // Scale from 1 to 1.15
+
+        // Apply both effects
+        heroBg.style.transform = `translateY(${parallaxSpeed}px) scale(${scale})`;
+        heroBg.style.transformOrigin = 'center center';
+    }
 });
