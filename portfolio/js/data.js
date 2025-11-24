@@ -117,7 +117,7 @@ const translations = {
     he: {
         // Personal Info
         name: "הדס שוויצר",
-        location: "תל אביב, ישראל",
+        location: "ירושלים, ישראל",
 
         // Navigation
         nav: {
