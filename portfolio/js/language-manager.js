@@ -7,7 +7,7 @@
  */
 const LanguageManager = {
     // Current language state
-    currentLanguage: 'en',
+    currentLanguage: 'he',
 
     // Available languages
     languages: ['en', 'he'],
@@ -49,15 +49,15 @@ const LanguageManager = {
 
     /**
      * Get saved language from localStorage
-     * @returns {string} Saved language code or default 'en'
+     * @returns {string} Saved language code or default 'he'
      */
     getSavedLanguage() {
         try {
             const saved = localStorage.getItem('preferredLanguage');
-            return saved && this.languages.includes(saved) ? saved : 'en';
+            return saved && this.languages.includes(saved) ? saved : 'he';
         } catch (error) {
             console.warn('localStorage not available:', error);
-            return 'en';
+            return 'he';
         }
     },
 

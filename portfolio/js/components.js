@@ -67,7 +67,7 @@ function createFooter(data, isProjectPage = false) {
             <div class="container">
                 <div class="footer-content">
                     <div class="footer-left">
-                        <p>${rightsText}</p>
+                        <p><i class="far fa-copyright"></i> ${rightsText.replace('©', '').trim()}</p>
                     </div>
                     <div class="footer-right">
                         <a href="${isProjectPage ? '../index.html' : '#home'}">
@@ -166,7 +166,7 @@ function updatePageComponents(data, options = {}) {
     const footerLeft = document.querySelector('.footer-left p');
     if (footerLeft) {
         const rightsText = data.footer?.rights || `© ${year} ${data.name}. All rights reserved.`;
-        footerLeft.textContent = rightsText;
+        footerLeft.innerHTML = `<i class="far fa-copyright"></i> ${rightsText.replace('©', '').trim()}`;
     }
 
     const footerRight = document.querySelector('.footer-right a');
