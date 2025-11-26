@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://hadassschweitzer.netlify.app/sitemap.xml
+
+# Optimization
+Crawl-delay: 0
+
+# Disallow specific paths (if any)
+# User-agent: *
+# Disallow: /admin/
