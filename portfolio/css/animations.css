@@ -580,3 +580,16 @@
         transition-duration: 0.01ms !important;
     }
 }
+
+.hero-title {
+    animation: fadeInUp 1.5s ease-out; /* Fade-in effect for the title */
+}
+
+.hero-description {
+    animation: fadeInUp 2s ease-out 0.5s; /* Delay effect for description */
+}
+
+.hero-buttons .btn {
+    animation: fadeInUp 2s ease-out 1s; /* Delay effect for buttons */
+}
+
