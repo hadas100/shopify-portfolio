@@ -185,33 +185,207 @@ function initRippleEffect() {
 // ========== Background Parallax for Hero ==========
 function initHeroParallax() {
     const heroBg = document.querySelector('.hero-bg');
-    if (!heroBg) return;
+    const hero = document.querySelector('.hero');
+    if (!heroBg || !hero) return;
+
+    const heroVisual = document.querySelector('.hero-visual');
+    const heroLogo = document.querySelector('.hero-logo');
+    const plexusLayers = document.querySelectorAll('.hero-plexus');
+    const heroMesh = document.querySelector('.hero-mesh');
 
     let ticking = false;
+    let scrollOffset = 0;
+    let mouseOffsetX = 0;
+    let mouseOffsetY = 0;
 
-    window.addEventListener('scroll', () => {
-        if (!ticking) {
-            window.requestAnimationFrame(() => {
-                const scrolled = window.pageYOffset;
-                const parallaxSpeed = 0.5;
+    const applyParallax = () => {
+        const translateX = mouseOffsetX * 0.8;
+        const translateY = scrollOffset * 0.4 + mouseOffsetY * 0.8;
+        heroBg.style.transform = `translate3d(${translateX}px, ${translateY}px, 0) scale(1.08)`;
 
-                // Parallax effect
-                heroBg.style.transform = `translateY(${scrolled * parallaxSpeed}px) scale(1.1)`;
+        if (heroLogo) {
+            heroLogo.style.transform = `translate3d(${mouseOffsetX * 0.6}px, ${mouseOffsetY * 0.6}px, 0)`;
+        }
 
-                ticking = false;
+        if (heroMesh) {
+            heroMesh.style.transform = `translate3d(${mouseOffsetX}px, ${mouseOffsetY}px, 0)`;
+        }
+
+        if (plexusLayers.length) {
+            plexusLayers.forEach((layer, index) => {
+                const factor = 0.6 + index * 0.25;
+                layer.style.transform = `translate3d(${mouseOffsetX * factor}px, ${mouseOffsetY * factor}px, 0)`;
             });
+        }
+
+        ticking = false;
+    };
+
+    const requestTick = () => {
+        if (!ticking) {
+            window.requestAnimationFrame(applyParallax);
             ticking = true;
         }
+    };
+
+    window.addEventListener('scroll', () => {
+        scrollOffset = Math.min(window.pageYOffset, window.innerHeight);
+        requestTick();
     }, { passive: true });
 
-    // Mouse move effect
+    hero.addEventListener('mousemove', (e) => {
+        const bounds = hero.getBoundingClientRect();
+        const relativeX = (e.clientX - bounds.left) / bounds.width - 0.5;
+        const relativeY = (e.clientY - bounds.top) / bounds.height - 0.5;
+
+        mouseOffsetX = relativeX * 30;
+        mouseOffsetY = relativeY * 30;
+        requestTick();
+    });
+
+    hero.addEventListener('mouseleave', () => {
+        mouseOffsetX = 0;
+        mouseOffsetY = 0;
+        requestTick();
+    });
+
+    requestTick();
+}
+
+// ========== Plexus Network Background ==========
+function initHeroPlexus() {
+    const canvases = document.querySelectorAll('.hero-plexus');
+    if (!canvases.length) return;
+
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+    const globalMouse = { x: null, y: null };
+
     document.addEventListener('mousemove', (e) => {
-        if (window.pageYOffset > window.innerHeight) return;
+        globalMouse.x = e.clientX;
+        globalMouse.y = e.clientY;
+    });
 
-        const x = (e.clientX / window.innerWidth) * 20 - 10;
-        const y = (e.clientY / window.innerHeight) * 20 - 10;
+    document.addEventListener('mouseleave', () => {
+        globalMouse.x = null;
+        globalMouse.y = null;
+    });
 
-        heroBg.style.transform = `translate(${x}px, ${y}px) scale(1.1)`;
+    canvases.forEach(canvas => {
+        const container = canvas.parentElement;
+        if (!container) return;
+        const ctx = canvas.getContext('2d');
+        let width = 0;
+        let height = 0;
+        let points = [];
+
+        const resize = () => {
+            const rect = canvas.getBoundingClientRect();
+            width = rect.width;
+            height = rect.height;
+            canvas.width = width * dpr;
+            canvas.height = height * dpr;
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            buildPoints();
+        };
+
+        const buildPoints = () => {
+            const count = Math.max(22, Math.floor((width + height) / 16));
+            points = Array.from({ length: count }, () => ({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                r: 1 + Math.random() * 1.5,
+                vx: (Math.random() - 0.5) * 0.55,
+                vy: (Math.random() - 0.5) * 0.55
+            }));
+        };
+
+        const draw = () => {
+            ctx.clearRect(0, 0, width, height);
+
+            // Update point positions
+            points.forEach(p => {
+                p.x += p.vx;
+                p.y += p.vy;
+
+                // gentle wrap-around
+                if (p.x < -40) p.x = width + 40;
+                if (p.x > width + 40) p.x = -40;
+                if (p.y < -40) p.y = height + 40;
+                if (p.y > height + 40) p.y = -40;
+
+                // mild attraction to mouse
+                if (globalMouse.x !== null) {
+                    const rect = canvas.getBoundingClientRect();
+                    const mx = globalMouse.x - rect.left;
+                    const my = globalMouse.y - rect.top;
+                    const dx = p.x - mx;
+                    const dy = p.y - my;
+                    const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+                    if (dist < 240) {
+                        p.vx += (-dx / dist) * 0.006;
+                        p.vy += (-dy / dist) * 0.006;
+                    }
+                }
+
+                // damping
+                p.vx = clamp(p.vx, -0.8, 0.8);
+                p.vy = clamp(p.vy, -0.8, 0.8);
+            });
+
+            // determine render positions (pulled toward mouse for a "thread" feel)
+            let mx = null, my = null;
+            if (globalMouse.x !== null) {
+                const rect = canvas.getBoundingClientRect();
+                mx = globalMouse.x - rect.left;
+                my = globalMouse.y - rect.top;
+            }
+
+            const renderPoints = points.map(p => {
+                if (mx === null) return { x: p.x, y: p.y };
+                const dx = p.x - mx;
+                const dy = p.y - my;
+                const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+                const pull = Math.max(0, 1 - dist / 260) * 14; // visual tug distance
+                const nx = dx / dist;
+                const ny = dy / dist;
+                return { x: p.x - nx * pull, y: p.y - ny * pull };
+            });
+
+            // draw lines
+            for (let i = 0; i < points.length; i++) {
+                for (let j = i + 1; j < points.length; j++) {
+                    const p1 = renderPoints[i];
+                    const p2 = renderPoints[j];
+                    const dx = p1.x - p2.x;
+                    const dy = p1.y - p2.y;
+                    const dist2 = dx * dx + dy * dy;
+                    const maxDist = 170;
+                    if (dist2 < maxDist * maxDist) {
+                        const opacity = 1 - Math.sqrt(dist2) / maxDist;
+                        ctx.strokeStyle = `rgba(150, 191, 72, ${opacity * 0.8})`;
+                        ctx.lineWidth = 1.1;
+                        ctx.beginPath();
+                        ctx.moveTo(p1.x, p1.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            // draw nodes
+            renderPoints.forEach((p, idx) => {
+                ctx.fillStyle = 'rgba(212, 255, 111, 1)';
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, points[idx].r, 0, Math.PI * 2);
+                ctx.fill();
+            });
+
+            requestAnimationFrame(draw);
+        };
+        resize();
+        draw();
+        window.addEventListener('resize', resize);
     });
 }
 
@@ -283,6 +457,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
     initRippleEffect();
     initHeroParallax();
+    initHeroPlexus();
     initAnimatedTextGradients();
     initParticleBackground();
     initScrollProgressBar();

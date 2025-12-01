@@ -1,4 +1,4 @@
-// ========== Dynamic Content Builder ==========
+﻿// ========== Dynamic Content Builder ==========
 function buildDynamicContent(lang = 'he') {
     const data = portfolioData[lang];
     currentLanguage = lang;
@@ -502,7 +502,7 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.style.cursor = 'not-allowed';
 
             try {
-                // Submit form using AJAX to FormSubmit
+                // Submit form using AJAX to Formspree
                 const formData = new FormData(contactForm);
                 const response = await fetch(contactForm.action, {
                     method: 'POST',
@@ -512,15 +512,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 });
 
-                const result = await response.json();
+                const result = await response.json().catch(() => ({}));
 
                 // Debug logging - remove this after testing
-                console.log('📧 FormSubmit Response:', result);
+                console.log('📧 Formspree Response:', result);
                 console.log('📊 Response status:', response.status);
                 console.log('✔️ Response OK:', response.ok);
-                console.log('🔍 Result success:', result.success);
-
-                if (response.ok && result.success) {
+                if (response.ok) {
                     // Success
                     console.log('✅ Form submitted successfully!');
                     showFormMessage(portfolioData[currentLanguage].contact.form.successMessage, 'success');
@@ -528,7 +526,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else {
                     // Error - could be validation or server error
                     console.error('❌ Form submission failed:', result);
-                    const errorMsg = result.message || portfolioData[currentLanguage].contact.form.errorMessage;
+                    const errorMsg = Array.isArray(result.errors) && result.errors.length
+                        ? result.errors.map(err => err.message).join(', ')
+                        : result.message || portfolioData[currentLanguage].contact.form.errorMessage;
                     showFormMessage(errorMsg, 'error');
                 }
             } catch (error) {
@@ -600,6 +600,8 @@ function typeWriter(element, text, speed = 100) {
 }
 
 // ========== Console Easter Egg ==========
-console.log('%c👨‍💻 Shopify Developer Portfolio', 'color: #96bf48; font-size: 20px; font-weight: bold;');
-console.log('%c🚀 Built with vanilla JavaScript, HTML5, and CSS3', 'color: #b0b8d4; font-size: 14px;');
-console.log('%c💼 Looking for a Shopify developer? Let\'s connect!', 'color: #96bf48; font-size: 14px;');
+console.log('%cðŸ‘¨â€ðŸ’» Shopify Developer Portfolio', 'color: #96bf48; font-size: 20px; font-weight: bold;');
+console.log('%cðŸš€ Built with vanilla JavaScript, HTML5, and CSS3', 'color: #b0b8d4; font-size: 14px;');
+console.log('%cðŸ’¼ Looking for a Shopify developer? Let\'s connect!', 'color: #96bf48; font-size: 14px;');
+
+

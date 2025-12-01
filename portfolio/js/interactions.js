@@ -127,6 +127,114 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Contact form handling (AJAX, no redirect)
+    const contactForm = document.getElementById('contactForm');
+    const submitBtn = contactForm?.querySelector('.btn-submit');
+    const formMessage = document.getElementById('formMessage');
+    const messages = {
+        success: 'ההודעה נשלחה, אחזור אליכם בהקדם.',
+        error: 'שגיאה בשליחת הטופס. נסו שוב או צרו קשר ישירות.',
+        sending: 'שולחת...'
+    };
+
+    const showFormMessage = (message, type) => {
+        if (!formMessage) return;
+        formMessage.textContent = message;
+        formMessage.className = `form-message ${type}`;
+        formMessage.style.display = 'block';
+        setTimeout(() => {
+            formMessage.style.display = 'none';
+        }, 5000);
+    };
+
+    if (contactForm && submitBtn) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const submitText = submitBtn.querySelector('.submit-text');
+            const originalText = submitText?.textContent || '';
+
+            const name = document.getElementById('name')?.value.trim();
+            const email = document.getElementById('email')?.value.trim();
+            const subject = document.getElementById('subject')?.value.trim();
+            const message = document.getElementById('message')?.value.trim();
+
+            if (!name || !email || !subject || !message) {
+                showFormMessage(messages.error, 'error');
+                return;
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showFormMessage(messages.error, 'error');
+                return;
+            }
+
+            submitBtn.disabled = true;
+            if (submitText) submitText.textContent = messages.sending;
+            submitBtn.style.opacity = '0.7';
+            submitBtn.style.cursor = 'not-allowed';
+
+            try {
+                const formData = new FormData(contactForm);
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                let result = {};
+                try {
+                    result = await response.json();
+                } catch (err) {
+                    result = {};
+                }
+
+                if (response.ok) {
+                    showFormMessage(messages.success, 'success');
+                    contactForm.reset();
+                } else {
+                    const errorMsg = Array.isArray(result.errors) && result.errors.length
+                        ? result.errors.map(err => err.message).join(', ')
+                        : result.message || messages.error;
+                    showFormMessage(errorMsg, 'error');
+                }
+            } catch (err) {
+                showFormMessage(messages.error, 'error');
+            } finally {
+                submitBtn.disabled = false;
+                if (submitText) submitText.textContent = originalText;
+                submitBtn.style.opacity = '1';
+                submitBtn.style.cursor = 'pointer';
+            }
+        });
+    }
+});
+
+// ========== Back to Top Button ==========
+document.addEventListener('DOMContentLoaded', () => {
+    const backToTop = document.createElement('button');
+    backToTop.className = 'back-to-top';
+    backToTop.type = 'button';
+    backToTop.setAttribute('aria-label', 'חזרה לראש העמוד');
+    backToTop.innerHTML = '<i class="fas fa-arrow-up"></i>';
+    document.body.appendChild(backToTop);
+
+    const toggleBackToTop = () => {
+        if (window.pageYOffset > 400) {
+            backToTop.classList.add('show');
+        } else {
+            backToTop.classList.remove('show');
+        }
+    };
+
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    toggleBackToTop();
+    window.addEventListener('scroll', toggleBackToTop);
 });
 
 // ========== Card Hover Effects ==========
