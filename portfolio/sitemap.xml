@@ -4,7 +4,7 @@
 
     <!-- Homepage -->
     <url>
-        <loc>https://hadassschweitzer.netlify.app/</loc>
+        <loc>https://hadas-dev.netlify.app/</loc>
         <lastmod>2025-11-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
@@ -12,42 +12,42 @@
 
     <!-- Project Pages -->
     <url>
-        <loc>https://hadassschweitzer.netlify.app/projects/ai-image-generation.html</loc>
+        <loc>https://hadas-dev.netlify.app/projects/ai-image-generation.html</loc>
         <lastmod>2025-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://hadassschweitzer.netlify.app/projects/erp-integration.html</loc>
+        <loc>https://hadas-dev.netlify.app/projects/erp-integration.html</loc>
         <lastmod>2025-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://hadassschweitzer.netlify.app/projects/automation-workflows.html</loc>
+        <loc>https://hadas-dev.netlify.app/projects/automation-workflows.html</loc>
         <lastmod>2025-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://hadassschweitzer.netlify.app/projects/hubspot-sync.html</loc>
+        <loc>https://hadas-dev.netlify.app/projects/hubspot-sync.html</loc>
         <lastmod>2025-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://hadassschweitzer.netlify.app/projects/data-sync-platform.html</loc>
+        <loc>https://hadas-dev.netlify.app/projects/data-sync-platform.html</loc>
         <lastmod>2025-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://hadassschweitzer.netlify.app/projects/b2b-platform.html</loc>
+        <loc>https://hadas-dev.netlify.app/projects/b2b-platform.html</loc>
         <lastmod>2025-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
