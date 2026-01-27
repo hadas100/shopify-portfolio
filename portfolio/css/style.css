@@ -39,6 +39,7 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: hidden;
 }
 
 body {
@@ -47,6 +48,7 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100%;
 }
 
 .container {
@@ -1690,8 +1692,10 @@ section {
     }
 
     .hero-plexus {
-        width: 360px;
-        height: 360px;
+        width: 100%;
+        max-width: 360px;
+        height: auto;
+        aspect-ratio: 1/1;
     }
 
     .plexus-top-left {
@@ -1705,8 +1709,10 @@ section {
     }
 
     .hero-rings {
-        width: 230px;
-        height: 230px;
+        width: 100%;
+        max-width: 230px;
+        height: auto;
+        aspect-ratio: 1/1;
     }
 
     .plexus-top-right {
