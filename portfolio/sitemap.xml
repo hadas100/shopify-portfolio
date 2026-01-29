@@ -2,62 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <!--  Homepage  -->
   <url>
-    <loc>https://hadas-dev.netlify.app/</loc>
+    <loc>https://shopify-il.netlify.app/</loc>
     <lastmod>2025-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <!--  Project Pages  -->
   <url>
-    <loc>https://hadas-dev.netlify.app/projects/ai-image-generation.html</loc>
+    <loc>https://shopify-il.netlify.app/projects/ai-image-generation.html</loc>
     <lastmod>2025-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hadas-dev.netlify.app/projects/erp-integration.html</loc>
+    <loc>https://shopify-il.netlify.app/projects/erp-integration.html</loc>
     <lastmod>2025-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hadas-dev.netlify.app/projects/automation-workflows.html</loc>
+    <loc>https://shopify-il.netlify.app/projects/automation-workflows.html</loc>
     <lastmod>2025-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hadas-dev.netlify.app/projects/hubspot-sync.html</loc>
+    <loc>https://shopify-il.netlify.app/projects/hubspot-sync.html</loc>
     <lastmod>2025-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hadas-dev.netlify.app/projects/data-sync-platform.html</loc>
+    <loc>https://shopify-il.netlify.app/projects/data-sync-platform.html</loc>
     <lastmod>2025-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://hadas-dev.netlify.app/projects/b2b-platform.html</loc>
+    <loc>https://shopify-il.netlify.app/projects/b2b-platform.html</loc>
     <lastmod>2025-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
     <url>
-        <loc>https://hadas-dev.netlify.app/shopify-vs-competitors.html</loc>
+        <loc>https://shopify-il.netlify.app/shopify-vs-competitors.html</loc>
         <lastmod>2025-12-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://hadas-dev.netlify.app/shopify-pricing.html</loc>
+        <loc>https://shopify-il.netlify.app/shopify-pricing.html</loc>
         <lastmod>2025-12-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://hadas-dev.netlify.app/shopify-playbook.html</loc>
+        <loc>https://shopify-il.netlify.app/shopify-playbook.html</loc>
         <lastmod>2025-12-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.85</priority>

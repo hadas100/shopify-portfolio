@@ -29,6 +29,117 @@
     --glow: 0 0 20px rgba(150, 191, 72, 0.3);
 }
 
+/* ========== Light Mode Overrides ========== */
+body.light-mode {
+    --dark-bg: #f7f8fb;
+    --darker-bg: #eef2f6;
+    --light-bg: #ffffff;
+    --lighter-bg: #f2f5fa;
+    --text-primary: #101624;
+    --text-secondary: #3a4459;
+    --text-muted: #6a738a;
+    --border-color: #d8dde8;
+    --shadow-sm: 0 2px 6px rgba(16, 22, 36, 0.08);
+    --shadow-md: 0 6px 16px rgba(16, 22, 36, 0.12);
+    --shadow-lg: 0 12px 30px rgba(16, 22, 36, 0.16);
+    --shadow-xl: 0 24px 60px rgba(16, 22, 36, 0.18);
+    --glow: 0 0 18px rgba(150, 191, 72, 0.25);
+    color-scheme: light;
+}
+
+body.light-mode .navbar {
+    background: rgba(247, 248, 251, 0.95);
+    border-bottom-color: rgba(16, 22, 36, 0.08);
+}
+
+body.light-mode .hero {
+    background: #f6f8fb;
+}
+
+body.light-mode .hero-bg {
+    background:
+        radial-gradient(circle at 25% 35%, rgba(150, 191, 72, 0.18), transparent 45%),
+        radial-gradient(circle at 70% 25%, rgba(150, 191, 72, 0.14), transparent 42%),
+        radial-gradient(circle at 50% 70%, rgba(150, 191, 72, 0.1), transparent 55%),
+        linear-gradient(135deg, #f6f8fb 0%, #e6edf6 50%, #f6f8fb 100%);
+    filter: drop-shadow(0 30px 60px rgba(16, 22, 36, 0.12));
+}
+
+body.light-mode .hero-bg::after {
+    background: radial-gradient(circle, rgba(150, 191, 72, 0.15) 0%, transparent 60%);
+    mix-blend-mode: multiply;
+}
+
+body.light-mode .hero-badges span {
+    color: #2e3d20;
+    background: rgba(150, 191, 72, 0.14);
+    border-color: rgba(150, 191, 72, 0.35);
+    box-shadow: 0 10px 30px rgba(150, 191, 72, 0.14);
+}
+
+body.light-mode .hero-stats-bar {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(150, 191, 72, 0.2);
+    box-shadow: inset 0 0 0 1px rgba(16, 22, 36, 0.04), 0 18px 50px rgba(16, 22, 36, 0.12);
+}
+
+body.light-mode .stat-label {
+    color: #4b566b;
+}
+
+body.light-mode .page-hero {
+    background: linear-gradient(135deg, #f8fafc 0%, #e8eff7 100%);
+}
+
+body.light-mode .page-hero::before {
+    background:
+        radial-gradient(circle at 50% 20%, rgba(150, 191, 72, 0.15), transparent 45%),
+        radial-gradient(circle at 80% 10%, rgba(150, 191, 72, 0.12), transparent 35%),
+        linear-gradient(135deg, rgba(248, 250, 252, 0.9), rgba(234, 241, 249, 0.95));
+}
+
+body.light-mode .page-hero.gradient-1,
+body.light-mode .page-hero.gradient-2,
+body.light-mode .page-hero.gradient-3 {
+    background: linear-gradient(135deg, #f6f8fb 0%, #e7eef7 100%);
+}
+
+body.light-mode .project-overlay {
+    background: rgba(247, 248, 251, 0.92);
+}
+
+body.light-mode .theme-toggle {
+    background: rgba(16, 22, 36, 0.04);
+    border-color: rgba(16, 22, 36, 0.15);
+    color: var(--text-secondary);
+}
+
+body.light-mode .theme-toggle:hover {
+    background: rgba(150, 191, 72, 0.18);
+    border-color: rgba(150, 191, 72, 0.45);
+    color: var(--text-primary);
+}
+
+body.light-mode .btn-secondary {
+    background: rgba(150, 191, 72, 0.2);
+    color: #1f2a1a;
+    border-color: rgba(94, 142, 62, 0.55);
+    box-shadow: none;
+}
+
+body.light-mode .gradient-text {
+    background: linear-gradient(135deg, #4c7b2a, #96bf48);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.light-mode .back-to-top {
+    color: #0a0e1a;
+    border: 1px solid rgba(16, 22, 36, 0.12);
+    box-shadow: var(--shadow-lg);
+}
+
 /* ========== Reset & Base ========== */
 * {
     margin: 0;
@@ -127,6 +238,13 @@ a {
     padding: 1rem 0;
     z-index: 1000;
     border-bottom: 1px solid var(--border-color);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
 .navbar .container {
@@ -557,6 +675,58 @@ a {
     margin: 0 auto;
     text-align: center;
     gap: 1.25rem;
+}
+
+/* ========== Theme Toggle ========== */
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(150, 191, 72, 0.35);
+    background: rgba(150, 191, 72, 0.08);
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.theme-toggle i {
+    font-size: 1rem;
+    color: var(--primary-color);
+}
+
+.theme-toggle:hover {
+    background: rgba(150, 191, 72, 0.16);
+    border-color: rgba(150, 191, 72, 0.6);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
+.theme-toggle--inline {
+    box-shadow: none;
+}
+
+.navbar .theme-toggle--inline {
+    align-self: center;
+    margin-inline-start: 12px;
+}
+
+.theme-toggle--floating {
+    position: fixed;
+    inset-inline-start: 24px;
+    inset-block-start: 88px;
+    left: 24px;
+    top: 88px;
+    z-index: 1200;
+    box-shadow: var(--shadow-lg);
 }
 
 .hero-content.narrow .hero-description {
@@ -1434,7 +1604,7 @@ section {
     pointer-events: none;
     transform: translateY(10px);
     transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    z-index: 1300;
+    z-index: 1400;
 }
 
 .back-to-top:hover {
@@ -1451,6 +1621,10 @@ section {
     visibility: visible;
     pointer-events: auto;
     transform: translateY(0);
+}
+
+.back-to-top.ripple-effect {
+    position: fixed;
 }
 
 /* ========== Responsive Design ========== */
@@ -1553,6 +1727,11 @@ section {
 }
 
 @media (max-width: 768px) {
+    .navbar .container {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
     .nav-menu {
         position: fixed;
         top: 70px;
@@ -1591,6 +1770,19 @@ section {
 
     .language-switcher i {
         font-size: 1.4rem;
+    }
+
+    .nav-actions {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .theme-toggle {
+        padding: 10px;
+    }
+
+    .theme-toggle .theme-text {
+        display: none;
     }
 
     .hamburger.active span:nth-child(1) {
@@ -1683,6 +1875,11 @@ section {
     .cta-banner {
         align-items: center;
         text-align: center;
+    }
+
+    .theme-toggle--floating {
+        left: 16px;
+        top: 72px;
     }
 }
 

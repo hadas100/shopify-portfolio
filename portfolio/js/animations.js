@@ -178,6 +178,10 @@ function initRippleEffect() {
     const buttons = document.querySelectorAll('.btn, button');
 
     buttons.forEach(button => {
+        if (button.classList.contains('back-to-top')) {
+            button.classList.remove('ripple-effect');
+            return;
+        }
         button.classList.add('ripple-effect');
     });
 }

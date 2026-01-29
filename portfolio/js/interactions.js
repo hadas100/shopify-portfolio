@@ -47,6 +47,61 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+// ========== Theme Toggle (Light Mode) ==========
+document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'theme-toggle';
+    toggle.setAttribute('aria-pressed', 'false');
+    toggle.innerHTML = '<i class="fas fa-sun"></i><span class="theme-text">תצוגה בהירה</span>';
+
+    const navContainer = document.querySelector('.navbar .container');
+    const navMenu = navContainer?.querySelector('.nav-menu');
+    const navActions = navContainer?.querySelector('.nav-actions');
+
+    if (navContainer) {
+        toggle.classList.add('theme-toggle--inline');
+        if (navMenu) {
+            navMenu.insertAdjacentElement('afterend', toggle);
+        } else if (navActions) {
+            navActions.insertAdjacentElement('afterend', toggle);
+        } else {
+            navContainer.appendChild(toggle);
+        }
+    } else {
+        toggle.classList.add('theme-toggle--floating');
+        document.body.appendChild(toggle);
+    }
+
+    const applyTheme = (mode) => {
+        const isLight = mode === 'light';
+        document.body.classList.toggle('light-mode', isLight);
+        const label = isLight ? 'מעבר לתצוגה כהה' : 'מעבר לתצוגה בהירה';
+        toggle.setAttribute('aria-pressed', String(isLight));
+        toggle.setAttribute('aria-label', label);
+        toggle.title = label;
+        const icon = toggle.querySelector('i');
+        const text = toggle.querySelector('.theme-text');
+        if (icon) {
+            icon.className = isLight ? 'fas fa-moon' : 'fas fa-sun';
+        }
+        if (text) {
+            text.textContent = isLight ? 'תצוגה כהה' : 'תצוגה בהירה';
+        }
+    };
+
+    const storedTheme = localStorage.getItem('site-theme');
+    const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+    const initialTheme = storedTheme || (prefersLight ? 'light' : 'dark');
+    applyTheme(initialTheme);
+
+    toggle.addEventListener('click', () => {
+        const nextTheme = document.body.classList.contains('light-mode') ? 'dark' : 'light';
+        localStorage.setItem('site-theme', nextTheme);
+        applyTheme(nextTheme);
+    });
+});
+
 // ========== FAQ Accordion ==========
 document.addEventListener('DOMContentLoaded', () => {
     const faqItems = document.querySelectorAll('.faq-item');
@@ -222,7 +277,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(backToTop);
 
     const toggleBackToTop = () => {
-        if (window.pageYOffset > 400) {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
+        if (scrollTop > 400) {
             backToTop.classList.add('show');
         } else {
             backToTop.classList.remove('show');
